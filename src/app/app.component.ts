@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./layout/header/header.component";
 
@@ -10,4 +10,15 @@ import { HeaderComponent } from "./layout/header/header.component";
 })
 export class AppComponent {
   title = 'pgweb';
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const scrollPosition = window.scrollY;
+    const docHeight = document.body.scrollHeight - window.innerHeight;
+    const scrollPercent = scrollPosition / docHeight;
+
+    const background = document.querySelector('.scroll-gradient') as HTMLElement;
+    if (background) {
+      background.style.backgroundPosition = `center ${scrollPercent * 100}%`;
+    }
+  }
 }
