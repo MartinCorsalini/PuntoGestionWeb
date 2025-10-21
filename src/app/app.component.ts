@@ -2,10 +2,13 @@ import { Component, HostListener } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./layout/header/header.component";
 import { FooterComponent } from "./layout/footer/footer.component";
+import { WavesDownComponent } from "./components/waves-down/waves-down.component";
+import { WavesUpComponent } from "./components/waves-up/waves-up.component";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent, WavesDownComponent, WavesUpComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
