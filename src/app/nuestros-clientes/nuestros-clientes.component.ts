@@ -64,8 +64,23 @@ export class NuestrosClientesComponent {
     { nombre: 'Vitalis Navitas', logo: 'assets/logos-clientes/vitalis-navitas.png', url: 'https://www.vitalisnavitas.com.ar' }
   ];
 
-  // Duplicamos el array 3 veces para crear un efecto de loop infinito sin cortes
-  get clientesDuplicados(): Cliente[] {
-    return [...this.clientes, ...this.clientes, ...this.clientes];
+  // Dividir clientes en dos filas
+  get clientesFila1(): Cliente[] {
+    const mitad = Math.ceil(this.clientes.length / 2);
+    return this.clientes.slice(0, mitad);
+  }
+
+  get clientesFila2(): Cliente[] {
+    const mitad = Math.ceil(this.clientes.length / 2);
+    return this.clientes.slice(mitad);
+  }
+
+  // Duplicamos cada fila 3 veces para crear un efecto de loop infinito sin cortes
+  get clientesFila1Duplicados(): Cliente[] {
+    return [...this.clientesFila1, ...this.clientesFila1, ...this.clientesFila1];
+  }
+
+  get clientesFila2Duplicados(): Cliente[] {
+    return [...this.clientesFila2, ...this.clientesFila2, ...this.clientesFila2];
   }
 }

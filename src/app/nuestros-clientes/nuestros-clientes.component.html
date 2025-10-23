@@ -10,10 +10,31 @@
       </p>
     </div>
 
-    <!-- Contenedor del carrusel horizontal infinito -->
-    <div class="logos-slider">
+    <!-- Primer Carrusel -->
+    <div class="logos-slider mb-8">
       <div class="logos-slide">
-        @for (cliente of clientesDuplicados; track $index) {
+        @for (cliente of clientesFila1Duplicados; track $index) {
+          <a
+            [href]="cliente.url"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="logo-item"
+            [attr.aria-label]="'Visitar sitio de ' + cliente.nombre"
+          >
+            <img
+              [src]="cliente.logo"
+              [alt]="cliente.nombre"
+              class="logo-img"
+            />
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Segundo Carrusel -->
+    <div class="logos-slider logos-slider-reverse">
+      <div class="logos-slide">
+        @for (cliente of clientesFila2Duplicados; track $index) {
           <a
             [href]="cliente.url"
             target="_blank"

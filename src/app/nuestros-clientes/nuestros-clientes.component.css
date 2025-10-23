@@ -36,13 +36,28 @@
   width: fit-content;
 }
 
-/* Animación de desplazamiento horizontal */
+/* Segundo carrusel en dirección inversa */
+.logos-slider-reverse .logos-slide {
+  animation: slideReverse 60s linear infinite;
+}
+
+/* Animación de desplazamiento horizontal hacia la izquierda */
 @keyframes slide {
   from {
     transform: translateX(0);
   }
   to {
     transform: translateX(-33.333%);
+  }
+}
+
+/* Animación de desplazamiento horizontal hacia la derecha */
+@keyframes slideReverse {
+  from {
+    transform: translateX(-33.333%);
+  }
+  to {
+    transform: translateX(0);
   }
 }
 
@@ -116,6 +131,10 @@
   .logos-slide {
     animation-duration: 45s;
   }
+
+  .logos-slider-reverse .logos-slide {
+    animation-duration: 45s;
+  }
 }
 
 @media (max-width: 480px) {
@@ -135,6 +154,10 @@
   }
 
   .logos-slide {
+    animation-duration: 35s;
+  }
+
+  .logos-slider-reverse .logos-slide {
     animation-duration: 35s;
   }
 }
