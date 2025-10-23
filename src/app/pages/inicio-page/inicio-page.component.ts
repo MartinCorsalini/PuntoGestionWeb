@@ -5,10 +5,11 @@ import { TangoProductosComponent } from "../../components/tango-productos/tango-
 import { ContactoComponent } from '../../components/contacto/contacto.component';
 import { NuestrosServiciosComponent } from "../../components/nuestros-servicios/nuestros-servicios.component";
 import { WaveComponent } from "../../components/wave/wave.component";
+import { NuestrosClientesComponent } from "../../nuestros-clientes/nuestros-clientes.component";
 
 @Component({
   selector: 'app-inicio-page',
-  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent],
+  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
