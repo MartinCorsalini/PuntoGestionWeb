@@ -62,22 +62,26 @@
 }
 
 .logo-item:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
-/* Las imágenes */
+/* Las imágenes con fondo blanco */
 .logo-img {
   width: 180px;
   height: 100px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0) invert(1);
-  opacity: 0.7;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  opacity: 0.85;
   transition: all 0.4s ease;
 }
 
 .logo-item:hover .logo-img {
-  filter: none;
   opacity: 1;
+  transform: translateY(-0.25rem);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
 /* Responsive */
@@ -89,6 +93,7 @@
   .logo-img {
     width: 160px;
     height: 90px;
+    padding: 0.75rem;
   }
 }
 
@@ -105,6 +110,7 @@
   .logo-img {
     width: 140px;
     height: 80px;
+    padding: 0.75rem;
   }
 
   .logos-slide {
@@ -125,6 +131,7 @@
   .logo-img {
     width: 120px;
     height: 70px;
+    padding: 0.5rem;
   }
 
   .logos-slide {
