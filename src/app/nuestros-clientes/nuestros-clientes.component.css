@@ -1,0 +1,133 @@
+/* Contenedor principal del slider */
+.logos-slider {
+  overflow: hidden;
+  padding: 2rem 0;
+  position: relative;
+  width: 100%;
+}
+
+/* Gradientes laterales para efecto fade */
+.logos-slider::before,
+.logos-slider::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logos-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #16094f 0%, transparent 100%);
+}
+
+.logos-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #16094f 0%, transparent 100%);
+}
+
+/* Track que contiene todos los logos */
+.logos-slide {
+  display: flex;
+  align-items: center;
+  animation: slide 60s linear infinite;
+  width: fit-content;
+}
+
+/* Animación de desplazamiento horizontal */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.333%);
+  }
+}
+
+/* Pausa la animación al hacer hover */
+.logos-slider:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+/* Cada item de logo */
+.logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.logo-item:hover {
+  transform: scale(1.1);
+}
+
+/* Las imágenes */
+.logo-img {
+  width: 180px;
+  height: 100px;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0) invert(1);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.logo-item:hover .logo-img {
+  filter: none;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .logo-item {
+    padding: 0 2.5rem;
+  }
+
+  .logo-img {
+    width: 160px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 80px;
+  }
+
+  .logo-item {
+    padding: 0 2rem;
+  }
+
+  .logo-img {
+    width: 140px;
+    height: 80px;
+  }
+
+  .logos-slide {
+    animation-duration: 45s;
+  }
+}
+
+@media (max-width: 480px) {
+  .logos-slider::before,
+  .logos-slider::after {
+    width: 50px;
+  }
+
+  .logo-item {
+    padding: 0 1.5rem;
+  }
+
+  .logo-img {
+    width: 120px;
+    height: 70px;
+  }
+
+  .logos-slide {
+    animation-duration: 35s;
+  }
+}
