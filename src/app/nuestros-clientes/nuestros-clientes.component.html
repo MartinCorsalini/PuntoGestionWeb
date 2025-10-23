@@ -15,7 +15,7 @@
       <div class="logos-slide">
         @for (cliente of clientesDuplicados; track $index) {
           <a
-
+            [href]="cliente.url"
             target="_blank"
             rel="noopener noreferrer"
             class="logo-item"
