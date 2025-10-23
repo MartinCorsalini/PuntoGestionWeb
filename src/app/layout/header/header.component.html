@@ -1,7 +1,7 @@
-<div class="navbar bg-base-100/90 py-2 px-6 shadow-md fixed top-0 w-full z-50">
+<div class="navbar bg-base-100 py-3 px-6 shadow-lg fixed top-0 w-full z-50">
 
   <!-- Sección izquierda: logo + menú hamburguesa móvil -->
-  <div class="navbar-start">
+  <div class="navbar-start flex-none lg:flex-[0.5]">
     <!-- Dropdown (solo visible en pantallas pequeñas) -->
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -25,30 +25,30 @@
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
       >
         <li><a>Quiénes somos?</a></li>
-      <li>
-        <details>
-          <summary>Productos</summary>
-          <ul class="p-2">
-            <li><a>Empresas</a></li>
-            <li><a>Comercios</a></li>
-            <li><a>Estudios Contables</a></li>
-            <li><a>Gastronómicos</a></li>
-            <li><a>Micro-Emprendimientos</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Servicios</a></li>
-      <li><a>Contacto</a></li>
+        <li>
+          <details>
+            <summary>Productos</summary>
+            <ul class="p-2">
+              <li><a>Empresas</a></li>
+              <li><a>Comercios</a></li>
+              <li><a>Estudios Contables</a></li>
+              <li><a>Gastronómicos</a></li>
+              <li><a>Micro-Emprendimientos</a></li>
+            </ul>
+          </details>
+        </li>
+        <li><a>Servicios</a></li>
+        <li><a>Contacto</a></li>
         <li><a>Item 3</a></li>
       </ul>
     </div>
 
-    <!-- ✅ Logo -->
-    <a routerLink="/" class="btn btn-ghost normal-case text-xl px-2">
+    <!-- Logo -->
+    <a routerLink="/" class="btn btn-ghost normal-case text-xl px-2 lg:ml-auto lg:mr-34">
       <img
         src="assets/logosPG/fhPunto-Gestion_BLANCO-sinfondo.png"
         alt="Punto Gestión"
-        class="h-10 md:h-20 w-auto"
+        class="h-14 md:h-24 w-auto"
       />
     </a>
   </div>
@@ -75,7 +75,7 @@
   </div>
 
   <!-- Botones derecha -->
-  <div class="navbar-end space-x-2">
+  <div class="navbar-end flex-none lg:flex-[0.5] lg:justify-center space-x-2">
     <a class="btn btn-primary">En Directo</a>
     <a class="btn btn-secondary">Soporte</a>
   </div>

@@ -8,7 +8,7 @@ import { WavesUpComponent } from "./components/waves-up/waves-up.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent, WavesDownComponent, WavesUpComponent],
+  imports: [RouterOutlet, HeaderComponent, FooterComponent,  WavesUpComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
