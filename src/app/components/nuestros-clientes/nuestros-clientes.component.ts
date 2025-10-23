@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface Cliente {
@@ -13,7 +13,7 @@ interface Cliente {
   templateUrl: './nuestros-clientes.component.html',
   styleUrl: './nuestros-clientes.component.css'
 })
-export class NuestrosClientesComponent {
+export class NuestrosClientesComponent implements OnInit, OnDestroy {
   clientes: Cliente[] = [
     
     { nombre: 'Casa Farina', logo: 'assets/logos-clientes/casa-farina.jpg', url: 'https://www.casafarina.com.ar' },
@@ -58,23 +58,63 @@ export class NuestrosClientesComponent {
     { nombre: 'Vitalis Navitas', logo: 'assets/logos-clientes/vitalis-navitas.png', url: 'https://www.vitalisnavitas.com.ar' }
   ];
 
-  // Dividir clientes en dos filas
-  get clientesFila1(): Cliente[] {
-    const mitad = Math.ceil(this.clientes.length / 2);
-    return this.clientes.slice(0, mitad);
+  // Estado para controlar la animación
+  isVisible: boolean = false; 
+  private observer!: IntersectionObserver;
+
+  constructor(private el: ElementRef) {}
+
+  ngOnInit(): void {
+    if (typeof IntersectionObserver !== 'undefined') {
+      // 1. Configurar Intersection Observer
+      const options = {
+        root: null, // El viewport
+        rootMargin: '0px',
+        threshold: 0.50 // Se activa cuando el 10% del elemento es visible
+      };
+
+      this.observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // El elemento entró en el viewport
+            this.isVisible = true;
+            // Detener la observación después de que la animación se dispare
+            this.observer.unobserve(this.el.nativeElement);
+          }
+        });
+      }, options);
+
+      // 2. Observar el elemento host del componente
+      this.observer.observe(this.el.nativeElement);
+    } else {
+      // Fallback para navegadores antiguos: mostrar el elemento inmediatamente
+      this.isVisible = true;
+    }
   }
 
-  get clientesFila2(): Cliente[] {
-    const mitad = Math.ceil(this.clientes.length / 2);
-    return this.clientes.slice(mitad);
+  ngOnDestroy(): void {
+    // Limpiar el observer al destruir el componente
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
 
-  // Duplicamos cada fila 3 veces para crear un efecto de loop infinito sin cortes
-  get clientesFila1Duplicados(): Cliente[] {
-    return [...this.clientesFila1, ...this.clientesFila1, ...this.clientesFila1];
-  }
+ // Lógica existente para dividir clientes
+ get clientesFila1(): Cliente[] {
+  const mitad = Math.ceil(this.clientes.length / 2);
+  return this.clientes.slice(0, mitad);
+ }
 
-  get clientesFila2Duplicados(): Cliente[] {
-    return [...this.clientesFila2, ...this.clientesFila2, ...this.clientesFila2];
-  }
+ get clientesFila2(): Cliente[] {
+  const mitad = Math.ceil(this.clientes.length / 2);
+  return this.clientes.slice(mitad);
+ }
+
+ get clientesFila1Duplicados(): Cliente[] {
+  return [...this.clientesFila1, ...this.clientesFila1, ...this.clientesFila1];
+ }
+
+ get clientesFila2Duplicados(): Cliente[] {
+  return [...this.clientesFila2, ...this.clientesFila2, ...this.clientesFila2];
+ }
 }

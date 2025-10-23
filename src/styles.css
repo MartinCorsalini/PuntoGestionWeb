@@ -38,6 +38,23 @@
   --noise: 0;
 }
 
+/* ========================================= */
+/* CLASES DE ANIMACIÓN FADE-IN-UP (Scroll) */
+/* ========================================= */
+
+/* Estado inicial, oculto y desplazado */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 2000ms ease, transform 2000ms ease;
+  will-change: opacity, transform; /* más suave */
+}
+
+/* Cuando entra en viewport */
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 
