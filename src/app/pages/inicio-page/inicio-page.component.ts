@@ -7,9 +7,11 @@ import { NuestrosServiciosComponent } from "../../components/nuestros-servicios/
 import { WaveComponent } from "../../components/wave/wave.component";
 import { NuestrosClientesComponent } from "../../components/nuestros-clientes/nuestros-clientes.component";
 
+import { WaveVioletaComponent } from "../../components/wave-violeta/wave-violeta.component";
+
 @Component({
   selector: 'app-inicio-page',
-  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent],
+  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent, WaveVioletaComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
