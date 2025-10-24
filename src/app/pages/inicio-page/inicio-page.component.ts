@@ -6,12 +6,21 @@ import { ContactoComponent } from '../../components/contacto/contacto.component'
 import { NuestrosServiciosComponent } from "../../components/nuestros-servicios/nuestros-servicios.component";
 import { WaveComponent } from "../../components/wave/wave.component";
 import { NuestrosClientesComponent } from "../../components/nuestros-clientes/nuestros-clientes.component";
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
-import { WaveVioletaComponent } from "../../components/wave-violeta/wave-violeta.component";
+
 
 @Component({
   selector: 'app-inicio-page',
-  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent],
+  imports: [CarruselComponent, 
+    CertificadoTangoComponent, 
+    TangoProductosComponent, 
+    ContactoComponent, 
+    NuestrosServiciosComponent, 
+    WaveComponent, 
+    NuestrosClientesComponent,
+    ScrollRevealDirective 
+  ],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
