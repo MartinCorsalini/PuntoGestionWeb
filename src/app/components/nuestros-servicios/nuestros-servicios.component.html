@@ -1,34 +1,34 @@
 <section class="relative bg-[#16094f] text-white overflow-hidden">
-
-  <!-- 🔹 Contenido -->
-  <div class="relative py-24 px-6 max-w-6xl mx-auto text-center">
-    <h2
-      class="text-4xl font-bold mb-16 uppercase tracking-wide text-[#ff861b] animate-fadeIn"
-    >
+  <div class="relative py-16 sm:py-24 px-4 max-w-6xl mx-auto text-center">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 uppercase tracking-wide text-[#ff861b]">
       Nuestros Servicios
     </h2>
 
-    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
-      @for (service of services; track $index) {
-        <div
-          class="card shadow-xl hover:shadow-2xl transition-transform duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeUp bg-[#7c21be] border border-[#fa0052]/30"
-          [style.animationDelay]="($index * 0.2) + 's'"
-        >
-          <div class="card-body items-center text-center">
-            <div
-              class="rounded-full bg-[#fa0052]/20 p-5 mb-4 text-[#ff861b] text-4xl transition-transform duration-300 hover:rotate-12"
-            >
-              <i [class]="service.icon"></i>
-            </div>
-            <h3 class="text-xl font-semibold mb-2 text-white">
-              {{ service.title }}
-            </h3>
-            <p class="text-sm text-white/80">{{ service.description }}</p>
+    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+      <div *ngFor="let service of services; let i = index"
+           class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-transform duration-500 transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center opacity-0 animate-fadeUp"
+           [style.animationDelay]="(i * 0.2) + 's'">
+
+        <div class="relative mb-5">
+          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
+            <i [class]="service.icon"></i>
           </div>
         </div>
-      }
+
+        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
+          {{ service.title }}
+        </h3>
+
+        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
+          {{ service.description }}
+        </p>
+
+        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
+          Ver más
+        </button>
+
+        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
+      </div>
     </div>
   </div>
-
-
 </section>

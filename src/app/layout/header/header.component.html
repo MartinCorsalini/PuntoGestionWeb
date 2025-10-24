@@ -1,5 +1,7 @@
-<div class="navbar min-h-[70px] h-[70px] py-0 px-6 shadow-lg fixed top-0 w-full z-50" style="background: linear-gradient(135deg, #121316, #262f52) !important;">
-
+<div
+  class="navbar min-h-[70px] h-[70px] py-0 px-3 sm:px-6 shadow-lg fixed top-0 w-full z-50"
+  style="background: linear-gradient(135deg, #121316, #262f52) !important;"
+>
   <!-- Sección izquierda: logo + menú hamburguesa móvil -->
   <div class="navbar-start flex-none lg:flex-[0.5]">
     <!-- Dropdown (solo visible en pantallas pequeñas) -->
@@ -7,7 +9,7 @@
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-6 w-6"
+          class="h-6 w-6 text-white"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -22,7 +24,7 @@
       </div>
       <ul
         tabindex="-1"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base-content"
       >
         <li><a>Quiénes somos?</a></li>
         <li>
@@ -39,28 +41,42 @@
         </li>
         <li><a>Servicios</a></li>
         <li><a>Contacto</a></li>
-        <li><a>Item 3</a></li>
+        <li><a>Soporte</a></li>
+
+        <!-- En Directo (solo visible en móvil) -->
+        <li class="block sm:hidden mt-2">
+          <a
+            class="btn text-white font-bold uppercase border-none rounded-full px-4 py-2 text-sm shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300 w-full"
+            style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%);"
+            >En Directo</a
+          >
+        </li>
       </ul>
     </div>
 
     <!-- Logo -->
-    <a routerLink="/" class="btn btn-ghost normal-case text-xl px-2 lg:ml-auto lg:mr-4">
+    <a
+      routerLink="/"
+      class="btn btn-ghost normal-case text-xl px-2 lg:ml-auto lg:mr-4"
+    >
       <img
         src="assets/logosPG/fhPunto-Gestion_BLANCO-sinfondo.png"
         alt="Punto Gestión"
-        class="h-14 md:h-24 w-auto"
+        class="h-10 sm:h-12 md:h-14 lg:h-20 w-auto object-contain"
       />
     </a>
   </div>
 
-  <!-- Menú central -->
+  <!-- Menú central (oculto en móvil) -->
   <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1 font-semibold text-lg text-white">
+    <ul
+      class="menu menu-horizontal px-1 font-semibold text-base xl:text-lg text-white"
+    >
       <li><a class="text-white hover:text-gray-200">Quiénes somos?</a></li>
       <li>
         <details>
           <summary class="text-white hover:text-gray-200">Productos</summary>
-          <ul class="p-2 bg-base-100">
+          <ul class="p-2 bg-base-100 text-base-content">
             <li><a>Empresas</a></li>
             <li><a>Comercios</a></li>
             <li><a>Estudios Contables</a></li>
@@ -71,15 +87,26 @@
       </li>
       <li><a class="text-white hover:text-gray-200">Servicios</a></li>
       <li><a class="text-white hover:text-gray-200">Contacto</a></li>
-        <a class="btn btn-outline btn-info text-white">Soporte</a> 
+      <li>
+        <a
+          class="btn btn-outline btn-info text-white font-semibold normal-case px-4"
+          >Soporte</a
+        >
+      </li>
     </ul>
   </div>
 
-  <!-- Botones derecha -->
- <div class="navbar-end flex-none lg:flex-[0.5] lg:justify-center lg:ml-4 space-x-2">
-
-  <a class="btn text-white font-bold uppercase border-none rounded-full px-6 shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300" style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%);">En Directo</a>
-    <!-- <a class="btn text-white font-bold uppercase border-none rounded-full px-6 shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300" style="background: linear-gradient(180deg, #9d4edd 0%, #7c21be 100%);">Soporte</a> -->
+  <!-- Botones derecha (oculto en móvil) -->
+  <div
+    class="navbar-end flex-none lg:flex-[0.5] lg:justify-center lg:ml-4 hidden sm:flex"
+  >
+    <a
+      class="btn text-white font-bold uppercase border-none rounded-full px-3 sm:px-5 md:px-6 py-1 sm:py-2 text-xs sm:text-sm md:text-base shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300"
+      style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%);"
+    >
+      En Directo
+    </a>
   </div>
-
 </div>
+
+
