@@ -11,7 +11,7 @@ import { WaveVioletaComponent } from "../../components/wave-violeta/wave-violeta
 
 @Component({
   selector: 'app-inicio-page',
-  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent, WaveVioletaComponent],
+  imports: [CarruselComponent, CertificadoTangoComponent, TangoProductosComponent, ContactoComponent, NuestrosServiciosComponent, WaveComponent, NuestrosClientesComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })
