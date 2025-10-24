@@ -1,3 +1,5 @@
+
+/*
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -74,7 +76,7 @@ export class ContactoComponent {
         setTimeout(() => this.submitError = false, 5000);
       }
     });
-    */
+
   }
 
   // Validadores personalizados para mostrar mensajes específicos
@@ -110,3 +112,74 @@ export class ContactoComponent {
     return !!(control && control.invalid && control.touched);
   }
 }
+
+*/
+
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, NgForm } from '@angular/forms';
+
+@Component({
+  selector: 'app-contacto',
+  standalone: true,
+  imports: [CommonModule, FormsModule],
+  templateUrl: './contacto.component.html',
+  styleUrls: ['./contacto.component.css']
+})
+export class ContactoComponent {
+  name: string = '';
+  email: string = '';
+  phone: string = '';
+  message: string = '';
+  touched = {
+    name: false,
+    email: false,
+    phone: false,
+    message: false
+  };
+
+  onSubmit(form: NgForm) {
+    this.markAllAsTouched();
+
+    if (form.valid) {
+      console.log('Formulario enviado:', form.value);
+      alert('Mensaje enviado correctamente ✅');
+      form.reset();
+      this.resetTouched();
+    } else {
+      alert('Por favor completá todos los campos correctamente ❌');
+    }
+  }
+
+  private markAllAsTouched() {
+    this.touched = {
+      name: true,
+      email: true,
+      phone: true,
+      message: true
+    };
+  }
+
+  private resetTouched() {
+    this.touched = {
+      name: false,
+      email: false,
+      phone: false,
+      message: false
+    };
+  }
+}
+
+
+ /*
+  onSubmit() {
+    if (this.name && this.email && this.phone && this.message) {
+      alert('Mensaje enviado con éxito!');
+      this.name = this.email = this.phone = this.message = '';
+      this.touched = { name: false, email: false, phone: false, message: false };
+    } else {
+      alert('Por favor, completá todos los campos.');
+    }
+  }
+
+*/

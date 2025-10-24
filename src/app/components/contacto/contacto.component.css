@@ -1,35 +1,75 @@
-/* Fade-up para entradas progresivas */
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-fadeUp { animation: fadeUp 0.6s ease forwards; }
+/*
 
-/* Slide para alertas */
-@keyframes slideDown {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.animate-slideDown { animation: slideDown 0.5s ease forwards; }
-
-/* Efecto wave sutil */
-.wave {
-  animation: waveMove 8s ease-in-out infinite alternate;
-}
-@keyframes waveMove {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(20px); }
+.contact-section {
+  background: url('https://colorlib.com/etc/cf/ContactFrom_v17/images/bg-01.jpg') no-repeat center center/cover;
+  min-height: 90vh;
+  padding: 2rem;
 }
 
-/* Micro-interacciones en inputs y botón */
-.input:focus, .textarea:focus {
-  transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(250,0,82,0.3);
-  transition: all 0.3s ease;
+.contact-card {
+  animation: fadeInUp 0.8s ease-in-out;
 }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(250,0,82,0.4);
-  transition: all 0.3s ease;
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .contact-section {
+    padding: 1rem;
+  }
+}
+
+*/
+.contact-container-wrapper {
+  clip-path: url(#wave-clip);
+}
+
+.contact-container {
+  background-image: url('/assets/contacto-imagen.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+  min-height: 85vh;
+  position: relative;
+  filter: grayscale(40%);
+}
+
+.contact-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 1;
+}
+
+/* Color personalizado para íconos */
+.icon-color {
+  color: #fa0052;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-container {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    min-height: auto;
+  }
 }

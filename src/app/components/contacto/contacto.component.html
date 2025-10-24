@@ -1,146 +1,170 @@
-<section class="w-full relative bg-[#7c21be]">
-  <!-- Wave superior -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-20 sm:h-24" preserveAspectRatio="none">
-    <path fill="#16094f" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+<section class="relative w-full mb-0">
+  <!-- Definimos el mask SVG -->
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0,0.05 Q0.1,0.02 0.2,0.04 T0.4,0.03 T0.6,0.02 T0.8,0.03 T1,0.04 L1,0.96 Q0.9,0.98 0.8,0.97 T0.6,0.98 T0.4,0.97 T0.2,0.96 T0,0.95 Z"
+        />
+      </clipPath>
+    </defs>
   </svg>
 
-  <!-- Contenido del formulario -->
-  <div class="py-12 sm:py-16 px-4 sm:px-6 lg:px-8 -mt-1">
-    <div class="max-w-4xl mx-auto">
-      <!-- Título -->
+  <div class="contact-container-wrapper">
+    <div
+      class="contact-container relative overflow-hidden flex items-center justify-center mt-16 mb-0 w-full"
+    >
+      <div
+        class="relative z-10 flex flex-col lg:flex-row items-center justify-center px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-12 md:py-16 lg:py-20 text-white w-full gap-8 lg:gap-12"
+      >
+        <!-- Columna izquierda centrada -->
+        <div
+          class="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left"
+        >
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2">
+            CONTACT US
+          </h2>
+          <p class="text-sm text-gray-300 mb-8 lg:mb-12">Images from Freepik</p>
 
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-2 sm:mb-4">
-        Contactanos
-      </h2>
-      <p class="text-white text-center text-base sm:text-lg mb-8 sm:mb-12">
-        Dejanos tu consulta y te responderemos a la brevedad
-      </p>
+          <div class="space-y-6 w-full max-w-md lg:max-w-lg">
+            <div class="grid grid-cols-[40px_1fr] gap-3 items-start text-left">
+              <i
+                class="fa-solid fa-phone icon-color text-xl justify-self-center mt-0.5"
+              ></i>
+              <div>
+                <h3 class="font-semibold mb-1 text-base md:text-lg">Call Us</h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                  1 (234) 567-891, 1 (234) 987-654
+                </p>
+              </div>
+            </div>
 
-      <!-- Mensajes de estado -->
-      <div *ngIf="submitSuccess" class="alert alert-success mb-4 sm:mb-6 shadow-lg text-sm sm:text-base">
-        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span>¡Mensaje enviado exitosamente! Te contactaremos pronto.</span>
+            <div class="grid grid-cols-[40px_1fr] gap-3 items-start text-left">
+              <i
+                class="fa-solid fa-location-dot icon-color text-xl justify-self-center mt-0.5"
+              ></i>
+              <div>
+                <h3 class="font-semibold mb-1 text-base md:text-lg">
+                  Location
+                </h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                  121 Rock Street, 21 Avenue, New York, NY 92103-9000
+                </p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-[40px_1fr] gap-3 items-start text-left">
+              <i
+                class="fa-solid fa-clock icon-color text-xl justify-self-center mt-0.5"
+              ></i>
+              <div>
+                <h3 class="font-semibold mb-1 text-base md:text-lg">
+                  Business Hours
+                </h3>
+                <p class="text-gray-300 text-sm md:text-base">
+                  Mon – Fri ..... 10 am – 8 pm, Sat, Sun ....... Closed
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="w-full lg:w-1/2 max-w-md lg:max-w-lg">
+          <form
+            #contactForm="ngForm"
+            (ngSubmit)="onSubmit(contactForm)"
+            novalidate
+            class="space-y-6 md:space-y-7"
+          >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter your name"
+                  class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm md:text-base"
+                  [(ngModel)]="name"
+                  required
+                  (blur)="touched.name = true"
+                />
+                <div
+                  *ngIf="touched.name && !name"
+                  class="text-xs text-red-400 mt-1"
+                >
+                  Name is required
+                </div>
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter a valid email address"
+                  class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm md:text-base"
+                  [(ngModel)]="email"
+                  required
+                  email
+                  (blur)="touched.email = true"
+                />
+                <div
+                  *ngIf="
+                    touched.email &&
+                    (!email || !contactForm.controls['email']?.valid)
+                  "
+                  class="text-xs text-red-400 mt-1"
+                >
+                  Valid email required
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Enter your phone number"
+                class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm md:text-base"
+                [(ngModel)]="phone"
+                required
+                (blur)="touched.phone = true"
+              />
+              <div
+                *ngIf="touched.phone && !phone"
+                class="text-xs text-red-400 mt-1"
+              >
+                Phone number is required
+              </div>
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                placeholder="Enter your message"
+                class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm md:text-base h-24 md:h-28 resize-none"
+                [(ngModel)]="message"
+                required
+                (blur)="touched.message = true"
+              ></textarea>
+              <div
+                *ngIf="touched.message && !message"
+                class="text-xs text-red-400 mt-1"
+              >
+                Message is required
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <button
+                type="submit"
+                class="btn bg-[#fa0052] hover:bg-[#c90045] border-none text-white font-semibold w-full transition-colors duration-300 text-sm md:text-base h-12 md:h-14"
+              >
+                SUBMIT
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-
-      <div *ngIf="submitError" class="alert alert-error mb-4 sm:mb-6 shadow-lg text-sm sm:text-base">
-        <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span>Error al enviar el mensaje. Por favor, intentá nuevamente.</span>
-      </div>
-
-      <!-- Formulario -->
-
-      <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="bg-white rounded-3xl p-6 sm:p-8 shadow-2xl">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-          <!-- Nombre -->
-          <div class="form-control">
-            <label class="label">
-              <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Nombre</span>
-            </label>
-            <input type="text" formControlName="nombre" placeholder="Tu nombre"
-                   class="input input-bordered w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                   [class.input-error]="hasError('nombre')" />
-
-            <label class="label" *ngIf="hasError('nombre')">
-              <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('nombre') }}</span>
-            </label>
-          </div>
-
-          <!-- Apellido -->
-          <div class="form-control">
-            <label class="label">
-
-              <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Apellido</span>
-            </label>
-            <input type="text" formControlName="apellido" placeholder="Tu apellido"
-                   class="input input-bordered w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                   [class.input-error]="hasError('apellido')" />
-
-            <label class="label" *ngIf="hasError('apellido')">
-              <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('apellido') }}</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Email y Teléfono -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
-          <div class="form-control">
-            <label class="label">
-
-              <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Email</span>
-            </label>
-            <input type="email" formControlName="email" placeholder="tu@email.com"
-                   class="input input-bordered w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                   [class.input-error]="hasError('email')" />
-
-            <label class="label" *ngIf="hasError('email')">
-              <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('email') }}</span>
-            </label>
-          </div>
-
-          <div class="form-control">
-            <label class="label">
-
-              <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Teléfono</span>
-            </label>
-            <input type="tel" formControlName="telefono" placeholder="Tu teléfono"
-                   class="input input-bordered w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                   [class.input-error]="hasError('telefono')" />
-
-            <label class="label" *ngIf="hasError('telefono')">
-              <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('telefono') }}</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- Asunto -->
-        <div class="form-control mb-4 sm:mb-6">
-          <label class="label">
-
-            <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Asunto</span>
-          </label>
-          <input type="text" formControlName="asunto" placeholder="¿Sobre qué querés consultar?"
-                 class="input input-bordered w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                 [class.input-error]="hasError('asunto')" />
-
-          <label class="label" *ngIf="hasError('asunto')">
-            <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('asunto') }}</span>
-          </label>
-        </div>
-
-        <!-- Mensaje -->
-        <div class="form-control mb-4 sm:mb-6">
-          <label class="label">
-
-            <span class="label-text font-semibold text-gray-700 text-sm sm:text-base">Mensaje</span>
-          </label>
-          <textarea formControlName="mensaje"
-                    class="textarea textarea-bordered h-28 sm:h-32 w-full bg-gray-50 focus:bg-white text-gray-900 text-sm sm:text-base"
-                    placeholder="Escribí tu mensaje aquí..." [class.textarea-error]="hasError('mensaje')"></textarea>
-
-          <label class="label" *ngIf="hasError('mensaje')">
-            <span class="label-text-alt text-error text-xs sm:text-sm">{{ getErrorMessage('mensaje') }}</span>
-          </label>
-        </div>
-
-        <!-- Botón -->
-        <div class="flex justify-center">
-          <button type="submit" [disabled]="isSubmitting"
-                  class="btn text-white font-bold uppercase border-none rounded-full px-6 sm:px-12 w-full sm:w-auto shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300 disabled:opacity-50"
-                  style="background: #fa0052;">
-            <span *ngIf="!isSubmitting">Enviar Mensaje</span>
-            <span *ngIf="isSubmitting" class="loading loading-spinner loading-md"></span>
-          </button>
-        </div>
-      </form>
     </div>
   </div>
-
-  <!-- Wave inferior -->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="w-full h-20 sm:h-24 -mb-1" preserveAspectRatio="none">
-    <path fill="#16094f" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,154.7C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-  </svg>
 </section>
