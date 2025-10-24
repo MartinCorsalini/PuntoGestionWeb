@@ -171,41 +171,232 @@
 
 
 
-/*
-@layer utilities {
-  .scroll-gradient {
-    background: linear-gradient(180deg, #3b82f6, #9333ea, #ec4899);
-    background-size: 200% 200%;
-    transition: background-position 0.2s ease-out;
-  }
+/* AGREGAR ESTO A src/styles.css */
+
+/* ============================================ */
+/* ANIMACIONES DE SCROLL - Múltiples efectos   */
+/* ============================================ */
+
+/* 1. FADE IN UP (de abajo hacia arriba) */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-@layer utilities {
-  .scroll-gradient {
-    background: linear-gradient(
-      180deg,
-      #3b82f6,
-      #9333ea,
-      #ec4899,
-      #f59e0b,
-      #10b981
-    );
-    background-size: 400% 400%;
-    background-attachment: fixed;
-    animation: gradientFlow 15s ease infinite;
-    transition: background-position 0.2s ease-out;
-  }
-
-  @keyframes gradientFlow {
-    0% {
-      background-position: 50% 0%;
-    }
-    50% {
-      background-position: 50% 100%;
-    }
-    100% {
-      background-position: 50% 0%;
-    }
-  }
+.fade-in-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
-*/
+
+/* 2. FADE IN DOWN (de arriba hacia abajo) */
+.fade-in-down {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-down.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 3. FADE IN LEFT (desde la izquierda) */
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 4. FADE IN RIGHT (desde la derecha) */
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 5. ZOOM IN (escalado desde pequeño) */
+.zoom-in {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.zoom-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 6. ZOOM OUT (escalado desde grande) */
+.zoom-out {
+  opacity: 0;
+  transform: scale(1.2);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.zoom-out.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 7. ROTATE IN (rotación con fade) */
+.rotate-in {
+  opacity: 0;
+  transform: rotate(-10deg) scale(0.95);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.rotate-in.is-visible {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+/* 8. FLIP IN X (voltear en eje X) */
+.flip-in-x {
+  opacity: 0;
+  transform: perspective(800px) rotateX(-45deg);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.flip-in-x.is-visible {
+  opacity: 1;
+  transform: perspective(800px) rotateX(0);
+}
+
+/* 9. SLIDE UP (deslizar hacia arriba - más dramático) */
+.slide-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.slide-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 10. FADE IN ONLY (solo aparece) */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+}
+
+/* 11. BOUNCE IN (con rebote) */
+.bounce-in {
+  opacity: 0;
+  transform: scale(0.3);
+  transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.bounce-in.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 12. BLUR IN (desde desenfocado) */
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, filter 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.blur-in.is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+/* ============================================ */
+/* ANIMACIONES ESPECIALES PARA TEXTOS          */
+/* ============================================ */
+
+/* Efecto de "escritura" para títulos */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.text-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efecto de subrayado animado */
+.underline-reveal {
+  position: relative;
+  display: inline-block;
+}
+
+.underline-reveal::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: currentColor;
+  transition: width 0.8s ease-out;
+}
+
+.underline-reveal.is-visible::after {
+  width: 100%;
+}
+
+
+
+
+/* ============================================ */
+/* UTILIDADES ADICIONALES                      */
+/* ============================================ */
+
+/* Para animar elementos hijos con delay escalonado */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+
+/* Optimización de rendimiento */
+.fade-in-up,
+.fade-in-down,
+.fade-in-left,
+.fade-in-right,
+.zoom-in,
+.zoom-out,
+.rotate-in,
+.flip-in-x,
+.slide-up,
+.fade-in,
+.bounce-in,
+.blur-in {
+  will-change: opacity, transform;
+}
+
+/* Remover will-change después de la animación */
+.is-visible {
+  will-change: auto;
+}
