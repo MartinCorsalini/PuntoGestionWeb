@@ -8,6 +8,7 @@ import { WaveComponent } from "../../components/wave/wave.component";
 import { NuestrosClientesComponent } from "../../components/nuestros-clientes/nuestros-clientes.component";
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { CasosExitoComponent } from "../../components/casos-exito/casos-exito.component";
+import { NosotrosComponent } from "../../components/nosotros/nosotros.component";
 
 
 
@@ -20,7 +21,9 @@ import { CasosExitoComponent } from "../../components/casos-exito/casos-exito.co
     NuestrosServiciosComponent,
     WaveComponent,
     NuestrosClientesComponent,
-    ScrollRevealDirective, CasosExitoComponent],
+    ScrollRevealDirective, 
+    CasosExitoComponent, 
+    NosotrosComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })

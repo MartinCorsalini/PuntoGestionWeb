@@ -18,15 +18,15 @@ interface CasoExito {
 export class CasosExitoComponent {
   casos: CasoExito[] = [
     {
-      empresa: 'Puppis',
-      videoId: 'h89nQr0yGv4',
-      descripcion: '"Decidimos adquirir SAP Business One, un ERP escalable, en lugar de desarrollar uno desde cero. Elegimos SAP Business One por su reconocimiento internacional y porque ofrece una gran cantidad de módulos y funcionalidades útiles para nosotros."'
+      empresa: 'Buena Proa',
+      videoId: 'pyrhXWME5O0',
+      descripcion: "Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión. A lo largo del testimonio, nos cuenta: Qué hace Buena Proa y cómo se desarrolla dentro de su rubro. Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba. El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.'"
     },
     {
-      empresa: 'Hubbing Latam',
-      videoId: 'h89nQr0yGv4', // Reemplaza con el ID real del video
-      descripcion: '"Elegimos SAP Business One y Seidor por su reputación, flexibilidad y capacidad de integración. Este software nos permitirá crecer y expandir nuestras operaciones. Seidor, con su experiencia y excelente servicio de consultoría, asegura una implementación exitosa."'
-    }
+      empresa: 'Buena Proa',
+      videoId: 'pyrhXWME5O0', // Reemplaza con el ID real del video
+      descripcion: "Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión. A lo largo del testimonio, nos cuenta: Qué hace Buena Proa y cómo se desarrolla dentro de su rubro. Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba. El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.'"
+    },
   ];
 
   private videoUrlCache = new Map<string, SafeResourceUrl>();
