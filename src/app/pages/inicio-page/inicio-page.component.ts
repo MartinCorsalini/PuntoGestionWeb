@@ -7,20 +7,20 @@ import { NuestrosServiciosComponent } from "../../components/nuestros-servicios/
 import { WaveComponent } from "../../components/wave/wave.component";
 import { NuestrosClientesComponent } from "../../components/nuestros-clientes/nuestros-clientes.component";
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
+import { CasosExitoComponent } from "../../components/casos-exito/casos-exito.component";
 
 
 
 @Component({
   selector: 'app-inicio-page',
-  imports: [CarruselComponent, 
-    CertificadoTangoComponent, 
-    TangoProductosComponent, 
-    ContactoComponent, 
-    NuestrosServiciosComponent, 
-    WaveComponent, 
+  imports: [CarruselComponent,
+    CertificadoTangoComponent,
+    TangoProductosComponent,
+    ContactoComponent,
+    NuestrosServiciosComponent,
+    WaveComponent,
     NuestrosClientesComponent,
-    ScrollRevealDirective 
-  ],
+    ScrollRevealDirective, CasosExitoComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })

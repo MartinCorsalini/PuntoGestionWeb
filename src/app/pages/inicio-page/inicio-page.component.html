@@ -1,56 +1,48 @@
-<!-- inicio-page.component.html CON ANIMACIONES -->
+<!-- inicio-page.component.html - ACTUALIZADO -->
 
 <!-- El carrusel NO se anima (aparece inmediatamente) -->
 <app-carrusel></app-carrusel>
 
 <!-- Certificado Tango: Aparece desde abajo -->
-<app-certificado-tango 
-  appScrollReveal 
-  animationClass="fade-in-down"
+<app-certificado-tango
+  appScrollReveal
+  animationClass="fade-in-up"
   [threshold]="0.2">
 </app-certificado-tango>
 
-<!-- Productos: Zoom in con delay -->
-<app-tango-productos 
-  appScrollReveal 
-  animationClass="fade-in-down" 
-  [delay]="150"
-  [threshold]="0.15">
-</app-tango-productos>
+<!-- Productos: SIN animación del componente (se anima internamente) -->
+<app-tango-productos></app-tango-productos>
 
 <!-- Wave decorativo: Fade in simple -->
-<app-wave 
-  appScrollReveal 
-  animationClass="fade-in-down"
+<app-wave
+  appScrollReveal
+  animationClass="fade-in"
   [threshold]="0.3">
 </app-wave>
 
-<!-- Servicios: Desde la izquierda -->
-<app-nuestros-servicios 
-  appScrollReveal 
-  animationClass="fade-in-down" 
-  [delay]="100"
-  [threshold]="0.2">
-</app-nuestros-servicios>
+<!-- Servicios: SIN animación del componente (se anima internamente) -->
+<app-nuestros-servicios></app-nuestros-servicios>
 
 <!-- Wave decorativo: Fade in simple -->
-<app-wave 
-  appScrollReveal 
-  animationClass="fade-in-down"
+<app-wave
+  appScrollReveal
+  animationClass="fade-in"
   [threshold]="0.3">
 </app-wave>
 
 <!-- Clientes: Slide up dramático -->
-<app-nuestros-clientes 
-  appScrollReveal 
-  animationClass="fade-in-down" 
+<app-nuestros-clientes
+  appScrollReveal
+  animationClass="slide-up"
   [delay]="200"
   [threshold]="0.15">
 </app-nuestros-clientes>
 
-<!-- Contacto: Blur in con efecto especial -->
-<app-contacto 
-  appScrollReveal 
-  animationClass="fade-in-down" 
+<app-casos-exito></app-casos-exito>
+
+<!-- Contacto: Fade in up -->
+<app-contacto
+  appScrollReveal
+  animationClass="fade-in-up"
   [threshold]="0.1">
 </app-contacto>
