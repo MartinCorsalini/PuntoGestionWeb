@@ -1,10 +1,11 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-nuestros-servicios',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollRevealDirective],
   templateUrl: './nuestros-servicios.component.html',
   styleUrls: ['./nuestros-servicios.component.css'],
   encapsulation: ViewEncapsulation.None // <--- Esto es clave

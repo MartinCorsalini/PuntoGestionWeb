@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-tango-productos',
-  imports: [],
+  imports: [ScrollRevealDirective],
   templateUrl: './tango-productos.component.html',
   styleUrl: './tango-productos.component.css'
 })

@@ -2,6 +2,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* ============================================ */
+/* TEMA DAISYUI PERSONALIZADO                  */
+/* ============================================ */
 
 @plugin "daisyui/theme" {
   name: "synthwave";
@@ -38,28 +41,9 @@
   --noise: 0;
 }
 
-/* ========================================= */
-/* CLASES DE ANIMACIÓN FADE-IN-UP (Scroll) */
-/* ========================================= */
-
-/* Estado inicial, oculto y desplazado */
-.fade-in-up {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 2000ms ease, transform 2000ms ease;
-  will-change: opacity, transform; /* más suave */
-}
-
-/* Cuando entra en viewport */
-.fade-in-up.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-
-
-
-/*Fuente */
+/* ============================================ */
+/* FUENTES POPPINS                             */
+/* ============================================ */
 
 .poppins-thin {
   font-family: "Poppins", sans-serif;
@@ -169,12 +153,8 @@
   font-style: italic;
 }
 
-
-
-/* AGREGAR ESTO A src/styles.css */
-
 /* ============================================ */
-/* ANIMACIONES DE SCROLL - Múltiples efectos   */
+/* ANIMACIONES DE SCROLL - BÁSICAS             */
 /* ============================================ */
 
 /* 1. FADE IN UP (de abajo hacia arriba) */
@@ -228,8 +208,9 @@
 /* 5. ZOOM IN (escalado desde pequeño) */
 .zoom-in {
   opacity: 0;
-  transform: scale(0.8);
-  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  transform: scale(0.85);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .zoom-in.is-visible {
@@ -273,11 +254,11 @@
   transform: perspective(800px) rotateX(0);
 }
 
-/* 9. SLIDE UP (deslizar hacia arriba - más dramático) */
+/* 9. SLIDE UP (deslizar hacia arriba) */
 .slide-up {
   opacity: 0;
   transform: translateY(100px);
-  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
               transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
@@ -323,6 +304,116 @@
 }
 
 /* ============================================ */
+/* ANIMACIONES SUAVES PREMIUM                  */
+/* ============================================ */
+
+/* 1. SMOOTH FADE UP - Más suave que fade-in-up */
+.smooth-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 2. GENTLE ZOOM - Zoom muy suave */
+.gentle-zoom {
+  opacity: 0;
+  transform: scale(0.85);
+  transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.gentle-zoom.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* 3. FLOAT IN - Efecto de flotación suave */
+.float-in {
+  opacity: 0;
+  transform: translateY(50px) scale(0.95);
+  transition: opacity 1.1s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 1.1s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+.float-in.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 4. ELASTIC FADE - Con efecto elástico suave */
+.elastic-fade {
+  opacity: 0;
+  transform: translateY(30px) scale(0.9);
+  transition: opacity 0.9s ease-out,
+              transform 1s cubic-bezier(0.68, -0.15, 0.265, 1.15);
+}
+
+.elastic-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* 5. SLIDE FADE - Desliza y aparece muy suave */
+.slide-fade {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 1.3s cubic-bezier(0.19, 1, 0.22, 1),
+              transform 1.3s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.slide-fade.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 6. SMOOTH SCALE - Escala ultra suave */
+.smooth-scale {
+  opacity: 0;
+  transform: scale(0.88) translateY(20px);
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.smooth-scale.is-visible {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+/* 7. REVEAL UP - Efecto de revelación progresiva */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(45px);
+  filter: blur(5px);
+  transition: opacity 1.2s ease-out,
+              transform 1.2s cubic-bezier(0.25, 1, 0.5, 1),
+              filter 1.2s ease-out;
+}
+
+.reveal-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+/* 8. SMOOTH RISE - Ascenso muy gradual */
+.smooth-rise {
+  opacity: 0;
+  transform: translateY(60px) scale(0.92);
+  transition: all 1.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.smooth-rise.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ============================================ */
 /* ANIMACIONES ESPECIALES PARA TEXTOS          */
 /* ============================================ */
 
@@ -359,9 +450,6 @@
   width: 100%;
 }
 
-
-
-
 /* ============================================ */
 /* UTILIDADES ADICIONALES                      */
 /* ============================================ */
@@ -373,14 +461,47 @@
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-.stagger-children.is-visible > *:nth-child(1) { transition-delay: 0ms; opacity: 1; transform: translateY(0); }
-.stagger-children.is-visible > *:nth-child(2) { transition-delay: 100ms; opacity: 1; transform: translateY(0); }
-.stagger-children.is-visible > *:nth-child(3) { transition-delay: 200ms; opacity: 1; transform: translateY(0); }
-.stagger-children.is-visible > *:nth-child(4) { transition-delay: 300ms; opacity: 1; transform: translateY(0); }
-.stagger-children.is-visible > *:nth-child(5) { transition-delay: 400ms; opacity: 1; transform: translateY(0); }
-.stagger-children.is-visible > *:nth-child(6) { transition-delay: 500ms; opacity: 1; transform: translateY(0); }
+.stagger-children.is-visible > *:nth-child(1) {
+  transition-delay: 0ms;
+  opacity: 1;
+  transform: translateY(0);
+}
 
-/* Optimización de rendimiento */
+.stagger-children.is-visible > *:nth-child(2) {
+  transition-delay: 100ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.is-visible > *:nth-child(3) {
+  transition-delay: 200ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.is-visible > *:nth-child(4) {
+  transition-delay: 300ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.is-visible > *:nth-child(5) {
+  transition-delay: 400ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.is-visible > *:nth-child(6) {
+  transition-delay: 500ms;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================ */
+/* OPTIMIZACIÓN DE RENDIMIENTO                 */
+/* ============================================ */
+
+/* Preparar elementos para animar */
 .fade-in-up,
 .fade-in-down,
 .fade-in-left,
@@ -392,11 +513,41 @@
 .slide-up,
 .fade-in,
 .bounce-in,
-.blur-in {
+.blur-in,
+.smooth-fade-up,
+.gentle-zoom,
+.float-in,
+.elastic-fade,
+.slide-fade,
+.smooth-scale,
+.reveal-up,
+.smooth-rise {
   will-change: opacity, transform;
 }
 
-/* Remover will-change después de la animación */
-.is-visible {
+/* Limpiar will-change después de la animación */
+.smooth-fade-up.is-visible,
+.gentle-zoom.is-visible,
+.float-in.is-visible,
+.elastic-fade.is-visible,
+.slide-fade.is-visible,
+.smooth-scale.is-visible,
+.reveal-up.is-visible,
+.smooth-rise.is-visible,
+.zoom-in.is-visible,
+.fade-in-up.is-visible,
+.fade-in-down.is-visible,
+.fade-in-left.is-visible,
+.fade-in-right.is-visible,
+.zoom-out.is-visible,
+.rotate-in.is-visible,
+.flip-in-x.is-visible,
+.slide-up.is-visible,
+.fade-in.is-visible,
+.bounce-in.is-visible,
+.blur-in.is-visible {
   will-change: auto;
+  /* Mantener opacidad y transform en valores finales */
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }

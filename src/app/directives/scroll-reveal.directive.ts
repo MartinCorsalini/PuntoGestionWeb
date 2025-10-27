@@ -21,15 +21,6 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
   ngOnInit() {
     // Agregar clase inicial (oculto)
     this.renderer.addClass(this.el.nativeElement, this.animationClass);
-    
-    // Aplicar delay si existe
-    if (this.delay > 0) {
-      this.renderer.setStyle(
-        this.el.nativeElement, 
-        'transition-delay', 
-        `${this.delay}ms`
-      );
-    }
 
     // Configurar Intersection Observer
     const options = {
@@ -41,9 +32,29 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
     this.observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          // Agregar clase 'is-visible' cuando entra en viewport
-          this.renderer.addClass(this.el.nativeElement, 'is-visible');
-          
+          // Aplicar delay si existe (solo cuando entra en viewport)
+          if (this.delay > 0) {
+            this.renderer.setStyle(
+              this.el.nativeElement,
+              'transition-delay',
+              `${this.delay}ms`
+            );
+          }
+
+          // Pequeño delay para asegurar que el navegador procesa la transición
+          setTimeout(() => {
+            // Agregar clase 'is-visible' cuando entra en viewport
+            this.renderer.addClass(this.el.nativeElement, 'is-visible');
+          }, 10);
+
+          // Limpiar estilos inline después de que termine la animación completa
+          const totalAnimationTime = 1200 + this.delay; // duración de animación + delay
+          setTimeout(() => {
+            this.renderer.removeStyle(this.el.nativeElement, 'transition-delay');
+            // Remover la clase de animación para que no interfiera con hover
+            this.renderer.removeClass(this.el.nativeElement, this.animationClass);
+          }, totalAnimationTime);
+
           // Dejar de observar si once=true
           if (this.once) {
             this.observer.unobserve(this.el.nativeElement);
