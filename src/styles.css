@@ -2,6 +2,10 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
+@theme {
+  --font-sans: 'Montserrat', ui-sans-serif, system-ui, sans-serif;
+}
 /* ============================================ */
 /* TEMA DAISYUI PERSONALIZADO                  */
 /* ============================================ */
