@@ -1,0 +1,40 @@
+<div class="container mx-auto px-4 py-8">
+  <!-- Título principal -->
+  <h2 class="text-2xl md:text-3xl font-bold text-center text-primary mb-8">
+    Súmate a nuestros casos de éxito.
+  </h2>
+
+  <!-- Casos de éxito -->
+  <div class="space-y-12">
+    <div *ngFor="let caso of casos; let i = index; trackBy: trackByCaso"
+         class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
+
+      <!-- Columna izquierda: Video -->
+      <div [class.lg:order-1]="i % 2 === 0"
+           [class.lg:order-2]="i % 2 === 1"
+           class="w-full">
+        <div class="aspect-video rounded-lg overflow-hidden shadow-lg max-w-md mx-auto lg:max-w-none">
+          <iframe
+            [src]="getVideoUrl(caso.videoId)"
+            class="w-full h-full"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Columna derecha: Información -->
+      <div [class.lg:order-2]="i % 2 === 0"
+           [class.lg:order-1]="i % 2 === 1"
+           class="flex flex-col justify-center px-4">
+        <h3 class="text-xl md:text-2xl font-bold text-primary mb-3">
+          {{ caso.empresa }}
+        </h3>
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed italic">
+          {{ caso.descripcion }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
