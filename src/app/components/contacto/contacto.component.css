@@ -42,7 +42,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #000;
-  min-height: 85vh;
+  min-height: 70vh; /* 👈 REDUCIDO de 85vh a 70vh */
   position: relative;
   filter: grayscale(40%);
 }
@@ -64,12 +64,12 @@
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-container {
-    min-height: auto;
+    min-height: auto; /* 👈 En tablets se ajusta automáticamente */
   }
 }
 
 @media (max-width: 768px) {
   .contact-container {
-    min-height: auto;
+    min-height: auto; /* 👈 En móviles se ajusta automáticamente */
   }
 }

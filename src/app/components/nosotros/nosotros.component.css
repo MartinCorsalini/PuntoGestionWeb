@@ -1,0 +1,27 @@
+/* Tamaño fijo del video: 12cm alto x 6.5cm ancho */
+.video-container {
+  width: 6.5cm;
+  height: 12cm;
+}
+
+.video-container .relative {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Asegurar que el video mantenga su proporción vertical */
+.relative {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.relative:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilos adicionales para el iframe */
+iframe {
+  border: none;
+  background: #000;
+}

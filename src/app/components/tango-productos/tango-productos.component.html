@@ -1,16 +1,25 @@
 <section class="w-full py-12 sm:py-16 px-4" style="background-color: #16094f;">
   <div class="max-w-7xl mx-auto">
-    <!-- Título de la sección -->
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
+    <!-- Título de la sección - APARECE PRIMERO -->
+    <h2
+      appScrollReveal
+      animationClass="fade-in-down"
+      [threshold]="0.3"
+      class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
       Nuestros Productos
     </h2>
 
     <!-- Grid de productos -->
     <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
 
-      <!-- Tango Gestión -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #2fa7df; min-height: auto;">
+      <!-- Tango Gestión - Card 1 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="200"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #2fa7df; min-height: auto;">
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/TangoGestion_v2.png" alt="Tango Gestión"
@@ -25,9 +34,14 @@
         </button>
       </div>
 
-      <!-- Tango Punto de Venta -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #2fa7df; min-height: auto;">
+      <!-- Tango Punto de Venta - Card 2 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="400"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #2fa7df; min-height: auto;">
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/TangoPDV_v2.png" alt="Tango Punto de Venta"
@@ -42,9 +56,14 @@
         </button>
       </div>
 
-      <!-- Tango Capital Humano -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #2fa7df; min-height: auto;">
+      <!-- Tango Capital Humano - Card 3 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="600"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #2fa7df; min-height: auto;">
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/Tango_Capitalhumano.png" alt="Tango Capital Humano"
@@ -59,9 +78,14 @@
         </button>
       </div>
 
-      <!-- Tango Estudios Contables -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #f47d30; min-height: auto;">
+      <!-- Tango Estudios Contables - Card 4 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="800"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #f47d30; min-height: auto;">
         <div>
           <div class="bg-[#f47d30] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/TangoEECC_v2.png" alt="Tango Estudios Contables"
@@ -76,9 +100,14 @@
         </button>
       </div>
 
-      <!-- Tango Restó -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #e51937; min-height: auto;">
+      <!-- Tango Restó - Card 5 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="1000"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #e51937; min-height: auto;">
         <div>
           <div class="bg-[#e51937] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/TangoResto_v2.png" alt="Tango Restó"
@@ -93,9 +122,14 @@
         </button>
       </div>
 
-      <!-- Tango Nube -->
-      <div class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 transition-transform duration-300"
-           style="background-color: #607d8a; min-height: auto;">
+      <!-- Tango Nube - Card 6 -->
+      <div
+        appScrollReveal
+        animationClass="gentle-zoom"
+        [delay]="1200"
+        [threshold]="0.15"
+        class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        style="background-color: #607d8a; min-height: auto;">
         <div>
           <div class="bg-[#607d8a] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
             <img src="assets/TangoSoftware-Productos/png/TangoNube_v2.png" alt="TFactura.io"
