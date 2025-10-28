@@ -20,12 +20,22 @@ export class CasosExitoComponent {
     {
       empresa: 'Buena Proa',
       videoId: 'pyrhXWME5O0',
-      descripcion: "Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión. A lo largo del testimonio, nos cuenta: Qué hace Buena Proa y cómo se desarrolla dentro de su rubro. Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba. El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.'"
-    },
+      descripcion: `Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión.
+      
+        A lo largo del testimonio, nos cuenta:
+        - Qué hace Buena Proa y cómo se desarrolla dentro de su rubro.
+        - Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba.
+        - El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.`
+      },
     {
       empresa: 'Buena Proa',
       videoId: 'pyrhXWME5O0', // Reemplaza con el ID real del video
-      descripcion: "Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión. A lo largo del testimonio, nos cuenta: Qué hace Buena Proa y cómo se desarrolla dentro de su rubro. Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba. El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.'"
+      descripcion: `Silvana, de Buena Proa, comparte su experiencia incorporando Tango Software junto al acompañamiento de Punto Gestión.
+      
+        A lo largo del testimonio, nos cuenta:
+        - Qué hace Buena Proa y cómo se desarrolla dentro de su rubro.
+        - Cómo Tango, junto al soporte cercano de nuestro equipo, les permitió optimizar procesos, mantener el control y seguir creciendo mientras la empresa escalaba.
+        - El impacto positivo que tuvo la herramienta en su gestión diaria y en el desarrollo sostenido del negocio.`
     },
   ];
 
