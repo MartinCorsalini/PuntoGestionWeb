@@ -56,9 +56,10 @@
   z-index: 1;
 }
 
-/* Color personalizado para íconos */
+
+/* Color personalizado para íconos - adaptable al tema */
 .icon-color {
-  color: #ff861b;
+  color: hsl(var(--s));
 }
 
 /* Responsive */
