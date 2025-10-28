@@ -11,6 +11,7 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   private isBrowser: boolean;
+  isDarkTheme: boolean = true; // Por defecto oscuro
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -19,14 +20,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     if (this.isBrowser) {
       // Cargar el tema guardado al iniciar
-      const savedTheme = localStorage.getItem('theme') || 'light';
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      this.isDarkTheme = savedTheme === 'dark';
       document.documentElement.setAttribute('data-theme', savedTheme);
-      
-      // Sincronizar el estado del checkbox
-      const checkbox = document.querySelector('.theme-controller') as HTMLInputElement;
-      if (checkbox) {
-        checkbox.checked = savedTheme === 'dark';
-      }
     }
   }
 
@@ -34,7 +30,8 @@ export class HeaderComponent implements OnInit {
     if (!this.isBrowser) return;
 
     const checkbox = event.target as HTMLInputElement;
-    const theme = checkbox.checked ? 'dark' : 'light';
+    const theme = checkbox.checked ? 'light' : 'dark';
+    this.isDarkTheme = theme === 'dark';
     
     // Aplicar el tema
     document.documentElement.setAttribute('data-theme', theme);

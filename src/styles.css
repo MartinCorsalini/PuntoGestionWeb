@@ -8,7 +8,8 @@
 }
 /* ============================================ */
 /* TEMA DAISYUI PERSONALIZADO                  */
-/* ============================================ */
+/* ============================================ 
+
 
 @plugin "daisyui/theme" {
   name: "synthwave";
@@ -35,6 +36,84 @@
   --color-warning-content: oklch(42% 0.095 57.708);
   --color-error: oklch(63% 0.237 25.331);
   --color-error-content: oklch(98% 0.003 247.858);
+  --radius-selector: 2rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+*/
+
+
+/* ============================================ */
+/* TEMAS DAISYUI PERSONALIZADOS                */
+/* ============================================ */
+
+/* TEMA OSCURO (synthwave) */
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+  prefersdark: true;
+  color-scheme: "dark";
+  --color-base-100: #16094f;
+  --color-base-200: #1a0d5a;
+  --color-base-300: #1e1165;
+  --color-base-content: #ffffff;
+  --color-primary: #2fa7df;
+  --color-primary-content: #ffffff;
+  --color-secondary: #ff861b;
+  --color-secondary-content: #ffffff;
+  --color-accent: #fa0052;
+  --color-accent-content: #ffffff;
+  --color-neutral: #626262;
+  --color-neutral-content: #ffffff;
+  --color-info: #7C20BE;
+  --color-info-content: #ffffff;
+  --color-success: oklch(77% 0.152 181.912);
+  --color-success-content: #ffffff;
+  --color-warning: oklch(83% 0.128 66.29);
+  --color-warning-content: #000000;
+  --color-error: oklch(63% 0.237 25.331);
+  --color-error-content: #ffffff;
+  --radius-selector: 2rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.5rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 0.5px;
+  --depth: 0;
+  --noise: 0;
+}
+
+/* TEMA CLARO (light) */
+@plugin "daisyui/theme" {
+  name: "light";
+  default: false;
+  prefersdark: false;
+  color-scheme: "light";
+  --color-base-100: #ffffff;
+  --color-base-200: #f5f5f5;
+  --color-base-300: #e5e5e5;
+  --color-base-content: #1f2937;
+  --color-primary: #2fa7df;
+  --color-primary-content: #ffffff;
+  --color-secondary: #ff861b;
+  --color-secondary-content: #ffffff;
+  --color-accent: #fa0052;
+  --color-accent-content: #ffffff;
+  --color-neutral: #4b5563;
+  --color-neutral-content: #ffffff;
+  --color-info: #7C20BE;
+  --color-info-content: #ffffff;
+  --color-success: #10b981;
+  --color-success-content: #ffffff;
+  --color-warning: #f59e0b;
+  --color-warning-content: #000000;
+  --color-error: #ef4444;
+  --color-error-content: #ffffff;
   --radius-selector: 2rem;
   --radius-field: 0.5rem;
   --radius-box: 0.5rem;

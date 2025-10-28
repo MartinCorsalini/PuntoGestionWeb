@@ -5,7 +5,7 @@ import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive'
 @Component({
   selector: 'app-nuestros-servicios',
   standalone: true,
-  imports: [CommonModule,ScrollRevealDirective],
+  imports: [CommonModule],
   templateUrl: './nuestros-servicios.component.html',
   styleUrls: ['./nuestros-servicios.component.css'],
   encapsulation: ViewEncapsulation.None // <--- Esto es clave

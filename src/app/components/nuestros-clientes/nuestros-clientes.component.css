@@ -6,7 +6,7 @@
  width: 100%;
 }
 
-/* Gradientes laterales para efecto fade */
+/* Gradientes laterales para efecto fade - Adaptables al tema */
 .logos-slider::before,
 .logos-slider::after {
  content: '';
@@ -20,12 +20,12 @@
 
 .logos-slider::before {
  left: 0;
- background: linear-gradient(to right, #16094f 0%, transparent 100%);
+ background: linear-gradient(to right, hsl(var(--b1)) 0%, transparent 100%);
 }
 
 .logos-slider::after {
  right: 0;
- background: linear-gradient(to left, #16094f 0%, transparent 100%);
+ background: linear-gradient(to left, hsl(var(--b1)) 0%, transparent 100%);
 }
 
 /* Track que contiene todos los logos */
