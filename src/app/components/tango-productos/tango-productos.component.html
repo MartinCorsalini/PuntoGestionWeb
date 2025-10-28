@@ -17,7 +17,7 @@
     </p>
 
     <!-- Certificado -->
-    <div class="flex justify-center mb-8">
+    <div class="flex justify-center mb-12">
       <img
         src="/assets/Insignias/TS-Dist-Certificado_dark.svg"
         alt="Tango Software Certificado"
@@ -25,7 +25,7 @@
       />
     </div>
 
-    <!-- Grid de productos - 6 cards en una fila -->
+     <!-- Grid de productos - 6 cards en una fila -->
     <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
       <!-- Cards de productos -->
       <div
@@ -34,23 +34,23 @@
         animationClass="gentle-zoom"
         [delay]="200 + (i * 100)"
         [threshold]="0.15"
-        class="rounded-2xl p-3 sm:p-4 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
+        class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out min-h-[380px] sm:min-h-[420px]"
         [style.background-color]="producto.bgColor"
       >
-        <div>
-          <div class="rounded-xl p-2 mb-3" [style.background-color]="producto.bgColor">
+        <div class="flex flex-col gap-4">
+          <div class="rounded-xl p-3 mb-2" [style.background-color]="producto.bgColor">
             <img
               [src]="producto.imagen"
               [alt]="producto.nombre"
-              class="w-full h-20 sm:h-24 object-contain"
+              class="w-full h-28 sm:h-32 object-contain"
             />
           </div>
-          <p class="text-white text-[10px] sm:text-xs leading-tight mb-3">
+          <p class="text-white text-xs sm:text-sm leading-relaxed mb-2">
             {{ producto.descripcion }}
           </p>
         </div>
         <button
-          class="btn font-semibold rounded-full border-none text-[10px] sm:text-xs py-1 h-8"
+          class="btn font-semibold rounded-full border-none text-xs sm:text-sm py-2 h-10 mt-auto"
           [class]="producto.btnClass"
         >
           Ver más

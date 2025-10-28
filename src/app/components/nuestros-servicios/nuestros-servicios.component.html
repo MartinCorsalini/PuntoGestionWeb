@@ -1,182 +1,114 @@
-<section class="relative bg-[#16094f] text-white overflow-hidden">
-  <div class="relative py-16 sm:py-24 px-4 max-w-6xl mx-auto text-center">
-    <!-- Título - APARECE PRIMERO -->
-    <h2
-      appScrollReveal
-      animationClass="fade-in-down"
-      [threshold]="0.3"
-      class="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 sm:mb-16 tracking-wide text-[#ff861b]">
-      Nuestros Servicios
-    </h2>
+<section class="relative bg-[#16094f] text-white overflow-hidden py-16 sm:py-20">
+  <div class="relative max-w-7xl mx-auto px-4 text-center">
 
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 lg:gap-12">
+    <!-- Título y subtítulo -->
+    <div class="mb-16">
+      <p class="text-sm sm:text-base text-gray-400 uppercase tracking-wider mb-3">
+        ¿POR QUÉ ELEGIR PUNTO GESTIÓN?
+      </p>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[#2fa7df] mb-4">
+        Potenciá tu negocio con estos beneficios
+      </h2>
+    </div>
+
+    <!-- Grid de servicios - 3x2 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 max-w-6xl mx-auto">
 
       <!-- Servicio 1 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="200"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-user-tie"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-lightbulb text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
           </div>
+          <!-- Círculo decorativo animado -->
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          Asesoramiento profesional
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Hace tus ideas realidad
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Nuestro staff te ayudará a elegir la mejor solución acorde a tu empresa.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Fomentamos la participación activa de nuestros clientes, escuchando sus ideas y sugerencias.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
       <!-- Servicio 2 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="400"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-gear"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-piggy-bank text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
           </div>
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          Implementación y coordinación
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Ahorrá tiempo y dinero
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Optimizamos transacciones y mejoramos procesos operativos.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Garantizamos un excelente tiempo de respuesta, brindando la mejor solución en el menor tiempo posible.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
       <!-- Servicio 3 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="600"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-graduation-cap"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-users-cog text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
           </div>
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          Capacitación
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Automatizá tus procesos
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Brindamos formación continua en cada uno de los diferentes procesos.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Desarrollamos soluciones específicas para cada cliente, integrado a Tango Software, potenciando sus funcionalidades.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
       <!-- Servicio 4 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="800"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-lightbulb"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-laptop-code text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
           </div>
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          Consultoría
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Maximizá el uso de tu sistema
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Impulsamos la innovación con información sobre las últimas novedades del sistema.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Brindamos formación continua en cada uno de los diferentes procesos para optimizar el uso del sistema.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
       <!-- Servicio 5 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="1000"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-headset"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-trophy text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12"></i>
           </div>
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          Soporte técnico
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Respaldate en los mejores
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Asistencia dinámica y remota cuando el cliente lo necesite.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Axoft nos ha distinguido como el mejor centro de servicio de Tango, por nuestra excepcional atención al cliente.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
       <!-- Servicio 6 -->
-      <div
-        appScrollReveal
-        animationClass="zoom-in"
-        [delay]="1200"
-        [threshold]="0.15"
-        class="relative rounded-3xl overflow-hidden shadow-inner hover:shadow-2xl transition-all duration-500 ease-out transform hover:scale-105 bg-gradient-to-br from-[#a87df0]/80 via-[#c19efc]/60 to-[#d4b9ff]/80 p-8 flex flex-col items-center text-center">
-        <div class="relative mb-5">
-          <div class="rounded-full bg-gradient-to-br from-[#fa0052]/20 to-[#ff861b]/20 p-6 text-[#ff861b] text-5xl flex items-center justify-center transition-transform duration-300 hover:rotate-12">
-            <i class="fas fa-handshake"></i>
+      <div class="group flex flex-col items-center text-center">
+        <div class="mb-6 relative">
+          <div class="w-20 h-20 rounded-full bg-[#2fa7df]/10 flex items-center justify-center">
+            <i class="fas fa-user-friends text-4xl text-[#2fa7df] transition-transform duration-500 group-hover:scale-110 group-hover:-rotate-12"></i>
           </div>
+          <div class="absolute inset-0 w-20 h-20 rounded-full border-2 border-[#2fa7df]/30 animate-ping-slow"></div>
         </div>
-
-        <h3 class="text-lg sm:text-xl md:text-2xl font-semibold mb-3 text-white">
-          El mejor respaldo
+        <h3 class="text-xl md:text-2xl font-bold mb-4">
+          Sentite acompañado
         </h3>
-
-        <p class="text-sm sm:text-base md:text-base text-white/80 leading-relaxed">
-          Con el respaldo de Axoft Argentina S.A., líder en software ERP.
+        <p class="text-sm md:text-base text-gray-300 leading-relaxed">
+          Con 35 años de experiencia hemos construido un sello de calidad que respalda cada servicio que ofrecemos.
         </p>
-
-        <button class="mt-6 btn bg-[#ff861b] text-[#16094f] font-semibold rounded-full hover:bg-[#ffa94d] border-none px-6 py-2 transition-all duration-300">
-          Ver más
-        </button>
-
-        <div class="absolute inset-0 rounded-3xl shadow-inner pointer-events-none"></div>
       </div>
 
     </div>
