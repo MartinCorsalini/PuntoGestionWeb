@@ -1,17 +1,42 @@
-<section class="w-full py-12 sm:py-16 px-4" style="background-color: #16094f;">
+<section class="w-full py-12 sm:py-16 px-4" style="background-color: #16094f">
   <div class="max-w-7xl mx-auto">
     <!-- Título de la sección - APARECE PRIMERO -->
     <h2
       appScrollReveal
       animationClass="fade-in-down"
       [threshold]="0.3"
-      class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-8 sm:mb-12">
+      class="text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center mb-8 sm:mb-12"
+    >
       Nuestros Productos
     </h2>
 
-    <!-- Grid de productos -->
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
+    <section
+      class="w-full relative mt-0 mb-10"
+      style="background-color: #16094f"
+    >
+      <div class="flex justify-center items-center py-4 -mt-1">
+        <div
+          class="flex flex-col md:flex-row items-center md:gap-6 lg:gap-12 max-w-5xl w-full justify-center px-4 text-center md:text-left"
+        >
+          <img
+            src="/assets/Insignias/TS-Dist-Certificado_dark.svg"
+            alt="Tango Software Certificado"
+            class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto object-contain mb-3 md:mb-0"
+          />
+          <p
+            class="text-base sm:text-lg md:text-xl lg:text-2xl text-white font-semibold"
+          >
+            Somos distribuidores oficiales de
+            <span class="font-bold text-secondary ">Tango Software</span>
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <!-- Grid de productos -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10"
+    >
       <!-- Tango Gestión - Card 1 -->
       <div
         appScrollReveal
@@ -19,17 +44,26 @@
         [delay]="200"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #2fa7df; min-height: auto;">
+        style="background-color: #2fa7df; min-height: auto"
+      >
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/TangoGestion_v2.png" alt="Tango Gestión"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/TangoGestion_v2.png"
+              alt="Tango Gestión"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Software para PyMEs y grandes empresas, desarrollado para lograr el mejor resultado de la manera más fácil en el menor tiempo posible.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Software para PyMEs y grandes empresas, desarrollado para lograr el
+            mejor resultado de la manera más fácil en el menor tiempo posible.
           </p>
         </div>
-        <button class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
@@ -41,17 +75,27 @@
         [delay]="400"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #2fa7df; min-height: auto;">
+        style="background-color: #2fa7df; min-height: auto"
+      >
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/TangoPDV_v2.png" alt="Tango Punto de Venta"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/TangoPDV_v2.png"
+              alt="Tango Punto de Venta"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Software para comercios minoristas, sucursales y/o franquicias. Es fácil de usar y cuenta con permisos y controles que le dan una total seguridad.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Software para comercios minoristas, sucursales y/o franquicias. Es
+            fácil de usar y cuenta con permisos y controles que le dan una total
+            seguridad.
           </p>
         </div>
-        <button class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
@@ -63,17 +107,27 @@
         [delay]="600"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #2fa7df; min-height: auto;">
+        style="background-color: #2fa7df; min-height: auto"
+      >
         <div>
           <div class="bg-[#2fa7df] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/Tango_Capitalhumano.png" alt="Tango Capital Humano"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/Tango_Capitalhumano.png"
+              alt="Tango Capital Humano"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Software para Recursos Humanos, desarrollado para automatizar y mejorar cada etapa de la administración del personal, obteniendo los mejores resultados de manera sencilla y rápida.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Software para Recursos Humanos, desarrollado para automatizar y
+            mejorar cada etapa de la administración del personal, obteniendo los
+            mejores resultados de manera sencilla y rápida.
           </p>
         </div>
-        <button class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-blue-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
@@ -85,17 +139,27 @@
         [delay]="800"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #f47d30; min-height: auto;">
+        style="background-color: #f47d30; min-height: auto"
+      >
         <div>
           <div class="bg-[#f47d30] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/TangoEECC_v2.png" alt="Tango Estudios Contables"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/TangoEECC_v2.png"
+              alt="Tango Estudios Contables"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Software para estudios contables desarrollado para facilitar y potenciar el trabajo del contador cualquiera sea el tamaño de su empresa cliente.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Software para estudios contables desarrollado para facilitar y
+            potenciar el trabajo del contador cualquiera sea el tamaño de su
+            empresa cliente.
           </p>
         </div>
-        <button class="btn bg-white text-orange-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-orange-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
@@ -107,17 +171,26 @@
         [delay]="1000"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #e51937; min-height: auto;">
+        style="background-color: #e51937; min-height: auto"
+      >
         <div>
           <div class="bg-[#e51937] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/TangoResto_v2.png" alt="Tango Restó"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/TangoResto_v2.png"
+              alt="Tango Restó"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Software gastronómico que se adapta a todos los tamaños de negocios y permite una gestión integrada en todos los formatos.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Software gastronómico que se adapta a todos los tamaños de negocios
+            y permite una gestión integrada en todos los formatos.
           </p>
         </div>
-        <button class="btn bg-white text-red-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-red-600 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
@@ -129,21 +202,29 @@
         [delay]="1200"
         [threshold]="0.15"
         class="rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out"
-        style="background-color: #607d8a; min-height: auto;">
+        style="background-color: #607d8a; min-height: auto"
+      >
         <div>
           <div class="bg-[#607d8a] rounded-2xl p-3 sm:p-4 mb-4 sm:mb-6">
-            <img src="assets/TangoSoftware-Productos/png/TangoNube_v2.png" alt="TFactura.io"
-                 class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain">
+            <img
+              src="assets/TangoSoftware-Productos/png/TangoNube_v2.png"
+              alt="TFactura.io"
+              class="w-full h-32 sm:h-36 md:h-40 lg:h-44 object-contain"
+            />
           </div>
-          <p class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
-            Solución cloud para pequeñas empresas y emprendedores, desarrollada para administrar tu negocio de forma simple.
+          <p
+            class="text-white text-sm sm:text-base leading-relaxed mb-4 sm:mb-6"
+          >
+            Solución cloud para pequeñas empresas y emprendedores, desarrollada
+            para administrar tu negocio de forma simple.
           </p>
         </div>
-        <button class="btn bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3">
+        <button
+          class="btn bg-white text-gray-700 font-semibold rounded-full hover:bg-gray-100 border-none text-sm sm:text-base py-2 sm:py-3"
+        >
           Ver más
         </button>
       </div>
-
     </div>
   </div>
 </section>

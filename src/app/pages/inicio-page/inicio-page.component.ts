@@ -15,14 +15,14 @@ import { NosotrosComponent } from "../../components/nosotros/nosotros.component"
 @Component({
   selector: 'app-inicio-page',
   imports: [CarruselComponent,
-    CertificadoTangoComponent,
+
     TangoProductosComponent,
     ContactoComponent,
     NuestrosServiciosComponent,
     WaveComponent,
     NuestrosClientesComponent,
-    ScrollRevealDirective, 
-    CasosExitoComponent, 
+    ScrollRevealDirective,
+    CasosExitoComponent,
     NosotrosComponent],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
