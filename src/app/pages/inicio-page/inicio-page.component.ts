@@ -4,11 +4,11 @@ import { CertificadoTangoComponent } from "../../components/certificado-tango/ce
 import { TangoProductosComponent } from "../../components/tango-productos/tango-productos.component";
 import { ContactoComponent } from '../../components/contacto/contacto.component';
 import { NuestrosServiciosComponent } from "../../components/nuestros-servicios/nuestros-servicios.component";
-import { WaveComponent } from "../../components/wave/wave.component";
 import { NuestrosClientesComponent } from "../../components/nuestros-clientes/nuestros-clientes.component";
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { CasosExitoComponent } from "../../components/casos-exito/casos-exito.component";
 import { NosotrosComponent } from "../../components/nosotros/nosotros.component";
+import { WaveComponent } from '../../../assets/waves/wave/wave.component';
 
 
 
