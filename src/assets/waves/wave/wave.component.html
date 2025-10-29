@@ -7,11 +7,21 @@
     preserveAspectRatio="none"
     class="w-full h-32 md:h-40"
   >
+    <!-- Definición del gradiente -->
+    <defs>
+      <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ec4899" /> <!-- from-pink-500 -->
+        <stop offset="100%" stop-color="#d946ef" /> <!-- to-fuchsia-600 -->
+      </linearGradient>
+    </defs>
+
+    <!-- Trazo con gradiente -->
     <path
       fill="none"
-      stroke="#ff861b"
+      stroke="url(#waveGradient)"
       stroke-width="35"
       d="M0,80 C180,140 360,20 540,80 C720,140 900,20 1080,80 C1260,140 1440,20 1440,20"
     />
   </svg>
 </section>
+

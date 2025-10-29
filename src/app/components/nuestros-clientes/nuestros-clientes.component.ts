@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface Cliente {
   nombre: string;
@@ -9,13 +10,13 @@ interface Cliente {
 
 @Component({
   selector: 'app-nuestros-clientes',
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollRevealDirective],
   templateUrl: './nuestros-clientes.component.html',
   styleUrl: './nuestros-clientes.component.css'
 })
 export class NuestrosClientesComponent implements OnInit, OnDestroy {
   clientes: Cliente[] = [
-    
+
     { nombre: 'Casa Farina', logo: 'assets/logos-clientes/casa-farina.jpg', url: 'https://www.casafarina.com.ar' },
     { nombre: 'Eurocafé', logo: 'assets/logos-clientes/eurocafe.png', url: 'https://www.eurocafe.com.ar' },
     { nombre: 'Fava', logo: 'assets/logos-clientes/fava.png', url: 'https://www.fava.com.ar' },
@@ -33,7 +34,7 @@ export class NuestrosClientesComponent implements OnInit, OnDestroy {
     { nombre: 'Tiribelli', logo: 'assets/logos-clientes/tiribelli.png', url: 'https://www.tiribelli.com.ar' },
     { nombre: 'Congelados Inal', logo: 'assets/logos-clientes/congelados-inal.jpg', url: 'https://www.congeladosinal.com.ar' },
 
- 
+
     { nombre: 'Luz y Fuerza', logo: 'assets/logos-clientes/luz-y-fuerza.png', url: 'https://www.luzyfuerza.com.ar' },
     { nombre: 'Via Sano', logo: 'assets/logos-clientes/via-sano.png', url: 'https://www.viasano.com.ar' },
     { nombre: 'Friosur', logo: 'assets/logos-clientes/friosur.jpg', url: 'https://www.friosur.com.ar' },
@@ -51,7 +52,7 @@ export class NuestrosClientesComponent implements OnInit, OnDestroy {
     { nombre: 'El Mudo', logo: 'assets/logos-clientes/el-mudo.png', url: 'https://www.elmudo.com.ar' },
     { nombre: 'Milagros del Cielo', logo: 'assets/logos-clientes/milagros-del-cielo.png', url: 'https://www.milagrosdelcielo.com.ar' },
     { nombre: 'Eskabe', logo: 'assets/logos-clientes/eskabe.png', url: 'https://www.eskabe.com.ar' },
-  
+
     { nombre: 'Pampa Fish', logo: 'assets/logos-clientes/pampa-fish.jpg', url: 'https://www.pampafish.com.ar' },
     { nombre: 'Rizzo', logo: 'assets/logos-clientes/rizzo.png', url: 'https://www.rizzo.com.ar' },
     { nombre: 'Tromarco', logo: 'assets/logos-clientes/tromarco.jpg', url: 'https://www.tromarco.com.ar' },
@@ -59,7 +60,7 @@ export class NuestrosClientesComponent implements OnInit, OnDestroy {
   ];
 
   // Estado para controlar la animación
-  isVisible: boolean = false; 
+  isVisible: boolean = false;
   private observer!: IntersectionObserver;
 
   constructor(private el: ElementRef) {}

@@ -7,17 +7,25 @@
       [threshold]="0.3"
       class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4"
     >
-      Nuestros Productos
+      <span class="text-gray-400">Nuestros </span>
+      <span
+        class="bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent"
+        >Productos</span
+      >
     </h2>
 
     <!-- Subtítulo -->
-    <p class="text-base sm:text-lg md:text-xl text-base-content font-semibold text-center mb-8">
+    <p
+      class="text-base sm:text-lg md:text-xl text-base-content font-semibold text-center mb-8"
+    >
       Somos distribuidores oficiales de
-      <span class="font-bold text-[#e51937]">Tango Software</span>
+      <span class="bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">Tango Software</span>
     </p>
 
     <!-- Certificado -->
-    <div class="flex justify-center mb-12 transition-opacity transition-duration-300">
+    <div
+      class="flex justify-center mb-12 transition-opacity transition-duration-300"
+    >
       <img
         [src]="certificadoLogo"
         alt="Tango Software Certificado"
@@ -25,20 +33,23 @@
       />
     </div>
 
-     <!-- Grid de productos - 6 cards en una fila -->
+    <!-- Grid de productos - 6 cards en una fila -->
     <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
       <!-- Cards de productos -->
       <div
         *ngFor="let producto of productos; let i = index"
         appScrollReveal
         animationClass="gentle-zoom"
-        [delay]="200 + (i * 100)"
+        [delay]="200 + i * 100"
         [threshold]="0.15"
         class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out min-h-[380px] sm:min-h-[420px]"
         [style.background-color]="producto.bgColor"
       >
         <div class="flex flex-col gap-4">
-          <div class="rounded-xl p-3 mb-2" [style.background-color]="producto.bgColor">
+          <div
+            class="rounded-xl p-3 mb-2"
+            [style.background-color]="producto.bgColor"
+          >
             <img
               [src]="producto.imagen"
               [alt]="producto.nombre"
