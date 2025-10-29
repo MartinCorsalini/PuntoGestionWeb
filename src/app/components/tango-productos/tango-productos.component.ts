@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, Inject, PLATFORM_ID } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 
 interface Producto {
   nombre: string;
@@ -20,6 +20,14 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
   currentIndex = 0;
   itemsPerView = 3;
   autoPlayInterval: any;
+  isDarkTheme: boolean = true;
+  certificadoLogo: string = 'assets/Insignias/TS-Dist-Certificado_dark.svg';
+  private isBrowser: boolean;
+  private themeObserver?: MutationObserver;
+
+  constructor(@Inject(PLATFORM_ID) platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
 
   productos: Producto[] = [
     {
@@ -77,10 +85,40 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.updateItemsPerView();
     this.startAutoPlay();
+
+    if (this.isBrowser) {
+      // Detectar tema inicial
+      this.updateTheme();
+
+      // Observar cambios en el atributo data-theme del HTML
+      this.themeObserver = new MutationObserver(() => {
+        this.updateTheme();
+      });
+
+      this.themeObserver.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-theme']
+      });
+    }
   }
 
   ngOnDestroy() {
     this.stopAutoPlay();
+    if (this.themeObserver) {
+      this.themeObserver.disconnect();
+    }
+  }
+
+  updateTheme() {
+    if (!this.isBrowser) return;
+
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    this.isDarkTheme = currentTheme === 'dark';
+
+    // Cambiar el logo según el tema
+    this.certificadoLogo = this.isDarkTheme
+      ? 'assets/Insignias/TS-Dist-Certificado_dark.svg'
+      : 'assets/Insignias/TS-Dist-Certificado_light.svg';
   }
 
   @HostListener('window:resize')
