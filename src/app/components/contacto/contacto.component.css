@@ -1,67 +1,84 @@
-/*
-
-.contact-section {
-  background: url('https://colorlib.com/etc/cf/ContactFrom_v17/images/bg-01.jpg') no-repeat center center/cover;
-  min-height: 90vh;
-  padding: 2rem;
-}
-
-.contact-card {
-  animation: fadeInUp 0.8s ease-in-out;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .contact-card {
-    padding: 2rem 1.5rem;
-  }
-
-  .contact-section {
-    padding: 1rem;
-  }
-}
-
-*/
 .contact-container-wrapper {
   clip-path: url(#wave-clip);
 }
 
-.contact-container {
-  background-image: url('/assets/contacto-imagen.jpg');
-  background-position: center;
+.bg-gradient-vio-nar-fondo {
+  background: var(--gradient-vio-nar);
   background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #000;
-  min-height: 70vh; /* 👈 REDUCIDO de 85vh a 70vh */
-  position: relative;
-  filter: grayscale(40%);
+  background-position: center;
 }
 
-.contact-container::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  z-index: 1;
+.bg-gradient-folly-fondo {
+  background: var(--gradient-folly);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-gradient-naranja-fondo {
+  background: var(--gradient-naranja);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-gradient-violeta-fondo {
+  background: var(--gradient-violeta);
+  background-size: cover;
+  background-position: center;
 }
 
 
-/* Color personalizado para íconos - adaptable al tema */
+
+
+
+
+/* Texto general */
+.contact-container,
+.contact-container * {
+  color: #f3f3f3;
+}
+
+/* Títulos */
+.contact-container h2,
+.contact-container h3 {
+  color: #ffffff;
+}
+
+/* Iconos */
 .icon-color {
-  color: hsl(var(--s));
+  color: #ffffff !important;
 }
 
+/* Inputs */
+.contact-container input,
+.contact-container textarea {
+  color: #ffffff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.contact-container input::placeholder,
+.contact-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Inputs activos */
+.contact-container input:focus,
+.contact-container textarea:focus {
+  border-color: #ffb85d; /* tono intermedio del gradiente */
+  outline: none;
+}
+
+/* Botón */
+.contact-container button {
+  background: #ffffff;
+  color: #7C21BE;
+  transition: all 0.3s ease;
+}
+
+.contact-container button:hover {
+  background: var(--gradient-vio-nar);
+  color: #ffffff;
+}
 /* Responsive */
 @media (max-width: 1024px) {
   .contact-container {
