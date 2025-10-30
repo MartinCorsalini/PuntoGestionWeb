@@ -170,15 +170,31 @@
   position: static; /* Mantener el flujo normal */
 }
 
-.menu-horizontal details ul {
+/* Submenú del dropdown en desktop - se muestra flotando sin scroll */
+.menu-horizontal details {
+  position: relative;
+}
+
+.menu-horizontal details[open] > ul {
+  display: block;
   position: absolute;
   top: 100%;
+  left: 0;
   margin-top: 0.5rem;
-  z-index: 9999; /* CAMBIO: Z-index muy alto para estar por encima de todo */
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
-  max-height: none; /* CAMBIO: Sin límite de altura */
-  overflow: visible; /* CAMBIO: Sin scroll interno */
+  background: var(--color-base-100, #fff);
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+  z-index: 9999;
+  min-width: 200px;
+  overflow: visible;
 }
+
+/* Asegurar que el menú padre no recorte */
+.navbar,
+.navbar-container {
+  overflow: visible !important;
+}
+
 
 /* Asegurar que el contenedor del navbar permita overflow */
 .navbar-container {
