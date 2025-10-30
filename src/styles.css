@@ -201,6 +201,29 @@
 .bg-gradient-azul { background: var(--gradient-azul); }
 
 
+.bg-gradient-vio-nar-fondo {
+  background: var(--gradient-vio-nar);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-gradient-folly-fondo {
+  background: var(--gradient-folly);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-gradient-naranja-fondo {
+  background: var(--gradient-naranja);
+  background-size: cover;
+  background-position: center;
+}
+
+.bg-gradient-violeta-fondo {
+  background: var(--gradient-violeta);
+  background-size: cover;
+  background-position: center;
+}
 
 /* ============================================ */
 /* ANIMACIONES DE SCROLL - BÁSICAS             */

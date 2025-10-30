@@ -2,35 +2,6 @@
   clip-path: url(#wave-clip);
 }
 
-.bg-gradient-vio-nar-fondo {
-  background: var(--gradient-vio-nar);
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-gradient-folly-fondo {
-  background: var(--gradient-folly);
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-gradient-naranja-fondo {
-  background: var(--gradient-naranja);
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-gradient-violeta-fondo {
-  background: var(--gradient-violeta);
-  background-size: cover;
-  background-position: center;
-}
-
-
-
-
-
-
 /* Texto general */
 .contact-container,
 .contact-container * {
