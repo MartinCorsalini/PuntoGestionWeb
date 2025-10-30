@@ -1,0 +1,306 @@
+/* ============================================ */
+/* HEADER/NAVBAR - ESTILOS ADICIONALES        */
+/* ============================================ */
+
+/* Asegurar que el navbar no se desborde */
+.navbar {
+  overflow-x: hidden;
+  overflow-y: visible; /* CAMBIO: Permitir que el contenido se superponga */
+}
+
+/* Contenedor principal del navbar */
+.navbar > div {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Dropdown del menú móvil - Solo contenido */
+.dropdown-content {
+  position: absolute;
+  background: var(--color-base-100);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  border-radius: 1rem;
+  max-height: 70vh;
+  overflow-y: auto;
+  z-index: 1000; /* CAMBIO: Asegurar que esté por encima */
+}
+
+/* Scroll suave en el dropdown */
+.dropdown-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-content::-webkit-scrollbar-track {
+  background: var(--color-base-200);
+  border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb {
+  background: var(--color-primary);
+  border-radius: 10px;
+}
+
+.dropdown-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* Menú items del dropdown móvil */
+.dropdown-content li a {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content li a:hover {
+  background: var(--color-base-200);
+  color: var(--color-primary);
+}
+
+/* Detalles del dropdown */
+.dropdown-content details summary {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdown-content details summary:hover {
+  background: var(--color-base-200);
+}
+
+.dropdown-content details[open] summary {
+  background: var(--color-base-200);
+}
+
+/* Submenú dentro del dropdown */
+.dropdown-content details ul {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dropdown-content details ul li a {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+/* Botón "En Directo" más compacto */
+.btn-sm {
+  height: 2rem;
+  min-height: 2rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* Theme toggle más compacto */
+.swap {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.25rem;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+}
+
+.swap:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Iconos del theme toggle */
+.swap svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.swap:hover svg {
+  transform: scale(1.1);
+}
+
+/* Ocultar checkbox del theme toggle */
+.theme-controller {
+  display: none;
+}
+
+/* Mostrar/ocultar iconos según el tema */
+.theme-controller:checked ~ .swap-on {
+  display: block;
+}
+
+.theme-controller:checked ~ .swap-off {
+  display: none;
+}
+
+.theme-controller:not(:checked) ~ .swap-on {
+  display: none;
+}
+
+.theme-controller:not(:checked) ~ .swap-off {
+  display: block;
+}
+
+/* Logo responsivo */
+.navbar img {
+  transition: all 0.3s ease;
+}
+
+/* Menú desktop - mejor espaciado */
+.menu-horizontal {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.menu-horizontal > li > a,
+.menu-horizontal > li > details > summary {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.menu-horizontal > li > a:hover,
+.menu-horizontal > li > details > summary:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* CAMBIO IMPORTANTE: Dropdown del menú desktop - se superpone sin crear scroll */
+.menu-horizontal details {
+  position: static; /* Mantener el flujo normal */
+}
+
+.menu-horizontal details ul {
+  position: absolute;
+  top: 100%;
+  margin-top: 0.5rem;
+  z-index: 9999; /* CAMBIO: Z-index muy alto para estar por encima de todo */
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  max-height: none; /* CAMBIO: Sin límite de altura */
+  overflow: visible; /* CAMBIO: Sin scroll interno */
+}
+
+/* Asegurar que el contenedor del navbar permita overflow */
+.navbar-container {
+  position: relative;
+  overflow: visible !important;
+}
+
+/* Ajustes responsive */
+@media (max-width: 1024px) {
+  /* En tablet, reducir aún más el botón "En Directo" */
+  .btn-sm {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* En móvil, asegurar que no haya overflow */
+  .navbar {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  /* Logo más pequeño en móviles */
+  .navbar img {
+    height: 2rem;
+  }
+
+  /* Theme toggle aún más compacto */
+  .swap svg {
+    width: 1rem;
+    height: 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  /* En móviles pequeños, mínimo padding */
+  .navbar {
+    padding-left: 0.375rem;
+    padding-right: 0.375rem;
+  }
+
+  /* Reducir gap entre elementos */
+  .navbar > div > div {
+    gap: 0.25rem;
+  }
+
+  /* Logo muy pequeño */
+  .navbar img {
+    height: 1.75rem;
+  }
+}
+
+/* Prevenir que el contenido se salga */
+* {
+  box-sizing: border-box;
+}
+
+/* Mejorar el contraste del botón de soporte */
+.btn-outline.btn-info {
+  border-color: var(--color-info);
+  color: var(--color-info);
+}
+
+.btn-outline.btn-info:hover {
+  background: var(--color-info);
+  border-color: var(--color-info);
+  color: white;
+}
+
+/* Animación suave del dropdown */
+.dropdown-content {
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu li a {
+  white-space: nowrap;
+}
+
+/* NUEVO: Asegurar que el dropdown móvil funcione correctamente */
+.dropdown {
+  position: relative;
+}
+
+/* CAMBIO: Dropdown alineado a la izquierda por defecto */
+.dropdown .dropdown-content {
+  left: 0;
+  right: auto;
+}
+
+.dropdown-end .dropdown-content {
+  right: 0;
+  left: auto;
+}
+
+/* NUEVO: Hacer que el botón hamburguesa sea más clickeable */
+.btn-ghost {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* NUEVO: Asegurar visibilidad del dropdown */
+.dropdown:focus-within .dropdown-content,
+.dropdown.dropdown-open .dropdown-content {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+}

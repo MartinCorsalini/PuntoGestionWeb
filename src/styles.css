@@ -96,7 +96,7 @@
   color-scheme: "light";
 
   /* === BASES (Fondos principales) === */
-  --color-base-100: #ffffff;      /* Fondo principal - Blanco puro */
+  --color-base-100: #f2f0eb;      /* Fondo principal - Blanco puro */
   --color-base-200: #f8f9fa;      /* Fondo secundario - Gris muy claro */
   --color-base-300: #e9ecef;      /* Fondo terciario - Gris claro */
   --color-base-content: #1f2937;  /* Texto sobre fondos base */
@@ -166,7 +166,7 @@
 
 :root {
   /* === GRADIENTES PRINCIPALES === */
-  --gradient-navbar: linear-gradient(135deg, #121316, #262f52);
+  --gradient-azul: linear-gradient(135deg, #121316, #262f52);
   --gradient-purple-dark: linear-gradient(180deg, #16094f 0%, #1a0d5a 100%);
   --gradient-purple-violet: linear-gradient(135deg, #16094f 0%, #7C20BE 100%);
   --gradient-cyan: linear-gradient(135deg, #2fa7df 0%, #1e8bb8 100%);
@@ -176,93 +176,31 @@
   --gradient-premium: linear-gradient(135deg, #16094f 0%, #121316 50%, #262f52 100%);
   --gradient-multicolor: linear-gradient(135deg, #2fa7df 0%, #7C20BE 50%, #fa0052 100%);
 
-  /* === GRADIENTES CON TRANSPARENCIA === */
-  --gradient-overlay-dark: linear-gradient(180deg, rgba(22, 9, 79, 0.95) 0%, rgba(26, 13, 90, 0.85) 100%);
-  --gradient-overlay-light: linear-gradient(180deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.85) 100%);
-  --gradient-hover-subtle: linear-gradient(135deg, rgba(47, 167, 223, 0.1) 0%, rgba(250, 0, 82, 0.1) 100%);
-
-  /* === SOMBRAS === */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-
-  /* === SOMBRAS CON COLOR === */
-  --shadow-cyan: 0 10px 30px rgba(47, 167, 223, 0.3);
-  --shadow-pink: 0 10px 30px rgba(250, 0, 82, 0.3);
-  --shadow-purple: 0 10px 30px rgba(124, 32, 190, 0.3);
-  --shadow-orange: 0 10px 30px rgba(255, 134, 27, 0.3);
+  --gradient-vio-nar: linear-gradient(135deg, #7C21BE, #ff861b);
+  --gradient-folly: linear-gradient(135deg, #7C21BE, #FA0052);
+  --gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%));
+  --gradient-naranja: linear-gradient(135deg, #FA0052, #FF861B);
 }
 
-/* ============================================ */
-/* CLASES UTILITARIAS PARA GRADIENTES        */
-/* ============================================ */
-
-.bg-gradient-navbar { background: var(--gradient-navbar); }
-.bg-gradient-purple-dark { background: var(--gradient-purple-dark); }
-.bg-gradient-purple-violet { background: var(--gradient-purple-violet); }
-.bg-gradient-cyan { background: var(--gradient-cyan); }
-.bg-gradient-orange { background: var(--gradient-orange); }
-.bg-gradient-pink { background: var(--gradient-pink); }
-.bg-gradient-button-live { background: var(--gradient-button-live); }
-.bg-gradient-premium { background: var(--gradient-premium); }
-.bg-gradient-multicolor { background: var(--gradient-multicolor); }
-
-/* === TEXTO CON GRADIENTE === */
-.text-gradient {
-  background: var(--gradient-multicolor);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.bg-gradient-violeta {
+  background-image: var(--gradient-violeta);
 }
 
-.text-gradient-cyan-pink {
-  background: linear-gradient(135deg, #2fa7df 0%, #fa0052 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+.bg-gradient-naranja {
+  background-image: var(--gradient-naranja);
 }
 
-/* === CLASES PARA SOMBRAS === */
-.shadow-cyan { box-shadow: var(--shadow-cyan); }
-.shadow-pink { box-shadow: var(--shadow-pink); }
-.shadow-purple { box-shadow: var(--shadow-purple); }
-.shadow-orange { box-shadow: var(--shadow-orange); }
-
-/* ============================================ */
-/* EJEMPLOS DE USO EN COMPONENTES            */
-/* ============================================ */
-
-/* Card Premium con gradiente */
-.card-premium {
-  background: var(--gradient-purple-violet);
-  box-shadow: var(--shadow-purple);
-  transition: all 0.3s ease;
+.bg-gradient-folly {
+  background-image: var(--gradient-folly);
 }
 
-.card-premium:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(124, 32, 190, 0.4);
+.bg-gradient-vio-nar {
+  background-image: var(--gradient-vio-nar);
 }
 
-/* Botón con gradiente */
-.btn-gradient-cyan {
-  background: var(--gradient-cyan);
-  transition: all 0.3s ease;
-}
+.bg-gradient-azul { background: var(--gradient-azul); }
 
-.btn-gradient-cyan:hover {
-  background: linear-gradient(135deg, #3db8f0 0%, #2fa7df 100%);
-  box-shadow: var(--shadow-cyan);
-}
 
-/* Overlay con blur */
-.overlay-blur {
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
 
 /* ============================================ */
 /* ANIMACIONES DE SCROLL - BÁSICAS             */
@@ -663,159 +601,34 @@
   transform: translateY(0) scale(1);
 }
 
-
-
-
-/* ============================================ */
-/* FUENTES POPPINS                             */
-/* ============================================
-
-.poppins-thin {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: normal;
+/* Gradiente con tonos violeta/morado más marcados */
+.bg-gradient-base {
+  background: radial-gradient(ellipse at top, #e8d5f2 0%, #f2e8f5 30%, #f5eef8 60%, #f2f0eb 100%);
 }
 
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
+/* Alternativa con más intensidad violeta */
+.bg-gradient-base-alt {
+  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
 }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
+/* Opción 3: Gradiente radial con violeta más visible */
+.bg-gradient-base-purple {
+  background: radial-gradient(circle at top center, #d5b8e8 0%, #e6d4f2 20%, #f0e5f7 50%, #f5f0ed 100%);
 }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
+
+.bg-gradient-base-inv {
+  background: radial-gradient(ellipse at top, #f2f0eb 0%, #f5eef8 40%, #f2e8f5 70%, #e8d5f2 100%);
 }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
+/* Alternativa con más intensidad violeta - INVERTIDO */
+.bg-gradient-base-alt-inv {
+  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
 }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
+/* Opción 3: Gradiente radial con violeta más visible - INVERTIDO */
+.bg-gradient-base-purple-inv {
+  background: radial-gradient(circle at top center, #f5f0ed 0%, #f0e5f7 50%, #e6d4f2 80%, #d5b8e8 100%);
 }
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
 
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
-.poppins-thin-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 100;
-  font-style: italic;
-}
-
-.poppins-extralight-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: italic;
-}
-
-.poppins-light-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: italic;
-}
-
-.poppins-regular-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.poppins-medium-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: italic;
-}
-
-.poppins-semibold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: italic;
-}
-
-.poppins-bold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: italic;
-}
-
-.poppins-extrabold-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: italic;
-}
-
-.poppins-black-italic {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: italic;
-}
-*/
-
-/* ============================================ */
-/* TEMA DAISYUI PERSONALIZADO                  */
-/* ============================================
-
-
-@plugin "daisyui/theme" {
-  name: "synthwave";
-  default: false;
-  prefersdark: false;
-  color-scheme: "dark";
-  --color-base-100: oklch(15% 0.09 281.288);
-  --color-base-200: oklch(20% 0.09 281.288);
-  --color-base-300: #7C20BE;
-  --color-base-content: oklch(98% 0.003 247.858);
-  --color-primary: #FF861B;
-  --color-primary-content: oklch(98% 0.002 247.839);
-  --color-secondary: #FA0052;
-  --color-secondary-content: oklch(29% 0.066 243.157);
-  --color-accent: oklch(86% 0.127 207.078);
-  --color-accent-content: oklch(26% 0.079 36.259);
-  --color-neutral: #626262;
-  --color-neutral-content: oklch(87% 0.065 274.039);
-  --color-info: #7C20BE;
-  --color-info-content: oklch(70% 0.015 286.067);
-  --color-success: oklch(77% 0.152 181.912);
-  --color-success-content: oklch(27% 0.046 192.524);
-  --color-warning: oklch(83% 0.128 66.29);
-  --color-warning-content: oklch(42% 0.095 57.708);
-  --color-error: oklch(63% 0.237 25.331);
-  --color-error-content: oklch(98% 0.003 247.858);
-  --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 0.5px;
-  --depth: 0;
-  --noise: 0;
-}
-*/

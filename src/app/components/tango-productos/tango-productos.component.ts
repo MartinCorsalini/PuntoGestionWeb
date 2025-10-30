@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 
@@ -17,13 +17,13 @@ interface Producto {
   styleUrl: './tango-productos.component.css'
 })
 export class TangoProductosComponent implements OnInit, OnDestroy {
-  currentIndex = 0;
-  itemsPerView = 3;
-  autoPlayInterval: any;
   isDarkTheme: boolean = true;
   certificadoLogo: string = 'assets/Insignias/TS-Dist-Certificado_dark.svg';
   private isBrowser: boolean;
   private themeObserver?: MutationObserver;
+
+  // Array para controlar qué cards están volteadas
+  flippedCards: boolean[] = [];
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -32,59 +32,51 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
   productos: Producto[] = [
     {
       nombre: 'Tango Gestión',
-      imagen: 'assets/TangoSoftware-Productos/png/TangoGestion_v2.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/1.TangoGestion.svg',
       descripcion: 'Software para PyMEs y grandes empresas, desarrollado para lograr el mejor resultado de la manera más fácil en el menor tiempo posible.',
       bgColor: '#2fa7df',
       btnClass: 'bg-white text-blue-600 hover:bg-gray-100'
     },
     {
       nombre: 'Tango Punto de Venta',
-      imagen: 'assets/TangoSoftware-Productos/png/TangoPDV_v2.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/2.TangoPDV.svg',
       descripcion: 'Software para comercios minoristas, sucursales y/o franquicias. Es fácil de usar y cuenta con permisos y controles que le dan una total seguridad.',
       bgColor: '#2fa7df',
       btnClass: 'bg-white text-blue-600 hover:bg-gray-100'
     },
     {
       nombre: 'Tango Capital Humano',
-      imagen: 'assets/TangoSoftware-Productos/png/Tango_Capitalhumano.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/1.TangoGestion.svg',
       descripcion: 'Software para Recursos Humanos, desarrollado para automatizar y mejorar cada etapa de la administración del personal, obteniendo los mejores resultados de manera sencilla y rápida.',
       bgColor: '#2fa7df',
       btnClass: 'bg-white text-blue-600 hover:bg-gray-100'
     },
     {
       nombre: 'Tango Estudios Contables',
-      imagen: 'assets/TangoSoftware-Productos/png/TangoEECC_v2.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/4.TangoEECC.svg',
       descripcion: 'Software para estudios contables desarrollado para facilitar y potenciar el trabajo del contador cualquiera sea el tamaño de su empresa cliente.',
       bgColor: '#f47d30',
       btnClass: 'bg-white text-orange-600 hover:bg-gray-100'
     },
     {
       nombre: 'Tango Restó',
-      imagen: 'assets/TangoSoftware-Productos/png/TangoResto_v2.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/5.TangoResto.svg',
       descripcion: 'Software gastronómico que se adapta a todos los tamaños de negocios y permite una gestión integrada en todos los formatos.',
       bgColor: '#e51937',
       btnClass: 'bg-white text-red-600 hover:bg-gray-100'
     },
     {
       nombre: 'Tango Nube',
-      imagen: 'assets/TangoSoftware-Productos/png/TangoNube_v2.png',
+      imagen: 'assets/TangoSoftware-Productos/svg/6.TangoNube.svg',
       descripcion: 'Solución cloud para pequeñas empresas y emprendedores, desarrollada para administrar tu negocio de forma simple.',
       bgColor: '#607d8a',
       btnClass: 'bg-white text-gray-700 hover:bg-gray-100'
     }
   ];
 
-  get maxIndex(): number {
-    return Math.max(0, this.productos.length - this.itemsPerView);
-  }
-
-  get dots(): number[] {
-    return Array(this.maxIndex + 1).fill(0).map((_, i) => i);
-  }
-
   ngOnInit() {
-    this.updateItemsPerView();
-    this.startAutoPlay();
+    // Inicializar el array de cards volteadas (todas en false)
+    this.flippedCards = new Array(this.productos.length).fill(false);
 
     if (this.isBrowser) {
       // Detectar tema inicial
@@ -103,7 +95,6 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.stopAutoPlay();
     if (this.themeObserver) {
       this.themeObserver.disconnect();
     }
@@ -121,63 +112,22 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
       : 'assets/Insignias/TS-Dist-Certificado_light.svg';
   }
 
-  @HostListener('window:resize')
-  onResize() {
-    this.updateItemsPerView();
-    // Ajustar currentIndex si es necesario
-    if (this.currentIndex > this.maxIndex) {
-      this.currentIndex = this.maxIndex;
-    }
+  /**
+   * Voltea una card específica
+   */
+  flipCard(index: number) {
+    this.flippedCards[index] = !this.flippedCards[index];
   }
 
-  updateItemsPerView() {
-    const width = window.innerWidth;
-    if (width < 640) {
-      this.itemsPerView = 1;
-    } else if (width < 1024) {
-      this.itemsPerView = 2;
-    } else {
-      this.itemsPerView = 3;
-    }
-  }
+  /**
+   * Maneja el click en el botón "Ver más"
+   */
+  verMas(event: Event, producto: Producto) {
+    // Prevenir que el click en el botón voltee la card
+    event.stopPropagation();
 
-  nextSlide() {
-    if (this.currentIndex < this.maxIndex) {
-      this.currentIndex++;
-    } else {
-      this.currentIndex = 0;
-    }
-    this.restartAutoPlay();
-  }
-
-  prevSlide() {
-    if (this.currentIndex > 0) {
-      this.currentIndex--;
-    } else {
-      this.currentIndex = this.maxIndex;
-    }
-    this.restartAutoPlay();
-  }
-
-  goToSlide(index: number) {
-    this.currentIndex = index;
-    this.restartAutoPlay();
-  }
-
-  startAutoPlay() {
-    this.autoPlayInterval = setInterval(() => {
-      this.nextSlide();
-    }, 5000);
-  }
-
-  stopAutoPlay() {
-    if (this.autoPlayInterval) {
-      clearInterval(this.autoPlayInterval);
-    }
-  }
-
-  restartAutoPlay() {
-    this.stopAutoPlay();
-    this.startAutoPlay();
+    console.log('Ver más:', producto.nombre);
+    // Aquí puedes agregar la lógica para navegar a otra página, abrir un modal, etc.
+    // Ejemplo: this.router.navigate(['/producto', producto.nombre]);
   }
 }
