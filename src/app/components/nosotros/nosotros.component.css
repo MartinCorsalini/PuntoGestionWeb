@@ -1,26 +1,39 @@
-/* Tamaño fijo del video: 12cm alto x 6.5cm ancho */
+.nosotros-container-wrapper {
+  clip-path: url(#wave-clip-nosotros);
+}
+
+/* Colores generales */
+.nosotros-container,
+.nosotros-container * {
+  color: #ffffff;
+}
+
+/* Títulos */
+.nosotros-container h1,
+.nosotros-container h2,
+.nosotros-container h3 {
+  color: #ffffff;
+}
+
+/* Párrafos */
+.nosotros-container p {
+  color: #f3f3f3;
+}
+
+/* Video: tamaño fijo */
 .video-container {
   width: 6.5cm;
   height: 12cm;
 }
 
+/* Contenedor del video sin animación */
 .video-container .relative {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-/* Asegurar que el video mantenga su proporción vertical */
-.relative {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.relative:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-/* Estilos adicionales para el iframe */
+/* Estilos del iframe */
 iframe {
   border: none;
   background: #000;

@@ -20,11 +20,11 @@ import { WaveNaranajaComponent } from "../../../assets/waves/wave-bg-nar/wave.co
     ContactoComponent,
     NuestrosServiciosComponent,
     WaveComponent,
-    WaveNaranajaComponent,
+    
     NuestrosClientesComponent,
     ScrollRevealDirective,
     CasosExitoComponent,
-    NosotrosComponent, WaveNaranajaComponent],
+    NosotrosComponent, ],
   templateUrl: './inicio-page.component.html',
   styleUrl: './inicio-page.component.css'
 })

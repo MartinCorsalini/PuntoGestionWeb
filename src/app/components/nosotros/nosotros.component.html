@@ -1,52 +1,71 @@
-<div class="bg-gradient-base-naranja-inv  py-12 md:py-16">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto">
+<section class="relative w-full mb-0 bg-gradient-base-alt">
+  <!-- 🔹 Definimos el mask SVG -->
+  <svg width="0" height="0">
+    <defs>
+      <clipPath id="wave-clip-nosotros" clipPathUnits="objectBoundingBox">
+        <path
+          d="M0,0.05 Q0.1,0.02 0.2,0.04 T0.4,0.03 T0.6,0.02 T0.8,0.03 T1,0.04 L1,0.96 Q0.9,0.98 0.8,0.97 T0.6,0.98 T0.4,0.97 T0.2,0.96 T0,0.95 Z"
+        />
+      </clipPath>
+    </defs>
+  </svg>
 
-      <!-- Columna izquierda: Contenido de texto -->
-      <div class="flex flex-col justify-center space-y-4 ml-20 lg:pr-8">
-        <!-- Logo y título -->
-        <div class="mb-4">
-          <h1 class="text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-folly">
-            Punto Gestión
-          </h1>
+  <div class="nosotros-container-wrapper">
+    <div
+      class="nosotros-container bg-gradient-vio-nar-fondo relative overflow-hidden flex flex-col items-center justify-center mt-0 mb-0 w-full"
+    >
+      <div class="container mx-auto px-4 py-12 md:py-16">
+        <div
+          class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center max-w-6xl mx-auto"
+        >
+          <!-- Columna izquierda -->
+          <div
+            class="flex flex-col justify-center space-y-4 text-white ml-20 lg:pr-8"
+          >
+            <div class="mb-4">
+              <h1
+                class="text-4xl md:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-pink-400"
+              >
+                Punto Gestión
+              </h1>
+            </div>
 
-        </div>
+            <h3 class="text-2xl md:text-3xl font-bold text-white">
+              Nosotros
+            </h3>
 
-        <!-- Título principal -->
-        <h3 class="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-naranja">
-          Nosotros
-        </h3>
+            <p class="text-base md:text-lg leading-relaxed text-gray-100">
+              En Punto Gestión creemos que la tecnología cobra sentido cuando mejora la vida de las personas.
+              Nuestra misión es <span class="font-bold">potenciar organizaciones</span> con soluciones que se adaptan a su forma de trabajar y las ayudan a crecer.
+            </p>
 
-        <!-- Descripción -->
-        <p class="text-base md:text-lg  leading-relaxed">
-          En Punto Gestión creemos que la tecnología cobra sentido cuando mejora la vida de las personas.
-          Nuestra misión es <span class="font-bold">potenciar organizaciones</span> con soluciones que se adaptan a su
-          forma de trabajar y las ayudan a crecer.
-        </p>
+            <p class="text-base md:text-lg leading-relaxed text-gray-100">
+              Somos <span class="font-bold">distribuidores oficiales de Tango Software</span>, pero más que sistemas,
+              ofrecemos <span class="font-bold">un equipo que te escucha, te entiende y está cuando lo necesitás</span>.
+            </p>
 
-        <p class="text-base md:text-lg  leading-relaxed">
-          Somos <span class="font-bold">distribuidores oficiales de Tango Software</span>, pero más que sistemas,
-          ofrecemos <span class="font-bold">un equipo que te escucha, te entiende y está cuando lo necesitás</span>.
-        </p>
+            <p class="text-base md:text-lg leading-relaxed text-gray-100">
+              Porque detrás de cada empresa hay personas, y en Punto Gestión estamos para acompañarlas.
+              ✨ <span class="font-bold">El soporte no es un área: es una forma de estar presentes</span>.
+            </p>
+          </div>
 
-        <p class="text-base md:text-lg leading-relaxed">
-          Porque detrás de cada empresa hay personas, y en Punto Gestión estamos para acompañarlas.
-          ✨ <span class="font-bold">El soporte no es un área: es una forma de estar presentes</span>.
-        </p>
-      </div>
-
-      <!-- Columna derecha: Video vertical -->
-      <div class="flex justify-center lg:justify-center">
-        <div class="video-container">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <iframe [src]="videoUrl" class="absolute top-0 left-0 w-full h-full" frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen>
-            </iframe>
+          <!-- Columna derecha: Video -->
+          <div class="flex justify-center lg:justify-center">
+            <div class="video-container">
+              <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <iframe
+                  [src]="videoUrl"
+                  class="absolute top-0 left-0 w-full h-full"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   </div>
-</div>
+</section>
