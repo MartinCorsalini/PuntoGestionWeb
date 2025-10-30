@@ -601,34 +601,23 @@
   transform: translateY(0) scale(1);
 }
 
-/* Gradiente con tonos violeta/morado más marcados */
-.bg-gradient-base {
-  background: radial-gradient(ellipse at top, #e8d5f2 0%, #f2e8f5 30%, #f5eef8 60%, #f2f0eb 100%);
-}
 
-/* Alternativa con más intensidad violeta */
+
+/*FONDO CON GRADIENT VIOLETA */
 .bg-gradient-base-alt {
   background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
 }
 
-/* Opción 3: Gradiente radial con violeta más visible */
-.bg-gradient-base-purple {
-  background: radial-gradient(circle at top center, #d5b8e8 0%, #e6d4f2 20%, #f0e5f7 50%, #f5f0ed 100%);
-}
-
-
-.bg-gradient-base-inv {
-  background: radial-gradient(ellipse at top, #f2f0eb 0%, #f5eef8 40%, #f2e8f5 70%, #e8d5f2 100%);
-}
-
-/* Alternativa con más intensidad violeta - INVERTIDO */
 .bg-gradient-base-alt-inv {
   background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
 }
 
-/* Opción 3: Gradiente radial con violeta más visible - INVERTIDO */
-.bg-gradient-base-purple-inv {
-  background: radial-gradient(circle at top center, #f5f0ed 0%, #f0e5f7 50%, #e6d4f2 80%, #d5b8e8 100%);
+
+/*FONDO CON GRADIENT NARANJA */
+.bg-gradient-base-naranja {
+  background: linear-gradient(180deg, #f0dac9 0%, #f4e8d9 25%, #f7eee5 50%, #f9f3ee 75%, #f2f0eb 100%);
 }
 
-
+.bg-gradient-base-naranja-inv {
+  background: linear-gradient(180deg, #f2f0eb 0%, #f9f3ee 25%, #f7eee5 50%, #f4e8d9 75%, #f0dac9 100%);
+}
