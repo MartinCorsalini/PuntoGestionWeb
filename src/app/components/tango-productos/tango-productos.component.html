@@ -1,17 +1,17 @@
-<section class="w-full py-12 sm:py-16 px-4 bg-base-100">
+<section class="w-full py-12 sm:py-16 px-4 bg-gradient-base-alt">
   <div class="max-w-[1600px] mx-auto">
     <!-- Título de la sección -->
     <h2
       appScrollReveal
       animationClass="fade-in-down"
       [threshold]="0.3"
-      class="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4"
+      class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-4"
     >
-      <span class="text-gray-400">Nuestros </span>
-      <span
-        class="bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent"
-        >Productos</span
-      >
+      <span>Nuestros </span>
+      <span class="bg-clip-text text-transparent bg-gradient-folly">Productos</span>
+
+
+
     </h2>
 
     <!-- Subtítulo -->
@@ -19,7 +19,10 @@
       class="text-base sm:text-lg md:text-xl text-base-content font-semibold text-center mb-8"
     >
       Somos distribuidores oficiales de
-      <span class="bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">Tango Software</span>
+      <span
+        class="bg-gradient-folly text-transparent bg-clip-text"
+        >Tango Software</span
+      >
     </p>
 
     <!-- Certificado -->
@@ -33,39 +36,62 @@
       />
     </div>
 
-    <!-- Grid de productos - 6 cards en una fila -->
-    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-3 sm:gap-4">
-      <!-- Cards de productos -->
+    <!-- Grid de productos - 3 cards por fila, 2 filas -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-15 justify-items-center place-items-center"
+    >
+      <!-- Flip Cards de productos -->
       <div
         *ngFor="let producto of productos; let i = index"
         appScrollReveal
         animationClass="gentle-zoom"
         [delay]="200 + i * 100"
         [threshold]="0.15"
-        class="rounded-2xl p-4 sm:p-5 flex flex-col justify-between shadow-lg hover:scale-105 hover:shadow-2xl transition-all duration-500 ease-out min-h-[380px] sm:min-h-[420px]"
-        [style.background-color]="producto.bgColor"
+        class="flip-card h-[320px] sm:h-[340px] lg:h-[360px]"
+        (click)="flipCard(i)"
       >
-        <div class="flex flex-col gap-4">
+        <div class="flip-card-inner" [class.flipped]="flippedCards[i]">
+          <!-- FRONT - Solo imagen -->
           <div
-            class="rounded-xl p-3 mb-2"
+            class="flip-card-front rounded-lg shadow-lg flex flex-col items-center justify-center p-4"
             [style.background-color]="producto.bgColor"
           >
-            <img
-              [src]="producto.imagen"
-              [alt]="producto.nombre"
-              class="w-full h-28 sm:h-32 object-contain"
-            />
+            <div
+              class="w-full h-full flex flex-col items-center justify-center"
+            >
+              <img
+                [src]="producto.imagen"
+                [alt]="producto.nombre"
+                class="w-full h-full object-contain mb-1"
+              />
+              <p class="text-white/80 text-[10px] text-center">
+                Click para más info
+              </p>
+            </div>
           </div>
-          <p class="text-white text-xs sm:text-sm leading-relaxed mb-2">
-            {{ producto.descripcion }}
-          </p>
+
+          <!-- BACK - Descripción -->
+          <div
+            class="flip-card-back rounded-lg shadow-lg flex flex-col justify-between p-3"
+            [style.background-color]="producto.bgColor"
+          >
+            <div class="flex-1 overflow-y-auto custom-scrollbar">
+              <h3 class="text-white text-sm font-bold text-center mb-2">
+                {{ producto.nombre }}
+              </h3>
+              <p class="text-white text-xs leading-snug">
+                {{ producto.descripcion }}
+              </p>
+            </div>
+            <button
+              class="btn btn-xs font-semibold rounded-full border-none text-xs h-7 mt-2"
+              [class]="producto.btnClass"
+              (click)="verMas($event, producto)"
+            >
+              Ver más
+            </button>
+          </div>
         </div>
-        <button
-          class="btn font-semibold rounded-full border-none text-xs sm:text-sm py-2 h-10 mt-auto"
-          [class]="producto.btnClass"
-        >
-          Ver más
-        </button>
       </div>
     </div>
   </div>

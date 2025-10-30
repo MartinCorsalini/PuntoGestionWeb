@@ -1,149 +1,116 @@
-<div
-  class="navbar min-h-[70px] h-[70px] py-0 px-3 sm:px-6 shadow-lg fixed top-0 w-full z-50"
-  style="background: linear-gradient(135deg, #121316, #262f52) !important"
->
-  <!-- Contenedor flex principal -->
-  <div class="w-full max-w-7xl mx-auto flex items-center justify-between gap-4">
-    <!-- Sección izquierda: logo + menú hamburguesa móvil -->
-    <div class="flex items-center space-x-4 lg:space-x-8">
-      <!-- Dropdown (solo en móvil) -->
-      <div class="dropdown lg:hidden">
-        <div tabindex="0" role="button" class="btn btn-ghost">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-6 w-6 text-white"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h8m-8 6h16"
-            />
+<div class="navbar min-h-[70px] h-[70px] py-0 px-3 sm:px-6 shadow-lg fixed top-0 w-full z-50 bg-gradient-azul">
+
+  <div class="w-full max-w-7xl mx-auto flex items-center justify-between gap-2">
+
+    <!-- IZQUIERDA: Menú hamburguesa (solo móvil) -->
+    <div class="flex items-center lg:hidden">
+      <!-- CAMBIO: Quitar dropdown-end para que se alinee a la izquierda -->
+      <div class="dropdown" [class.dropdown-open]="isMenuOpen">
+        <button (click)="toggleMenu()" class="btn btn-ghost btn-sm px-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16"/>
           </svg>
-        </div>
-        <ul
-          tabindex="-1"
-          class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-base-content"
-        >
-          <li><a>Quiénes somos?</a></li>
+        </button>
+
+        <!-- Dropdown móvil MEJORADO - alineado a la izquierda -->
+        <ul *ngIf="isMenuOpen"
+            class="menu menu-sm dropdown-content mt-3 w-64 p-3 shadow-2xl bg-base-100 rounded-box z-[1000] border border-base-300"
+            style="left: 0; right: auto;">
+          <li><a (click)="closeMenu()" class="py-2">Quiénes somos?</a></li>
           <li>
             <details>
-              <summary>Productos</summary>
-              <ul class="p-2">
-                <li><a>Empresas</a></li>
-                <li><a>Comercios</a></li>
-                <li><a>Estudios Contables</a></li>
-                <li><a>Gastronómicos</a></li>
-                <li><a>Micro-Emprendimientos</a></li>
+              <summary class="py-2">Productos</summary>
+              <ul class="p-2 bg-base-200 rounded-lg mt-1">
+                <li><a (click)="closeMenu()" class="text-sm py-1.5">Empresas</a></li>
+                <li><a (click)="closeMenu()" class="text-sm py-1.5">Comercios</a></li>
+                <li><a (click)="closeMenu()" class="text-sm py-1.5">Estudios Contables</a></li>
+                <li><a (click)="closeMenu()" class="text-sm py-1.5">Gastronómicos</a></li>
+                <li><a (click)="closeMenu()" class="text-sm py-1.5">Micro-Emprendimientos</a></li>
               </ul>
             </details>
           </li>
-          <li><a>Servicios</a></li>
-          <li><a>Contacto</a></li>
-          <li><a>Soporte</a></li>
-          <li class="block sm:hidden mt-2">
-            <a
-              class="btn text-white font-bold uppercase border-none rounded-full px-4 py-2 text-sm shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300 w-full"
-              style="
-                background: linear-gradient(180deg, #e63946 0%, #a4161a 100%);
-              "
-              >En Directo</a
-            >
+          <li><a (click)="closeMenu()" class="py-2">Servicios</a></li>
+          <li><a (click)="closeMenu()" class="py-2">Contacto</a></li>
+          <li><a (click)="closeMenu()" class="py-2">Soporte</a></li>
+
+          <!-- Botón "En Directo" solo en menú móvil (oculto en tablet donde ya aparece en navbar) -->
+          <li class="mt-3 md:hidden">
+            <a (click)="closeMenu()" class="btn btn-sm w-full text-white font-bold uppercase rounded-full border-none"
+               style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%)">
+              En Directo
+            </a>
           </li>
         </ul>
       </div>
+    </div>
 
-      <!-- Logo -->
-      <a routerLink="/" class="btn btn-ghost normal-case text-xl px-2">
-        <img
-          src="assets/logosPG/pg-logo-navbar.png"
-          alt="Punto Gestión"
-          class="h-6 sm:h-8 md:h-10 lg:h-12 w-auto object-contain"
-        />
+    <!-- CENTRO: Logo (siempre visible) -->
+    <div class="flex-shrink-0">
+      <a routerLink="/" class="cursor-pointer block">
+        <img src="assets/logosPG/pg-logo-navbar.png"
+             alt="Punto Gestión"
+             class="h-8 sm:h-9 md:h-10 lg:h-12 w-auto object-contain"/>
       </a>
     </div>
 
-    <!-- Menú central (oculto en móvil) -->
-    <div class="hidden lg:flex flex-1 justify-center">
-      <ul
-        class="menu menu-horizontal px-1 font-semibold text-base xl:text-lg text-white space-x-4 xl:space-x-6"
-      >
-        <li><a class="text-white hover:text-gray-200">Quiénes somos?</a></li>
-        <li>
-          <details>
-            <summary class="text-white hover:text-gray-200">Productos</summary>
-            <ul class="p-2 bg-base-100 text-base-content">
-              <li><a>Empresas</a></li>
-              <li><a>Comercios</a></li>
-              <li><a>Estudios Contables</a></li>
-              <li><a>Gastronómicos</a></li>
-              <li><a>Micro-Emprendimientos</a></li>
+    <!-- CENTRO-DERECHA: Menú desktop (oculto en móvil) -->
+    <div class="hidden lg:flex flex-1 justify-center max-w-3xl" style="overflow: visible;">
+      <ul class="menu menu-horizontal px-1 font-semibold text-sm text-white space-x-1">
+        <li><a class="text-white hover:text-gray-200 px-3">Quiénes somos?</a></li>
+        <li style="position: relative; overflow: visible;">
+          <details style="overflow: visible;">
+            <summary class="text-white hover:text-gray-200 px-3">Productos</summary>
+            <!-- CAMBIO: Ajustar posición y z-index del dropdown -->
+            <ul class="p-2 bg-base-100 text-base-content rounded-lg shadow-xl min-w-[200px]"
+                style="position: absolute; z-index: 9999; margin-top: 0.5rem;">
+              <li><a class="text-sm">Empresas</a></li>
+              <li><a class="text-sm">Comercios</a></li>
+              <li><a class="text-sm">Estudios Contables</a></li>
+              <li><a class="text-sm">Gastronómicos</a></li>
+              <li><a class="text-sm">Micro-Emprendimientos</a></li>
             </ul>
           </details>
         </li>
-        <li><a class="text-white hover:text-gray-200">Servicios</a></li>
-        <li><a class="text-white hover:text-gray-200">Contacto</a></li>
+        <li><a class="text-white hover:text-gray-200 px-3">Servicios</a></li>
+        <li><a class="text-white hover:text-gray-200 px-3">Contacto</a></li>
         <li>
-          <a
-            class="btn btn-outline btn-info text-white font-semibold normal-case px-4"
-            >Soporte</a
-          >
+          <a class="btn btn-outline btn-info btn-sm text-white font-semibold normal-case px-3">
+            Soporte
+          </a>
         </li>
       </ul>
     </div>
 
-    <!-- Sección derecha: Botón + Theme controller -->
-    <div class="flex items-center gap-2 sm:gap-3">
-      <!-- Botón En Directo (oculto en móvil pequeño) -->
-      <a
-        class="hidden sm:flex btn text-white font-bold uppercase border-none rounded-full px-3 sm:px-5 md:px-6 py-1 sm:py-2 text-xs sm:text-sm md:text-base shadow-none hover:scale-105 hover:shadow-lg transition-all duration-300"
-        style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%)"
-      >
+    <!-- DERECHA: Botón En Directo + Theme Toggle -->
+    <div class="flex items-center gap-2 flex-shrink-0">
+
+      <!-- Botón "En Directo" - Oculto en móvil, visible desde tablet -->
+      <a class="hidden md:flex btn btn-sm text-white font-bold uppercase border-none rounded-full px-3 py-1 text-xs hover:scale-105 transition-all duration-300"
+         style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%)">
         En Directo
       </a>
 
-      <!-- Theme Controller -->
-      <label class="flex cursor-pointer gap-2 text-white">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="12" cy="12" r="5" />
-          <path
-            d="M12 1v2M12 21v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M1 12h2M21 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4"
-          />
-        </svg>
+      <!-- Theme Toggle - MÁS PEQUEÑO -->
+      <label class="swap swap-rotate flex-shrink-0">
         <input
           type="checkbox"
-          class="toggle theme-controller"
+          class="theme-controller"
           [checked]="!isDarkTheme"
           (change)="toggleTheme($event)"
         />
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="20"
-          height="20"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+
+        <!-- Sol (light mode) -->
+        <svg class="swap-on fill-current w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+        </svg>
+
+        <!-- Luna (dark mode) -->
+        <svg class="swap-off fill-current w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z"/>
         </svg>
       </label>
 
     </div>
+
   </div>
 </div>
