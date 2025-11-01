@@ -30,24 +30,32 @@
 <!-- Servicios: SIN animación del componente (se anima internamente) -->
 <app-nuestros-servicios></app-nuestros-servicios>
 
-<app-nosotros
+<!-- <app-nosotros
   appScrollReveal
   animationClass="zoom-in"
   [threshold]="0.2">
+</app-nosotros> -->
+
+<app-nosotros>
 </app-nosotros>
 
 <!-- Clientes: Slide up dramático -->
 <app-nuestros-clientes
   appScrollReveal
   animationClass="slide-up"
-  [delay]="200"
+  [delay]="400"
   [threshold]="0.15">
 </app-nuestros-clientes>
 
 <app-wave>
 </app-wave>
 
-<app-casos-exito></app-casos-exito>
+<app-casos-exito
+  appScrollReveal
+  animationClass="slide-up"
+  [delay]="300"
+  [threshold]="0.15"
+></app-casos-exito>
 
 <!-- Contacto: Fade in up -->
 <app-contacto

@@ -118,11 +118,12 @@ export class ContactoComponent {
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-contacto',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule,ScrollRevealDirective],
   templateUrl: './contacto.component.html',
   styleUrls: ['./contacto.component.css']
 })
