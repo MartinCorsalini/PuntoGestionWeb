@@ -176,6 +176,8 @@
   --gradient-premium: linear-gradient(135deg, #16094f 0%, #121316 50%, #262f52 100%);
   --gradient-multicolor: linear-gradient(135deg, #2fa7df 0%, #7C20BE 50%, #fa0052 100%);
 
+  --gradient-navbar: linear-gradient(135deg, #16094F , #7C21BE);
+
   --gradient-vio-nar: linear-gradient(135deg, #7C21BE, #ff861b);
   --gradient-folly: linear-gradient(135deg, #7C21BE, #FA0052);
   --gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%));
@@ -185,6 +187,9 @@
 
 }
 
+.bg-gradient-navbar {
+  background-image: var(--gradient-navbar);
+}
 
 .bg-gradient-violeta {
   background-image: var(--gradient-violeta);
