@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 interface CasoExito {
   empresa: string;
@@ -11,7 +12,7 @@ interface CasoExito {
 @Component({
   selector: 'app-casos-exito',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,ScrollRevealDirective],
   templateUrl: './casos-exito.component.html',
   styleUrls: ['./casos-exito.component.css']
 })

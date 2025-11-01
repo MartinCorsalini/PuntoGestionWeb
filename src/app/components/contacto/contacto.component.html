@@ -4,75 +4,52 @@
     <defs>
       <clipPath id="wave-clip" clipPathUnits="objectBoundingBox">
         <path
-          d="M0,0.05 Q0.1,0.02 0.2,0.04 T0.4,0.03 T0.6,0.02 T0.8,0.03 T1,0.04 L1,0.96 Q0.9,0.98 0.8,0.97 T0.6,0.98 T0.4,0.97 T0.2,0.96 T0,0.95 Z"
-        />
+          d="M0,0.05 Q0.1,0.02 0.2,0.04 T0.4,0.03 T0.6,0.02 T0.8,0.03 T1,0.04 L1,0.96 Q0.9,0.98 0.8,0.97 T0.6,0.98 T0.4,0.97 T0.2,0.96 T0,0.95 Z" />
       </clipPath>
     </defs>
   </svg>
 
   <div class="contact-container-wrapper">
     <div
-      class="contact-container bg-gradient-vio-nar-fondo relative overflow-hidden flex flex-col items-center justify-start mt-0 mb-0 w-full"
-    >
+      class="contact-container bg-gradient-vio-nar-fondo relative overflow-hidden flex flex-col items-center justify-start mt-0 mb-0 w-full">
       <!-- 🔹 TÍTULO CON GRADIENTE -->
-      <h2
-        class="text-2xl md:text-3xl lg:text-4xl font-sans font-semibold text-center relative z-20 mt-12 md:mt-16 mb-0"
-      >
+      <h2 appScrollReveal animationClass="fade-in-down" [threshold]="0.1"
+        class="text-2xl md:text-3xl lg:text-4xl font-sans font-semibold text-center relative z-20 mt-12 md:mt-16 mb-0">
         Contactanos
       </h2>
 
       <!-- 🔹 CONTENEDOR DOS COLUMNAS -->
       <div
-        class="relative z-10 flex flex-col lg:flex-row items-start justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 md:py-10 lg:py-12 w-full max-w-6xl mx-auto gap-6 lg:gap-6 xl:gap-8"
-      >
+        class="relative z-10 flex flex-col lg:flex-row items-start justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 py-8 md:py-10 lg:py-12 w-full max-w-6xl mx-auto gap-6 lg:gap-6 xl:gap-8">
         <!-- Columna izquierda -->
-        <div
-          class="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-end lg:text-left lg:pr-4 "
-        >
+        <div appScrollReveal animationClass="fade-in-left" [threshold]="0.1" [delay]="200"
+          class="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-end lg:text-left lg:pr-4 ">
           <div class="space-y-4 w-full max-w-md lg:max-w-lg">
             <!-- 🔸 Secciones con títulos en gradiente -->
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-solid fa-phone icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-solid fa-phone icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-0.5 text-sm md:text-base"
-                >
+                <h3 class="font-semibold mb-0.5 text-sm md:text-base">
                   Llamanos
                 </h3>
                 <p class="text-gray-300 text-xs md:text-sm">(0223) 489-3423</p>
               </div>
             </div>
 
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-brands fa-whatsapp icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-brands fa-whatsapp icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-0.5 text-sm md:text-base"
-                >
+                <h3 class="font-semibold mb-0.5 text-sm md:text-base">
                   Escribinos
                 </h3>
                 <p class="text-gray-300 text-xs md:text-sm">2235282869</p>
               </div>
             </div>
 
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-solid fa-envelope icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-solid fa-envelope icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-0.5 text-sm md:text-base"
-                >
+                <h3 class="font-semibold mb-0.5 text-sm md:text-base">
                   Mail
                 </h3>
                 <p class="text-gray-300 text-xs md:text-sm">
@@ -83,16 +60,10 @@
               </div>
             </div>
 
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-solid fa-location-dot icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-solid fa-location-dot icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-0.5 text-sm md:text-base"
-                >
+                <h3 class="font-semibold mb-0.5 text-sm md:text-base">
                   Ubicación
                 </h3>
                 <p class="text-gray-300 text-xs md:text-sm">
@@ -101,16 +72,10 @@
               </div>
             </div>
 
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-solid fa-clock icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-solid fa-clock icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-0.5 text-sm md:text-base"
-                >
+                <h3 class="font-semibold mb-0.5 text-sm md:text-base">
                   Horarios de Atención
                 </h3>
                 <p class="text-gray-300 text-xs md:text-sm">
@@ -122,38 +87,20 @@
               </div>
             </div>
 
-            <div
-              class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left"
-            >
-              <i
-                class="fa-solid fa-share-nodes icon-color text-lg justify-self-center mt-0.5"
-              ></i>
+            <div class="grid grid-cols-[35px_1fr] gap-2.5 items-start text-left">
+              <i class="fa-solid fa-share-nodes icon-color text-lg justify-self-center mt-0.5"></i>
               <div>
-                <h3
-                  class="font-semibold mb-1.5 text-sm md:text-base "
-                >
+                <h3 class="font-semibold mb-1.5 text-sm md:text-base ">
                   Redes Sociales
                 </h3>
                 <div class="flex space-x-3 text-gray-300 text-lg">
-                  <a
-                    href="https://www.instagram.com"
-                    target="_blank"
-                    class="transition-all duration-300 "
-                  >
+                  <a href="https://www.instagram.com" target="_blank" class="transition-all duration-300 ">
                     <i class="fa-brands fa-instagram"></i>
                   </a>
-                  <a
-                    href="https://www.facebook.com"
-                    target="_blank"
-                    class="transition-all duration-300"
-                  >
+                  <a href="https://www.facebook.com" target="_blank" class="transition-all duration-300">
                     <i class="fa-brands fa-facebook-f"></i>
                   </a>
-                  <a
-                    href="https://www.youtube.com"
-                    target="_blank"
-                    class="transition-all duration-300"
-                  >
+                  <a href="https://www.youtube.com" target="_blank" class="transition-all duration-300">
                     <i class="fa-brands fa-youtube"></i>
                   </a>
                 </div>
@@ -163,57 +110,33 @@
         </div>
 
         <!-- Columna derecha - FORMULARIO -->
-        <div class="w-full lg:w-1/2 max-w-md lg:max-w-lg">
+        <div appScrollReveal animationClass="fade-in-right" [threshold]="0.1" [delay]="400"
+          class="w-full lg:w-1/2 max-w-md lg:max-w-lg">
           <h3
-            class="text-lg md:text-xl font-semibold mb-6 text-center lg:text-left bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent"
-          >
+            class="text-lg md:text-xl font-semibold mb-6 text-center lg:text-left bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">
             Dejanos tus datos y nuestro equipo se pondrá en contacto 🤝
           </h3>
 
-          <form
-            #contactForm="ngForm"
-            (ngSubmit)="onSubmit(contactForm)"
-            novalidate
-            class="space-y-5"
-          >
+          <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)" novalidate class="space-y-5">
             <!-- Nombre y Email -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Tu nombre"
-                  class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                  [(ngModel)]="name"
-                  required
-                  (blur)="touched.name = true"
-                />
-                <p
-                  *ngIf="touched.name && !name"
-                  class="text-xs text-red-400 mt-1"
-                >
+                <input type="text" name="name" placeholder="Tu nombre"
+                  class="w-full mb-3 bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
+                  [(ngModel)]="name" required (blur)="touched.name = true" />
+                <p *ngIf="touched.name && !name" class="text-xs text-red-400 mt-1">
                   El nombre es requerido
                 </p>
               </div>
 
               <div>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Tu email"
+                <input type="email" name="email" placeholder="Tu email"
                   class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                  [(ngModel)]="email"
-                  required
-                  email
-                  (blur)="touched.email = true"
-                />
-                <p
-                  *ngIf="
+                  [(ngModel)]="email" required email (blur)="touched.email = true" />
+                <p *ngIf="
                     touched.email &&
                     (!email || !contactForm.controls['email']?.valid)
-                  "
-                  class="text-xs text-red-400 mt-1"
-                >
+                  " class="text-xs text-red-400 mt-1">
                   El email es requerido
                 </p>
               </div>
@@ -221,47 +144,28 @@
 
             <!-- Teléfono -->
             <div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Tu teléfono"
+              <input type="tel" name="phone" placeholder="Tu teléfono"
                 class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                [(ngModel)]="phone"
-                required
-                (blur)="touched.phone = true"
-              />
-              <p
-                *ngIf="touched.phone && !phone"
-                class="text-xs text-red-400 mt-1"
-              >
+                [(ngModel)]="phone" required (blur)="touched.phone = true" />
+              <p *ngIf="touched.phone && !phone" class="text-xs text-red-400 mt-1">
                 El teléfono es requerido
               </p>
             </div>
 
             <!-- Mensaje -->
             <div>
-              <textarea
-                name="message"
-                placeholder="Escribinos tu mensaje..."
+              <textarea name="message" placeholder="Escribinos tu mensaje..."
                 class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm h-20 resize-none"
-                [(ngModel)]="message"
-                required
-                (blur)="touched.message = true"
-              ></textarea>
-              <p
-                *ngIf="touched.message && !message"
-                class="text-xs text-red-400 mt-1"
-              >
+                [(ngModel)]="message" required (blur)="touched.message = true"></textarea>
+              <p *ngIf="touched.message && !message" class="text-xs text-red-400 mt-1">
                 El mensaje es requerido
               </p>
             </div>
 
             <!-- Botón -->
             <div class="pt-3">
-              <button
-                type="submit"
-                class="w-full h-11 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 hover:from-fuchsia-600 hover:to-pink-500 cursor-pointer focus:outline-none border-0"
-              >
+              <button type="submit"
+                class="w-full h-11 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 hover:from-fuchsia-600 hover:to-pink-500 cursor-pointer focus:outline-none border-0">
                 ENVIAR
               </button>
             </div>

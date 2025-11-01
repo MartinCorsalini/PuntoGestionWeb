@@ -2,7 +2,11 @@
   <div class="max-w-[1600px] mx-auto">
   
     <!-- Subtítulo -->
-    <p
+    <h3 
+      appScrollReveal
+      animationClass="fade-in-down"
+      [threshold]="0.3"
+      [delay]="0"
       class="text-base sm:text-xl md:text-2xl text-base-content font-bold text-center mb-8 mt-0"
     >
       Somos distribuidores oficiales de
@@ -10,9 +14,13 @@
         class="bg-gradient-folly text-transparent bg-clip-text"
         >Tango Software</span
       >
-    </p>
+    </h3>
     <!-- Certificado -->
     <div
+      appScrollReveal
+      animationClass="fade-in-right"
+      [threshold]="0.3"
+      [delay]="400"
       class="flex justify-center mb-12 transition-opacity transition-duration-300"
     >
       <img
@@ -27,7 +35,8 @@
       appScrollReveal
       animationClass="fade-in-down"
       [threshold]="0.3"
-      class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-5"
+      [delay]="700"
+      class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10"
     >
       <span>Nuestros </span>
       <span class="bg-clip-text text-transparent bg-gradient-folly">Productos</span>

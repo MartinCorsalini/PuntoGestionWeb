@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 
 @Component({
   selector: 'app-nosotros',
   standalone: true,
-  imports: [CommonModule],
+  imports: [ScrollRevealDirective,CommonModule],
   templateUrl: './nosotros.component.html',
   styleUrls: ['./nosotros.component.css']
 })
