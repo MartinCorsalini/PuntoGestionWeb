@@ -169,18 +169,19 @@
   --gradient-azul: linear-gradient(135deg, #121316, #262f52);
   --gradient-purple-dark: linear-gradient(180deg, #16094f 0%, #1a0d5a 100%);
   --gradient-purple-violet: linear-gradient(135deg, #16094f 0%, #7C20BE 100%);
-  --gradient-cyan: linear-gradient(135deg, #2fa7df 0%, #1e8bb8 100%);
   --gradient-orange: linear-gradient(135deg, #ff861b 0%, #f47d30 100%);
   --gradient-pink: linear-gradient(135deg, #fa0052 0%, #e51937 100%);
   --gradient-button-live: linear-gradient(180deg, #e63946 0%, #a4161a 100%);
   --gradient-premium: linear-gradient(135deg, #16094f 0%, #121316 50%, #262f52 100%);
   --gradient-multicolor: linear-gradient(135deg, #2fa7df 0%, #7C20BE 50%, #fa0052 100%);
 
-  --gradient-navbar: linear-gradient(135deg, #16094F , #7C21BE);
+  --gradient-navbar: linear-gradient(135deg, #16094F 0%, #3B128A 55%, #7C21BE 90%);
 
   --gradient-vio-nar: linear-gradient(135deg, #7C21BE, #ff861b);
-  --gradient-folly: linear-gradient(135deg, #7C21BE, #FA0052);
-  --gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%));
+  --gradient-folly: linear-gradient(135deg,  #7C20BE 0%, #fa0052 50% , #ff861b 100%);
+  /*--gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%)); */
+ 
+  --gradient-violeta: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #2A0D78 100%);
   --gradient-naranja: linear-gradient(135deg, #FA0052, #FF861B);
   --gradient-ia: linear-gradient(135deg, #120A3E, #1C0B52);
 ;
@@ -193,6 +194,8 @@
 
 .bg-gradient-violeta {
   background-image: var(--gradient-violeta);
+
+  
 }
 
 .bg-gradient-naranja {
@@ -240,21 +243,52 @@
   background-position: center;
 }
 
+
+/* ============================================ */
+/*           FONDO DARK           */
+/* ============================================ */
+
 /*FONDO CON GRADIENT VIOLETA */
 .bg-gradient-base-alt {
-  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
+  background: linear-gradient(180deg, #561089 0%, #16094F 60%, #0E0635 100%);
 }
 
 .bg-gradient-base-alt-inv {
-  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
+  
+   background: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #561089 90%);
 }
 
 /*FONDO CON GRADIENT NARANJA */
 .bg-gradient-base-naranja {
-  background: linear-gradient(180deg, #f0dac9 0%, #f4e8d9 25%, #f7eee5 50%, #f9f3ee 75%, #f2f0eb 100%);
+  background: linear-gradient(180deg, #561089 0%, #16094F 60%, #0E0635 100%);
 }
 
 .bg-gradient-base-naranja-inv {
+   background: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #561089 90%);
+}
+
+
+
+/* ============================================ */
+/*           FONDO LIGHT           */
+/* ============================================ */
+
+/*FONDO CON GRADIENT VIOLETA */
+.bg-gradient-light-violeta {
+  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
+}
+
+.bg-gradient-light-violeta-inv {
+  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
+}
+
+
+/*FONDO CON GRADIENT NARANJA */
+.bg-gradient-light-naranja {
+  background: linear-gradient(180deg, #f0dac9 0%, #f4e8d9 25%, #f7eee5 50%, #f9f3ee 75%, #f2f0eb 100%);
+}
+
+.bg-gradient-light-naranja-inv {
   background: linear-gradient(180deg, #f2f0eb 0%, #f9f3ee 25%, #f7eee5 50%, #f4e8d9 75%, #f0dac9 100%);
 }
 
