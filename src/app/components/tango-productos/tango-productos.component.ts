@@ -18,7 +18,7 @@ interface Producto {
 })
 export class TangoProductosComponent implements OnInit, OnDestroy {
   isDarkTheme: boolean = true;
-  certificadoLogo: string = 'assets/Insignias/TS-Dist-Certificado_dark.svg';
+  certificadoLogo: string = 'assets/Insignias/TS-Dist-Certificado_light.svg';
   private isBrowser: boolean;
   private themeObserver?: MutationObserver;
 
@@ -108,8 +108,8 @@ export class TangoProductosComponent implements OnInit, OnDestroy {
 
     // Cambiar el logo según el tema
     this.certificadoLogo = this.isDarkTheme
-      ? 'assets/Insignias/TS-Dist-Certificado_dark.svg'
-      : 'assets/Insignias/TS-Dist-Certificado_light.svg';
+      ? 'assets/Insignias/TS-Dist-Certificado_light.svg'
+      : 'assets/Insignias/TS-Dist-Certificado_dark.svg';
   }
 
   /**
