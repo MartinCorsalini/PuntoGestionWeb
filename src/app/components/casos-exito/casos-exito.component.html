@@ -1,6 +1,6 @@
-<div class="bg-gradient-base-naranja-blanco  mx-auto px-4 py-8">
+<div class="bg-gradient-base-naranja-blanco  mx-auto px-4 py-8 mb-5">
   <!-- Título principal -->
-  <h2 
+  <h2
   appScrollReveal animationClass="fade-in-down" [threshold]="0.1"
   class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
     Súmate a nuestros
@@ -12,12 +12,12 @@
 
   <!-- Casos de éxito -->
   <div class="space-y-12">
-    <div 
+    <div
     *ngFor="let caso of casos; let i = index; trackBy: trackByCaso"
          class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
 
       <!-- Columna izquierda: Video -->
-      <div 
+      <div
       appScrollReveal animationClass="fade-in-left" [threshold]="0.1" [delay]="200"
       [class.lg:order-1]="i % 2 === 0"
            [class.lg:order-2]="i % 2 === 1"
@@ -34,7 +34,7 @@
       </div>
 
       <!-- Columna derecha: Información -->
-      <div 
+      <div
       appScrollReveal animationClass="fade-in-right" [threshold]="0.1" [delay]="400"
       [class.lg:order-2]="i % 2 === 0"
            [class.lg:order-1]="i % 2 === 1"
