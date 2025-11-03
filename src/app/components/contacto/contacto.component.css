@@ -1,6 +1,3 @@
-.contact-container-wrapper {
-  clip-path: url(#wave-clip);
-}
 
 /* Texto general */
 .contact-container,
@@ -62,3 +59,4 @@
     min-height: auto; /* 👈 En móviles se ajusta automáticamente */
   }
 }
+
