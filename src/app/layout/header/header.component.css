@@ -5,7 +5,7 @@
 /* Asegurar que el navbar no se desborde */
 .navbar {
   overflow-x: hidden;
-  overflow-y: visible; /* CAMBIO: Permitir que el contenido se superponga */
+  overflow-y: visible;
 }
 
 /* Contenedor principal del navbar */
@@ -22,7 +22,7 @@
   border-radius: 1rem;
   max-height: 70vh;
   overflow-y: auto;
-  z-index: 1000; /* CAMBIO: Asegurar que esté por encima */
+  z-index: 1000;
 }
 
 /* Scroll suave en el dropdown */
@@ -81,15 +81,6 @@
 .dropdown-content details ul li a {
   padding: 0.5rem 1rem;
   font-size: 0.875rem;
-}
-
-/* Botón "En Directo" más compacto */
-.btn-sm {
-  height: 2rem;
-  min-height: 2rem;
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-  font-size: 0.75rem;
 }
 
 /* Theme toggle más compacto */
@@ -165,12 +156,7 @@
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* CAMBIO IMPORTANTE: Dropdown del menú desktop - se superpone sin crear scroll */
-.menu-horizontal details {
-  position: static; /* Mantener el flujo normal */
-}
-
-/* Submenú del dropdown en desktop - se muestra flotando sin scroll */
+/* Dropdown del menú desktop */
 .menu-horizontal details {
   position: relative;
 }
@@ -195,20 +181,86 @@
   overflow: visible !important;
 }
 
-
 /* Asegurar que el contenedor del navbar permita overflow */
 .navbar-container {
   position: relative;
   overflow: visible !important;
 }
 
+/* === Botón Soporte con gradiente folly === */
+
+/* === Botón Soporte con borde gradiente folly === */
+.btn-soporte-desktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white !important;
+  background: transparent;
+  border: 2px solid transparent;
+  background-image: var(--gradient-folly);
+  background-origin: border-box;
+  background-clip: border-box;
+  transition: all 0.3s ease;
+  text-transform: none;
+  position: relative;
+}
+
+/* --- Truco para mostrar solo el borde con gradiente --- */
+/* Botón Soporte en desktop con borde gradiente y más redondeado */
+.btn-soporte-desktop {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 1rem !important; /* 🔹 más redondeado */
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: white !important;
+  background: transparent;
+  border: 2px solid transparent;
+  border-image: var(--gradient-folly) 1;
+  transition: all 0.2s ease;
+  text-transform: none;
+  text-decoration: none; /* 🔹 sin subrayado */
+  outline: none; /* 🔹 sin borde de foco azul */
+}
+
+/* Quitar subrayado también en estados hover/focus */
+.btn-soporte-desktop:hover,
+.btn-soporte-desktop:focus,
+.btn-soporte-desktop:active {
+  background: rgba(255, 255, 255, 0.1);
+  color: white !important;
+  text-decoration: none;
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+.btn-soporte-desktop svg {
+  width: 0.875rem;
+  height: 0.875rem;
+  flex-shrink: 0;
+}
+
+/* Botón Soporte en móvil */
+.btn-soporte-mobile {
+  color: inherit;
+  font-weight: normal;
+}
+
 /* Ajustes responsive */
 @media (max-width: 1024px) {
-  /* En tablet, reducir aún más el botón "En Directo" */
-  .btn-sm {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    font-size: 0.625rem;
+  /* Ajustes para tablet */
+  .swap svg {
+    width: 1.125rem;
+    height: 1.125rem;
   }
 }
 
@@ -254,18 +306,6 @@
   box-sizing: border-box;
 }
 
-/* Mejorar el contraste del botón de soporte */
-.btn-outline.btn-info {
-  border-color: var(--color-info);
-  color: var(--color-info);
-}
-
-.btn-outline.btn-info:hover {
-  background: var(--color-info);
-  border-color: var(--color-info);
-  color: white;
-}
-
 /* Animación suave del dropdown */
 .dropdown-content {
   animation: slideDown 0.2s ease-out;
@@ -286,12 +326,12 @@
   white-space: nowrap;
 }
 
-/* NUEVO: Asegurar que el dropdown móvil funcione correctamente */
+/* Asegurar que el dropdown móvil funcione correctamente */
 .dropdown {
   position: relative;
 }
 
-/* CAMBIO: Dropdown alineado a la izquierda por defecto */
+/* Dropdown alineado a la izquierda por defecto */
 .dropdown .dropdown-content {
   left: 0;
   right: auto;
@@ -302,7 +342,7 @@
   left: auto;
 }
 
-/* NUEVO: Hacer que el botón hamburguesa sea más clickeable */
+/* Hacer que el botón hamburguesa sea más clickeable */
 .btn-ghost {
   background-color: transparent;
   border: none;
@@ -313,7 +353,7 @@
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-/* NUEVO: Asegurar visibilidad del dropdown */
+/* Asegurar visibilidad del dropdown */
 .dropdown:focus-within .dropdown-content,
 .dropdown.dropdown-open .dropdown-content {
   display: block;
