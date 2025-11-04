@@ -57,7 +57,25 @@
   background-position: center;
 }
 
+/* =============================== */
+/*  Fondos automáticos por tema    */
+/* =============================== */
 
+/* Tema claro */
+.light-theme .contact-container,
+.light-theme .nosotros-container {
+  background: var(--gradient-vio-nar);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Tema oscuro */
+.dark-theme .contact-container,
+.dark-theme .nosotros-container {
+  background: linear-gradient(135deg, #D6492E 0%, #B32E4D 20%, #5E1F7D 40%, #23156B 70%, #0E0A3A 100%);
+  background-size: cover;
+  background-position: center;
+}
 
 .bg-gradient-folly-fondo {
   background: var(--gradient-folly);
