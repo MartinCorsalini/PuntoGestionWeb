@@ -26,8 +26,6 @@
 
 .bg-gradient-violeta {
   background-image: var(--gradient-violeta);
-
-
 }
 
 .bg-gradient-naranja {
@@ -43,12 +41,22 @@
 }
 
 
+
+
 /*FONDO COMPONENTES CONTACTO Y NOSOTROS */
 .bg-gradient-vio-nar-fondo {
   background: var(--gradient-vio-nar);
   background-size: cover;
   background-position: center;
 }
+
+.bg-gradient-vio-nar-fondo-dark {
+  background: linear-gradient(135deg, #D6492E 0%, #B32E4D 20%, #5E1F7D 40%, #23156B 70%, #0E0A3A 100%);
+  background-size: cover;
+  background-position: center;
+}
+
+
 
 .bg-gradient-folly-fondo {
   background: var(--gradient-folly);
@@ -75,22 +83,34 @@
 
 /* CLASE PARA ALTERNAR FONDO AUTOMÁTICAMENTE SEGÚN TEMA */
 .theme-bg-primary {
-  background: linear-gradient(180deg, #561089 0%, #16094F 60%, #0E0635 100%);
+  background: linear-gradient(180deg, #1B0F5E 0%, #0E0635 60%, #07031C 100%);
   transition: background 0.3s ease;
 }
 
 .theme-bg-primary-inv {
-  background: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #561089 90%);
+  background: linear-gradient(180deg, #07031C 0%, #0E0635 40%, #1B0F5E 100%); 
   transition: background 0.3s ease;
 }
 
 /* CUANDO EL TEMA ES CLARO */
 .light-theme .theme-bg-primary {
-  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
+  background: linear-gradient(
+    180deg,
+    #F3F2F6 0%,     /* gris lavanda muy suave */
+    #EEEAF2 40%,    /* apenas un matiz violeta grisáceo */
+    #EDEBEC 70%,    /* gris neutro cálido */
+    #F5F4F2 100%    /* cierre en tono claro cálido */
+  );
 }
 
 .light-theme .theme-bg-primary-inv {
-  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
+  background: linear-gradient(
+    180deg,
+    #F5F4F2 0%,
+    #EDEBEC 30%,
+    #EEEAF2 60%,
+    #F3F2F6 100%
+  );
 }
 
 /* ============================================ */
