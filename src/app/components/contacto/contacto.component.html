@@ -23,110 +23,112 @@
           animationClass="fade-in-left"
           [threshold]="0.1"
           [delay]="200"
-          class="w-full lg:w-1/2 max-w-md lg:max-w-lg lg:pr-4"
+          class="w-full lg:w-1/2 flex justify-center lg:justify-start"
         >
-          <h3
-            class="text-lg md:text-xl font-semibold mb-6 text-center lg:text-left bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent"
-          >
-            Dejanos tus datos y nuestro equipo se pondrá en contacto 🤝
-          </h3>
+          <div class="w-full max-w-md lg:max-w-lg lg:pr-4">
+            <h3
+              class="text-lg md:text-xl font-semibold mb-6 text-center lg:text-left bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent"
+            >
+              Dejanos tus datos y nuestro equipo se pondrá en contacto 🤝
+            </h3>
 
-          <form
-            #contactForm="ngForm"
-            (ngSubmit)="onSubmit(contactForm)"
-            novalidate
-            class="space-y-5"
-          >
-            <!-- Nombre y Email -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-              <div>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Tu nombre"
-                  class="w-full mb-3 bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                  [(ngModel)]="name"
-                  required
-                  (blur)="touched.name = true"
-                />
-                <p
-                  *ngIf="touched.name && !name"
-                  class="text-xs font-bold text-red-400 mt-1"
-                >
-                  El nombre es requerido
-                </p>
+            <form
+              #contactForm="ngForm"
+              (ngSubmit)="onSubmit(contactForm)"
+              novalidate
+              class="space-y-5"
+            >
+              <!-- Nombre y Email -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Tu nombre"
+                    class="w-full mb-3 bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
+                    [(ngModel)]="name"
+                    required
+                    (blur)="touched.name = true"
+                  />
+                  <p
+                    *ngIf="touched.name && !name"
+                    class="text-xs font-bold text-red-400 mt-1"
+                  >
+                    El nombre es requerido
+                  </p>
+                </div>
+
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Tu email"
+                    class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
+                    [(ngModel)]="email"
+                    required
+                    email
+                    (blur)="touched.email = true"
+                  />
+                  <p
+                    *ngIf="
+                      touched.email &&
+                      (!email || !contactForm.controls['email']?.valid)
+                    "
+                    class="text-xs font-bold text-red-400 mt-1"
+                  >
+                    El email es requerido
+                  </p>
+                </div>
               </div>
 
+              <!-- Teléfono -->
               <div>
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Tu email"
+                  type="tel"
+                  name="phone"
+                  placeholder="Tu teléfono"
                   class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                  [(ngModel)]="email"
+                  [(ngModel)]="phone"
                   required
-                  email
-                  (blur)="touched.email = true"
+                  (blur)="touched.phone = true"
                 />
                 <p
-                  *ngIf="
-                    touched.email &&
-                    (!email || !contactForm.controls['email']?.valid)
-                  "
+                  *ngIf="touched.phone && !phone"
                   class="text-xs font-bold text-red-400 mt-1"
                 >
-                  El email es requerido
+                  El teléfono es requerido
                 </p>
               </div>
-            </div>
 
-            <!-- Teléfono -->
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Tu teléfono"
-                class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm"
-                [(ngModel)]="phone"
-                required
-                (blur)="touched.phone = true"
-              />
-              <p
-                *ngIf="touched.phone && !phone"
-                class="text-xs font-bold text-red-400 mt-1"
-              >
-                El teléfono es requerido
-              </p>
-            </div>
+              <!-- Mensaje -->
+              <div>
+                <textarea
+                  name="message"
+                  placeholder="Escribinos tu mensaje..."
+                  class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm h-20 resize-none"
+                  [(ngModel)]="message"
+                  required
+                  (blur)="touched.message = true"
+                ></textarea>
+                <p
+                  *ngIf="touched.message && !message"
+                  class="text-xs font-bold text-red-400 mt-1"
+                >
+                  El mensaje es requerido
+                </p>
+              </div>
 
-            <!-- Mensaje -->
-            <div>
-              <textarea
-                name="message"
-                placeholder="Escribinos tu mensaje..."
-                class="w-full bg-transparent border-0 border-b-2 border-gray-400 focus:border-[#fa0052] focus:outline-none pb-2 text-white placeholder-gray-400 transition-colors duration-300 text-sm h-20 resize-none"
-                [(ngModel)]="message"
-                required
-                (blur)="touched.message = true"
-              ></textarea>
-              <p
-                *ngIf="touched.message && !message"
-                class="text-xs font-bold text-red-400 mt-1"
-              >
-              El mensaje es requerido
-              </p>
-            </div>
-
-            <!-- Botón -->
-            <div class="pt-3">
-              <button
-                type="submit"
-                class="w-full h-11 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 hover:from-fuchsia-600 hover:to-pink-500 cursor-pointer focus:outline-none border-0"
-              >
-                ENVIAR
-              </button>
-            </div>
-          </form>
+              <!-- Botón -->
+              <div class="pt-3">
+                <button
+                  type="submit"
+                  class="w-full h-11 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300 text-sm text-white bg-gradient-to-r from-pink-500 to-fuchsia-600 hover:from-fuchsia-600 hover:to-pink-500 cursor-pointer focus:outline-none border-0"
+                >
+                  ENVIAR
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <!-- Columna derecha - DATOS (AHORA A LA DERECHA) -->
@@ -135,7 +137,7 @@
           animationClass="fade-in-right"
           [threshold]="0.1"
           [delay]="400"
-          class="w-full lg:w-1/2 flex flex-col justify-center items-center text-center lg:items-start lg:text-left"
+          class="w-full lg:w-1/2 flex justify-center lg:justify-end"
         >
           <div class="space-y-4 w-full max-w-md lg:max-w-lg">
             <!-- 📞 Llamanos -->
