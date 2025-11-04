@@ -292,6 +292,73 @@
   background: linear-gradient(180deg, #f2f0eb 0%, #f9f3ee 25%, #f7eee5 50%, #f4e8d9 75%, #f0dac9 100%);
 }
 
+/* ============================================ */
+/*     SISTEMA DE FONDOS AUTOMÁTICO           */
+/* ============================================ */
+
+/* CLASE PARA ALTERNAR FONDO AUTOMÁTICAMENTE SEGÚN TEMA */
+.theme-bg-primary {
+  background: linear-gradient(180deg, #561089 0%, #16094F 60%, #0E0635 100%);
+  transition: background 0.3s ease;
+}
+
+.theme-bg-primary-inv {
+  background: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #561089 90%);
+  transition: background 0.3s ease;
+}
+
+/* CUANDO EL TEMA ES CLARO */
+.light-theme .theme-bg-primary {
+  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
+}
+
+.light-theme .theme-bg-primary-inv {
+  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
+}
+
+/* ============================================ */
+/*     COLORES DE DIVS SEGÚN TEMA             */
+/* ============================================ */
+
+/* Divs blancos en tema oscuro, oscuros en tema claro */
+.theme-card {
+  background-color: #ffffff;
+  color: #1f2937;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Variante para cards con sombra */
+.theme-card-shadow {
+  background-color: #ffffff;
+  color: #1f2937;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.light-theme .theme-card-shadow {
+  background-color: #16094f;
+  color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+}
+
+/* Texto que invierte color según tema */
+.theme-text {
+  color: #ffffff;
+  transition: color 0.3s ease;
+}
+
+.light-theme .theme-text {
+  color: #1f2937;
+}
+
+.theme-text-inverse {
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.light-theme .theme-text-inverse {
+  color: #ffffff;
+}
 
 
 /* ============================================ */
