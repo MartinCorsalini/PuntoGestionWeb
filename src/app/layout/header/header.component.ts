@@ -38,16 +38,14 @@ export class HeaderComponent implements OnInit {
     localStorage.setItem('theme', theme);
     this.addThemeTransition();
 
-    // Disparar evento personalizado para que otros componentes reaccionen
     window.dispatchEvent(new CustomEvent('theme-changed', { detail: { theme } }));
   }
 
   private applyTheme(theme: string): void {
     if (!this.isBrowser) return;
-    
+
     document.documentElement.setAttribute('data-theme', theme);
-    
-    // Agregar clase al body para facilitar el CSS
+
     if (theme === 'dark') {
       document.body.classList.add('dark-theme');
       document.body.classList.remove('light-theme');
@@ -118,12 +116,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  openSupport(): void {
-    console.log('Abriendo soporte...');
-  }
-
-  openLiveLink(): void {
-    console.log('Abriendo enlace en directo...');
+  openEnDirecto(): void {
+    if (this.isBrowser) {
+      window.open('https://www.axoft.com/tango/tango-en-directo/', '_blank');
+    }
   }
 
   private addThemeTransition(): void {

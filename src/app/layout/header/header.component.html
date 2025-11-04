@@ -4,7 +4,6 @@
 
     <!-- IZQUIERDA: Menú hamburguesa (solo móvil) -->
     <div class="flex items-center lg:hidden">
-      <!-- CAMBIO: Quitar dropdown-end para que se alinee a la izquierda -->
       <div class="dropdown" [class.dropdown-open]="isMenuOpen">
         <button (click)="toggleMenu()" class="btn btn-ghost btn-sm px-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -12,11 +11,11 @@
           </svg>
         </button>
 
-        <!-- Dropdown móvil MEJORADO - alineado a la izquierda -->
+        <!-- Dropdown móvil -->
         <ul *ngIf="isMenuOpen"
             class="menu menu-sm dropdown-content mt-3 w-64 p-3 shadow-2xl bg-base-100 rounded-box z-[1000] border border-base-300"
             style="left: 0; right: auto;">
-          <li><a (click)="closeMenu()" class="py-2">Quiénes somos?</a></li>
+          <li><a (click)="navigateToSection('nosotros')" class="py-2">¿Quiénes somos?</a></li>
           <li>
             <details>
               <summary class="py-2">Productos</summary>
@@ -29,16 +28,17 @@
               </ul>
             </details>
           </li>
-          <li><a (click)="closeMenu()" class="py-2">Servicios</a></li>
-          <li><a (click)="closeMenu()" class="py-2">Contacto</a></li>
-          <li><a (click)="closeMenu()" class="py-2">Soporte</a></li>
+          <li><a (click)="navigateToSection('nuestros-servicios')" class="py-2">Servicios</a></li>
+          <li><a (click)="navigateToSection('contactanos')" class="py-2">Contacto</a></li>
+          <li><a (click)="navigateToSection('contactanos')" class="py-2 btn-soporte-mobile">Soporte</a></li>
 
-          <!-- Botón "En Directo" solo en menú móvil (oculto en tablet donde ya aparece en navbar) -->
+          <!-- Botón "En Directo" en menú móvil -->
           <li class="mt-3 md:hidden">
-            <a (click)="closeMenu()" class="btn btn-sm w-full text-white font-bold uppercase rounded-full border-none"
-               style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%)">
-              En Directo
-            </a>
+            <button (click)="openEnDirecto()" class="w-full flex justify-center p-0 bg-transparent border-none hover:scale-105 transition-transform">
+              <img src="assets/DELTA5/PNGdelta5/btn_EnDirecto.png"
+                   alt="En Directo"
+                   class="h-8 w-auto object-contain cursor-pointer"/>
+            </button>
           </li>
         </ul>
       </div>
@@ -56,11 +56,10 @@
     <!-- CENTRO-DERECHA: Menú desktop (oculto en móvil) -->
     <div class="hidden lg:flex flex-1 justify-center max-w-3xl" style="overflow: visible;">
       <ul class="menu menu-horizontal px-1 font-semibold text-sm text-white space-x-1">
-        <li><a class="text-white hover:text-gray-200 px-3">Quiénes somos?</a></li>
+        <li><a (click)="navigateToSection('nosotros')" class="text-white hover:text-gray-200 px-3 cursor-pointer">¿Quiénes somos?</a></li>
         <li style="position: relative; overflow: visible;">
           <details style="overflow: visible;">
             <summary class="text-white hover:text-gray-200 px-3">Productos</summary>
-            <!-- CAMBIO: Ajustar posición y z-index del dropdown -->
             <ul class="p-2 bg-base-100 text-base-content rounded-lg shadow-xl min-w-[200px]"
                 style="position: absolute; z-index: 9999; margin-top: 0.5rem;">
               <li><a class="text-sm">Empresas</a></li>
@@ -71,10 +70,10 @@
             </ul>
           </details>
         </li>
-        <li><a class="text-white hover:text-gray-200 px-3">Servicios</a></li>
-        <li><a class="text-white hover:text-gray-200 px-3">Contacto</a></li>
+        <li><a (click)="navigateToSection('nuestros-servicios')" class="text-white hover:text-gray-200 px-3 cursor-pointer">Servicios</a></li>
+        <li><a (click)="navigateToSection('contactanos')" class="text-white hover:text-gray-200 px-3 cursor-pointer">Contacto</a></li>
         <li>
-          <a class="btn btn-outline btn-info btn-sm text-white font-semibold normal-case px-3">
+          <a (click)="navigateToSection('contactanos')" class="btn btn-outline btn-info btn-sm btn-soporte-desktop cursor-pointer">
             Soporte
           </a>
         </li>
@@ -85,12 +84,14 @@
     <div class="flex items-center gap-2 flex-shrink-0">
 
       <!-- Botón "En Directo" - Oculto en móvil, visible desde tablet -->
-      <a class="hidden md:flex btn btn-sm text-white font-bold uppercase border-none rounded-full px-3 py-1 text-xs hover:scale-105 transition-all duration-300"
-         style="background: linear-gradient(180deg, #e63946 0%, #a4161a 100%)">
-        En Directo
-      </a>
+      <button (click)="openEnDirecto()"
+              class="hidden md:flex items-center justify-center p-0 bg-transparent border-none hover:scale-105 transition-transform cursor-pointer">
+        <img src="assets/DELTA5/PNGdelta5/btn_EnDirecto.png"
+             alt="En Directo"
+             class="h-4 lg:h-7 w-auto object-contain"/>
+      </button>
 
-      <!-- Theme Toggle - MÁS PEQUEÑO -->
+      <!-- Theme Toggle -->
       <label class="swap swap-rotate flex-shrink-0">
         <input
           type="checkbox"

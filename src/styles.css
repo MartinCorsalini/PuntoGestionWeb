@@ -8,185 +8,16 @@
 }
 
 
-/* ============================================ */
-/* TEMAS DAISYUI PERSONALIZADOS                */
-/* ============================================ */
-
-/* ============================================ */
-/* TEMAS DAISYUI PERSONALIZADOS - MEJORADOS   */
-/* ============================================ */
-
-/* TEMA OSCURO (dark) */
-@plugin "daisyui/theme" {
-  name: "dark";
-  default: true;
-  prefersdark: true;
-  color-scheme: "dark";
-
-  /* === BASES (Fondos principales) === */
-  --color-base-100: #16094f;      /* Fondo principal - Morado oscuro */
-  --color-base-200: #1a0d5a;      /* Fondo secundario - Morado medio */
-  --color-base-300: #1e1165;      /* Fondo terciario - Morado más claro */
-  --color-base-content: #ffffff;  /* Texto sobre fondos base */
-
-  /* === COLORES CORPORATIVOS === */
-  --color-primary: #2fa7df;       /* Cyan - Color principal Tango */
-  --color-primary-content: #ffffff;
-  --color-secondary: #ff861b;     /* Naranja - Color secundario */
-  --color-secondary-content: #ffffff;
-  --color-accent: #fa0052;        /* Rosa/Fucsia - Acento */
-  --color-accent-content: #ffffff;
-
-  /* === COLORES NEUTRALES === */
-  --color-neutral: #4b5563;       /* Gris neutral mejorado */
-  --color-neutral-content: #f3f4f6;
-  --color-neutral-focus: #374151; /* Hover/Focus del neutral */
-
-  /* === COLORES DE ESTADO === */
-  --color-info: #7C20BE;          /* Violeta - Información */
-  --color-info-content: #ffffff;
-  --color-success: #10b981;       /* Verde - Éxito */
-  --color-success-content: #ffffff;
-  --color-warning: #f59e0b;       /* Amarillo - Advertencia */
-  --color-warning-content: #000000;
-  --color-error: #ef4444;         /* Rojo - Error */
-  --color-error-content: #ffffff;
-
-  /* === GRISES ADICIONALES (Custom Properties) === */
-  --pg-gray-50: #f9fafb;
-  --pg-gray-100: #f3f4f6;
-  --pg-gray-200: #e5e7eb;
-  --pg-gray-300: #d1d5db;
-  --pg-gray-400: #9ca3af;
-  --pg-gray-500: #6b7280;
-  --pg-gray-600: #4b5563;
-  --pg-gray-700: #374151;
-  --pg-gray-800: #1f2937;
-  --pg-gray-900: #111827;
-
-  /* === GRISES CON TINTE MORADO === */
-  --pg-dark-100: #121316;
-  --pg-dark-200: #1a1a2e;
-  --pg-dark-300: #262f52;
-  --pg-dark-400: #2d3561;
-
-  /* === COLORES TANGO === */
-  --pg-tango-red: #e51937;
-  --pg-tango-orange: #f47d30;
-  --pg-tango-cyan: #2fa7df;
-  --pg-tango-purple: #7C20BE;
-  --pg-tango-gray: #607d8a;
-
-  /* === CONFIGURACIÓN DE BORDES Y RADIOS === */
-  --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 0.5px;
-  --depth: 0;
-  --noise: 0;
-}
-
-/* TEMA CLARO (light) */
-@plugin "daisyui/theme" {
-  name: "light";
-  default: false;
-  prefersdark: false;
-  color-scheme: "light";
-
-  /* === BASES (Fondos principales) === */
-  --color-base-100: #f2f0eb;      /* Fondo principal - Blanco puro */
-  --color-base-200: #f8f9fa;      /* Fondo secundario - Gris muy claro */
-  --color-base-300: #e9ecef;      /* Fondo terciario - Gris claro */
-  --color-base-content: #1f2937;  /* Texto sobre fondos base */
-
-  /* === COLORES CORPORATIVOS === */
-  --color-primary: #2fa7df;       /* Cyan - Color principal Tango */
-  --color-primary-content: #ffffff;
-  --color-secondary: #ff861b;     /* Naranja - Color secundario */
-  --color-secondary-content: #ffffff;
-  --color-accent: #fa0052;        /* Rosa/Fucsia - Acento */
-  --color-accent-content: #ffffff;
-
-  /* === COLORES NEUTRALES === */
-  --color-neutral: #6b7280;       /* Gris neutral */
-  --color-neutral-content: #ffffff;
-  --color-neutral-focus: #4b5563; /* Hover/Focus del neutral */
-
-  /* === COLORES DE ESTADO === */
-  --color-info: #7C20BE;          /* Violeta - Información */
-  --color-info-content: #ffffff;
-  --color-success: #10b981;       /* Verde - Éxito */
-  --color-success-content: #ffffff;
-  --color-warning: #f59e0b;       /* Amarillo - Advertencia */
-  --color-warning-content: #000000;
-  --color-error: #ef4444;         /* Rojo - Error */
-  --color-error-content: #ffffff;
-
-  /* === GRISES ADICIONALES (Custom Properties) === */
-  --pg-gray-50: #f9fafb;
-  --pg-gray-100: #f3f4f6;
-  --pg-gray-200: #e5e7eb;
-  --pg-gray-300: #d1d5db;
-  --pg-gray-400: #9ca3af;
-  --pg-gray-500: #6b7280;
-  --pg-gray-600: #4b5563;
-  --pg-gray-700: #374151;
-  --pg-gray-800: #1f2937;
-  --pg-gray-900: #111827;
-
-  /* === GRISES CON TINTE AZUL (para modo claro) === */
-  --pg-light-100: #f8fafc;
-  --pg-light-200: #f1f5f9;
-  --pg-light-300: #e2e8f0;
-  --pg-light-400: #cbd5e1;
-
-  /* === COLORES TANGO === */
-  --pg-tango-red: #e51937;
-  --pg-tango-orange: #f47d30;
-  --pg-tango-cyan: #2fa7df;
-  --pg-tango-purple: #7C20BE;
-  --pg-tango-gray: #607d8a;
-
-  /* === CONFIGURACIÓN DE BORDES Y RADIOS === */
-  --radius-selector: 2rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 0.5px;
-  --depth: 0;
-  --noise: 0;
-}
-
-/* ============================================ */
-/* VARIABLES CSS GLOBALES PARA GRADIENTES     */
-/* ============================================ */
-
 :root {
   /* === GRADIENTES PRINCIPALES === */
-  --gradient-azul: linear-gradient(135deg, #121316, #262f52);
-  --gradient-purple-dark: linear-gradient(180deg, #16094f 0%, #1a0d5a 100%);
-  --gradient-purple-violet: linear-gradient(135deg, #16094f 0%, #7C20BE 100%);
-  --gradient-cyan: linear-gradient(135deg, #2fa7df 0%, #1e8bb8 100%);
-  --gradient-orange: linear-gradient(135deg, #ff861b 0%, #f47d30 100%);
-  --gradient-pink: linear-gradient(135deg, #fa0052 0%, #e51937 100%);
-  --gradient-button-live: linear-gradient(180deg, #e63946 0%, #a4161a 100%);
-  --gradient-premium: linear-gradient(135deg, #16094f 0%, #121316 50%, #262f52 100%);
-  --gradient-multicolor: linear-gradient(135deg, #2fa7df 0%, #7C20BE 50%, #fa0052 100%);
-
   --gradient-navbar: linear-gradient(135deg, #16094F , #7C21BE);
-
   --gradient-vio-nar: linear-gradient(135deg, #7C21BE, #ff861b);
   --gradient-folly: linear-gradient(135deg, #7C21BE, #FA0052);
   --gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%));
   --gradient-naranja: linear-gradient(135deg, #FA0052, #FF861B);
-  --gradient-ia: linear-gradient(135deg, #120A3E, #1C0B52);
-;
-
 }
 
+/*FONDO PARA TEXTOS */
 .bg-gradient-navbar {
   background-image: var(--gradient-navbar);
 }
@@ -207,9 +38,8 @@
   background-image: var(--gradient-vio-nar);
 }
 
-.bg-gradient-azul { background: var(--gradient-azul); }
 
-
+/*FONDO COMPONENTES CONTACTO Y NOSOTROS */
 .bg-gradient-vio-nar-fondo {
   background: var(--gradient-vio-nar);
   background-size: cover;
@@ -234,29 +64,6 @@
   background-position: center;
 }
 
-.bg-gradient-ia {
-  background: var(--gradient-ia);
-  background-size: cover;
-  background-position: center;
-}
-
-/*FONDO CON GRADIENT VIOLETA */
-.bg-gradient-base-alt {
-  background: linear-gradient(180deg, #e0c9f0 0%, #ead9f4 25%, #f0e5f7 50%, #f5eef9 75%, #f2f0eb 100%);
-}
-
-.bg-gradient-base-alt-inv {
-  background: linear-gradient(180deg, #f2f0eb 0%, #f5eef9 25%, #f0e5f7 50%, #ead9f4 75%, #e0c9f0 100%);
-}
-
-/*FONDO CON GRADIENT NARANJA */
-.bg-gradient-base-naranja {
-  background: linear-gradient(180deg, #f0dac9 0%, #f4e8d9 25%, #f7eee5 50%, #f9f3ee 75%, #f2f0eb 100%);
-}
-
-.bg-gradient-base-naranja-inv {
-  background: linear-gradient(180deg, #f2f0eb 0%, #f9f3ee 25%, #f7eee5 50%, #f4e8d9 75%, #f0dac9 100%);
-}
 
 /* ============================================ */
 /*     SISTEMA DE FONDOS AUTOMÁTICO           */
