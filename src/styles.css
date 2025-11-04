@@ -12,8 +12,10 @@
   /* === GRADIENTES PRINCIPALES === */
   --gradient-navbar: linear-gradient(135deg, #16094F , #7C21BE);
   --gradient-vio-nar: linear-gradient(135deg, #7C21BE, #ff861b);
-  --gradient-folly: linear-gradient(135deg, #7C21BE, #FA0052);
-  --gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%));
+  --gradient-folly: linear-gradient(135deg,  #7C20BE 0%, #fa0052 50% , #ff861b 100%);
+  /*--gradient-violeta: linear-gradient(135deg, hsl(256 74% 20%), hsl(283 72% 44%)); */
+
+  --gradient-violeta: linear-gradient(180deg, #0E0635 0%, #16094F 40%, #2A0D78 100%);
   --gradient-naranja: linear-gradient(135deg, #FA0052, #FF861B);
 }
 
@@ -24,6 +26,8 @@
 
 .bg-gradient-violeta {
   background-image: var(--gradient-violeta);
+
+
 }
 
 .bg-gradient-naranja {
