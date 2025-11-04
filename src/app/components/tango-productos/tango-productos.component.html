@@ -1,32 +1,31 @@
-<section class="w-full py-12 sm:py-16 px-4 bg-gradient-base-alt-inv">
+<section class="w-full py-12 sm:py-16 px-4 theme-bg-primary-inv">
   <div class="max-w-[1600px] mx-auto">
-  
-    <!-- Subtítulo -->
-    <h3 
+
+    <!-- Subtítulo + Certificado -->
+    <div
       appScrollReveal
       animationClass="fade-in-down"
       [threshold]="0.3"
       [delay]="0"
-      class="text-base sm:text-xl md:text-2xl text-base-content font-bold text-center mb-8 mt-0"
+      class="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-4 mb-12"
     >
-      Somos distribuidores oficiales de
-      <span
-        class="bg-gradient-folly text-transparent bg-clip-text"
-        >Tango Software</span
+      <h4
+        class="text-base sm:text-xl md:text-2xl text-base-content font-bold"
       >
-    </h3>
-    <!-- Certificado -->
-    <div
-      appScrollReveal
-      animationClass="fade-in-right"
-      [threshold]="0.3"
-      [delay]="400"
-      class="flex justify-center mb-12 transition-opacity transition-duration-300"
-    >
+        Somos distribuidores oficiales de
+        <span>
+          Tango Software
+        </span>
+      </h4>
+
       <img
+        appScrollReveal
+        animationClass="fade-in-right"
+        [threshold]="0.3"
+        [delay]="400"
         [src]="certificadoLogo"
         alt="Tango Software Certificado"
-        class="h-16 sm:h-20 md:h-26 w-auto object-contain"
+        class="h-12 sm:h-16 md:h-20 w-auto object-contain transition-opacity duration-300"
       />
     </div>
 
@@ -41,12 +40,11 @@
       <span>Nuestros </span>
       <span class="bg-clip-text text-transparent bg-gradient-folly">Productos</span>
     </h2>
-    
-    <!-- Grid de productos - 3 cards por fila, 2 filas -->
+
+    <!-- Grid de productos -->
     <div
       class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 justify-items-center place-items-center"
     >
-      <!-- Flip Cards de productos -->
       <div
         *ngFor="let producto of productos; let i = index"
         appScrollReveal
@@ -57,14 +55,13 @@
         (click)="flipCard(i)"
       >
         <div class="flip-card-inner" [class.flipped]="flippedCards[i]">
-          <!-- FRONT - Solo imagen -->
+
+          <!-- FRONT -->
           <div
             class="flip-card-front rounded-lg shadow-lg flex flex-col items-center justify-center p-4"
             [style.background-color]="producto.bgColor"
           >
-            <div
-              class="w-full h-full flex flex-col items-center justify-center"
-            >
+            <div class="w-full h-full flex flex-col items-center justify-center">
               <img
                 [src]="producto.imagen"
                 [alt]="producto.nombre"
@@ -76,7 +73,7 @@
             </div>
           </div>
 
-          <!-- BACK - Descripción -->
+          <!-- BACK -->
           <div
             class="flip-card-back rounded-lg shadow-lg flex flex-col justify-between p-3"
             [style.background-color]="producto.bgColor"

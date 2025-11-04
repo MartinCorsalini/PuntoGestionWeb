@@ -1,10 +1,9 @@
-<section
-  class="w-full relative overflow-hidden bg-gradient-base-alt ">
+<section class="w-full relative overflow-hidden theme-bg-primary">
 
   <!-- Carrusel -->
   <div
     class="carousel w-full h-56 sm:h-72 md:h-96 lg:h-[550px] -mt-1 mb-0 transition-all duration-700 ease-in-out"
-    style="background-color: #16094f"
+    style="background-color: transparent"
   >
     <div
       *ngFor="let slide of activeSlides; let i = index"
@@ -19,10 +18,10 @@
       <div
         class="absolute inset-0 flex items-center justify-between px-3 sm:px-5"
       >
-        <button (click)="prevSlide()" class="btn btn-circle btn-sm sm:btn-md">
+        <button (click)="prevSlide()" class="btn btn-circle btn-sm sm:btn-md theme-card">
           ❮
         </button>
-        <button (click)="nextSlide()" class="btn btn-circle btn-sm sm:btn-md">
+        <button (click)="nextSlide()" class="btn btn-circle btn-sm sm:btn-md theme-card">
           ❯
         </button>
       </div>
@@ -30,17 +29,17 @@
   </div>
 
   <!-- Indicadores (puntitos) -->
-<div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-  <button
-    *ngFor="let slide of activeSlides; let i = index"
-    (click)="goToSlide(i)"
-    class="w-3 h-3 rounded-full transition-all duration-300"
-    [ngClass]="
-      i === currentSlide
-        ? 'bg-white scale-125'
-        : 'bg-gray-400 hover:bg-gray-300'
-    "
-  ></button>
-</div>
+  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+    <button
+      *ngFor="let slide of activeSlides; let i = index"
+      (click)="goToSlide(i)"
+      class="w-3 h-3 rounded-full transition-all duration-300"
+      [ngClass]="
+        i === currentSlide
+          ? 'bg-white scale-125 shadow-lg'
+          : 'bg-gray-400 hover:bg-gray-300'
+      "
+    ></button>
+  </div>
 
 </section>

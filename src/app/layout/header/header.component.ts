@@ -11,9 +11,9 @@ import { RouterModule } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   private isBrowser: boolean;
-  isDarkTheme: boolean = true; // Por defecto oscuro
-  isMenuOpen: boolean = false; // Estado del menú móvil
-  isScrolled: boolean = false; // Detectar scroll
+  isDarkTheme: boolean = true;
+  isMenuOpen: boolean = false;
+  isScrolled: boolean = false;
 
   constructor(@Inject(PLATFORM_ID) platformId: Object) {
     this.isBrowser = isPlatformBrowser(platformId);
@@ -21,16 +21,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isBrowser) {
-      // Cargar el tema guardado al iniciar
       const savedTheme = localStorage.getItem('theme') || 'dark';
       this.isDarkTheme = savedTheme === 'dark';
-      document.documentElement.setAttribute('data-theme', savedTheme);
+      this.applyTheme(savedTheme);
     }
   }
 
-  /**
-   * Cambia el tema entre claro y oscuro
-   */
   toggleTheme(event: Event): void {
     if (!this.isBrowser) return;
 
@@ -38,24 +34,33 @@ export class HeaderComponent implements OnInit {
     const theme = checkbox.checked ? 'light' : 'dark';
     this.isDarkTheme = theme === 'dark';
 
-    // Aplicar el tema con transición suave
-    document.documentElement.setAttribute('data-theme', theme);
-
-    // Guardar en localStorage
+    this.applyTheme(theme);
     localStorage.setItem('theme', theme);
-
-    // Opcional: Agregar efecto visual
     this.addThemeTransition();
+
+    // Disparar evento personalizado para que otros componentes reaccionen
+    window.dispatchEvent(new CustomEvent('theme-changed', { detail: { theme } }));
   }
 
-  /**
-   * Abre/cierra el menú móvil
-   */
+  private applyTheme(theme: string): void {
+    if (!this.isBrowser) return;
+    
+    document.documentElement.setAttribute('data-theme', theme);
+    
+    // Agregar clase al body para facilitar el CSS
+    if (theme === 'dark') {
+      document.body.classList.add('dark-theme');
+      document.body.classList.remove('light-theme');
+    } else {
+      document.body.classList.add('light-theme');
+      document.body.classList.remove('dark-theme');
+    }
+  }
+
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
 
     if (this.isBrowser) {
-      // Prevenir scroll cuando el menú está abierto
       if (this.isMenuOpen) {
         document.body.style.overflow = 'hidden';
       } else {
@@ -64,9 +69,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Cierra el menú móvil
-   */
   closeMenu(): void {
     this.isMenuOpen = false;
     if (this.isBrowser) {
@@ -74,9 +76,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Detecta el scroll para agregar efectos al navbar
-   */
   @HostListener('window:scroll', [])
   onWindowScroll(): void {
     if (this.isBrowser) {
@@ -84,9 +83,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Cierra el menú al hacer click fuera
-   */
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const target = event.target as HTMLElement;
@@ -97,9 +93,6 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Cierra el menú al presionar Escape
-   */
   @HostListener('document:keydown.escape', ['$event'])
   onEscapeKey(event: KeyboardEvent): void {
     if (this.isMenuOpen) {
@@ -107,16 +100,13 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Navega a una sección específica
-   */
   navigateToSection(sectionId: string): void {
     this.closeMenu();
 
     if (this.isBrowser) {
       const element = document.getElementById(sectionId);
       if (element) {
-        const offset = 70; // Altura del navbar
+        const offset = 70;
         const elementPosition = element.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.scrollY - offset;
 
@@ -128,27 +118,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  /**
-   * Abre el enlace de soporte
-   */
   openSupport(): void {
-    // Aquí puedes abrir un modal, redirigir a otra página, etc.
     console.log('Abriendo soporte...');
-    // Ejemplo: window.open('https://soporte.punto-gestion.com', '_blank');
   }
 
-  /**
-   * Abre el enlace "En Directo"
-   */
   openLiveLink(): void {
-    // Aquí puedes abrir un enlace de streaming, webinar, etc.
     console.log('Abriendo enlace en directo...');
-    // Ejemplo: window.open('https://live.punto-gestion.com', '_blank');
   }
 
-  /**
-   * Efecto de transición suave al cambiar tema
-   */
   private addThemeTransition(): void {
     if (!this.isBrowser) return;
 
@@ -160,9 +137,6 @@ export class HeaderComponent implements OnInit {
     }, 300);
   }
 
-  /**
-   * Obtiene las clases del navbar según el estado
-   */
   getNavbarClasses(): string {
     const classes = ['navbar'];
 
@@ -173,9 +147,6 @@ export class HeaderComponent implements OnInit {
     return classes.join(' ');
   }
 
-  /**
-   * Verifica si estamos en una ruta específica
-   */
   isActiveRoute(route: string): boolean {
     if (!this.isBrowser) return false;
     return window.location.pathname === route;

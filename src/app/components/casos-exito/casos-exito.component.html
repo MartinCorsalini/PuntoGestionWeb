@@ -1,48 +1,63 @@
-<div class="bg-gradient-base-naranja-blanco  mx-auto px-4 py-8 mb-5">
+
+<div class="theme-bg-primary-inv mx-auto px-4 py-8 mb-0">
   <!-- Título principal -->
   <h2
-  appScrollReveal animationClass="fade-in-down" [threshold]="0.1"
-  class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10">
+    appScrollReveal
+    animationClass="fade-in-down"
+    [threshold]="0.1"
+    class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10"
+  >
     Súmate a nuestros
-    <span
-        class="bg-clip-text text-transparent bg-gradient-folly"
-        >casos de éxito</span
-      >
+    <span class="bg-clip-text text-transparent bg-gradient-folly">
+      casos de éxito
+    </span>
   </h2>
 
   <!-- Casos de éxito -->
   <div class="space-y-12">
     <div
-    *ngFor="let caso of casos; let i = index; trackBy: trackByCaso"
-         class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-5xl mx-auto">
-
+      *ngFor="let caso of casos; let i = index; trackBy: trackByCaso"
+      class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center max-w-5xl mx-auto"
+    >
       <!-- Columna izquierda: Video -->
       <div
-      appScrollReveal animationClass="fade-in-left" [threshold]="0.1" [delay]="200"
-      [class.lg:order-1]="i % 2 === 0"
-           [class.lg:order-2]="i % 2 === 1"
-           class="w-full">
-        <div class="aspect-video rounded-lg overflow-hidden shadow-lg max-w-md mx-auto lg:max-w-none">
+        appScrollReveal
+        animationClass="fade-in-left"
+        [threshold]="0.1"
+        [delay]="200"
+        [class.lg:order-1]="i % 2 === 0"
+        [class.lg:order-2]="i % 2 === 1"
+        class="w-full"
+      >
+        <div
+          class="aspect-video rounded-lg overflow-hidden shadow-xl max-w-md mx-auto lg:max-w-none theme-card-shadow"
+        >
+
           <iframe
             [src]="getVideoUrl(caso.videoId)"
             class="w-full h-full"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen>
-          </iframe>
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
 
       <!-- Columna derecha: Información -->
       <div
-      appScrollReveal animationClass="fade-in-right" [threshold]="0.1" [delay]="400"
-      [class.lg:order-2]="i % 2 === 0"
-           [class.lg:order-1]="i % 2 === 1"
-           class="flex flex-col justify-center px-4">
+
+        appScrollReveal
+        animationClass="fade-in-right"
+        [threshold]="0.1"
+        [delay]="400"
+        [class.lg:order-2]="i % 2 === 0"
+        [class.lg:order-1]="i % 2 === 1"
+        class="flex flex-col justify-center px-4"
+      >
         <h3 class="text-xl md:text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-naranja">
           {{ caso.empresa }}
         </h3>
-        <p class="text-xd md:text-sm leading-relaxed italic whitespace-pre-line">
+        <p class="text-xs md:text-sm leading-relaxed italic whitespace-pre-line">
           {{ caso.descripcion }}
         </p>
       </div>
