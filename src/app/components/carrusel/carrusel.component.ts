@@ -10,16 +10,17 @@ import { Component, HostListener, OnDestroy, OnInit } from '@angular/core';
 export class CarruselComponent implements OnInit, OnDestroy {
   slides = [
     { img: 'assets/DELTA5/delta-5.jpeg', alt: 'Imagen carrusel 1' },
-    { img: 'assets/DELTA5/delta-5.jpeg', alt: 'Imagen carrusel 2' },
+    { img: 'assets/DELTA5/delta-5-equipo.jpeg', alt: 'Imagen equipo Delta 5' },
   ];
 
   slidesMobile = [
     { img: 'assets/DELTA5/delta-5-phone.jpeg', alt: 'Imagen carrusel 1 móvil' },
+    { img: 'assets/DELTA5/delta-5-equipo-vertical.jpeg', alt: 'Imagen equipo Delta 5 móvil' },
   ];
 
   currentSlide = 0;
   isMobile = false;
-  autoplayInterval: any; // 👈 ESTA LÍNEA ES CLAVE
+  autoplayInterval: any;
 
   ngOnInit(): void {
     this.checkScreenSize();
@@ -46,14 +47,16 @@ export class CarruselComponent implements OnInit, OnDestroy {
   }
 
   prevSlide(): void {
-    this.currentSlide =
+    const nextIndex =
       (this.currentSlide - 1 + this.activeSlides.length) %
       this.activeSlides.length;
+    this.currentSlide = nextIndex;
     this.restartAutoplay();
   }
 
   nextSlide(): void {
-    this.currentSlide = (this.currentSlide + 1) % this.activeSlides.length;
+    const nextIndex = (this.currentSlide + 1) % this.activeSlides.length;
+    this.currentSlide = nextIndex;
     this.restartAutoplay();
   }
 
