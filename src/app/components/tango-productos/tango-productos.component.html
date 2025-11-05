@@ -10,10 +10,10 @@
       class="flex flex-col sm:flex-row items-center justify-center text-center sm:text-left gap-20 mb-18"
     >
       <h4
-        class="font-normal text-base sm:text-xl md:text-2xl text-base-content font-bold" style="font-family: 'Montserrat', sans-serif"
+        class="font-normal text-base sm:text-xl md:text-2xl text-base-content "
       >
         Somos distribuidores oficiales de
-        <span class="bg-clip-text text-transparent bg-gradient-folly">
+        <span class="bg-clip-text text-transparent theme-gradient-primary">
           Tango Software
         </span>
       </h4>
@@ -39,7 +39,7 @@
       class="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-10"
     >
       <span>Nuestros </span>
-      <span class="bg-clip-text text-transparent bg-gradient-folly">Productos</span>
+      <span class="bg-clip-text text-transparent theme-gradient-primary">Productos</span>
     </h2>
 
     <!-- Grid de productos -->
@@ -49,8 +49,8 @@
       <div
         *ngFor="let producto of productos; let i = index"
         appScrollReveal
-        animationClass="gentle-zoom"
-        [delay]="200 + i * 100"
+        animationClass="slide-up"
+        [delay]="200 + i * 200"
         [threshold]="0.15"
         class="flip-card h-[320px] sm:h-[340px] lg:h-[360px]"
         (click)="flipCard(i)"

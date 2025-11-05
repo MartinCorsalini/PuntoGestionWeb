@@ -41,8 +41,24 @@
   background-image: var(--gradient-vio-nar);
 }
 
+/*COLORES PARA FONDOS */
+.bg-gradient-folly-fondo {
+  background: var(--gradient-folly);
+  background-size: cover;
+  background-position: center;
+}
 
+.bg-gradient-naranja-fondo {
+  background: var(--gradient-naranja);
+  background-size: cover;
+  background-position: center;
+}
 
+.bg-gradient-violeta-fondo {
+  background: var(--gradient-violeta);
+  background-size: cover;
+  background-position: center;
+}
 
 /*FONDO COMPONENTES CONTACTO Y NOSOTROS */
 .bg-gradient-vio-nar-fondo {
@@ -77,23 +93,7 @@
   background-position: center;
 }
 
-.bg-gradient-folly-fondo {
-  background: var(--gradient-folly);
-  background-size: cover;
-  background-position: center;
-}
 
-.bg-gradient-naranja-fondo {
-  background: var(--gradient-naranja);
-  background-size: cover;
-  background-position: center;
-}
-
-.bg-gradient-violeta-fondo {
-  background: var(--gradient-violeta);
-  background-size: cover;
-  background-position: center;
-}
 
 
 /* ============================================ */
@@ -107,7 +107,7 @@
 }
 
 .theme-bg-primary-inv {
-  background: linear-gradient(180deg, #07031C 0%, #0E0635 40%, #1B0F5E 100%); 
+  background: linear-gradient(180deg, #07031C 0%, #0E0635 40%, #1B0F5E 100%);
   transition: background 0.3s ease;
 }
 
@@ -176,6 +176,16 @@
   color: #ffffff;
 }
 
+/* Por defecto (tema oscuro) usa gradiente naranja */
+.theme-gradient-primary {
+  background-image: var(--gradient-naranja);
+  transition: background-image 0.3s ease;
+}
+
+/* En tema claro usa gradiente folly */
+.light-theme .theme-gradient-primary {
+  background-image: var(--gradient-folly);
+}
 
 /* ============================================ */
 /* ANIMACIONES DE SCROLL - BÁSICAS             */
