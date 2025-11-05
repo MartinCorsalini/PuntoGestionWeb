@@ -2,7 +2,7 @@
 
   <!-- Carrusel -->
   <div
-    class="carousel w-full h-64 sm:h-72 md:h-64 lg:h-80 xl:h-96 -mt-1 mb-0"
+    class="carousel w-full h-64 sm:h-72 md:h-96 lg:h-[32rem] xl:h-[36rem] -mt-3 mb-0"
     style="background-color: transparent"
   >
     <div
@@ -17,10 +17,10 @@
       <img
         [src]="slide.img"
         [alt]="slide.alt"
-        class="w-full h-full object-cover object-center"
+        class="w-full h-full object-cover md:object-contain object-center"
       />
     </div>
-    
+
     <!-- Botones de navegación -->
     <div
       class="absolute inset-0 flex items-center justify-between px-3 sm:px-5 pointer-events-none"
@@ -35,7 +35,7 @@
   </div>
 
   <!-- Indicadores (puntitos) -->
-  <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
     <button
       *ngFor="let slide of activeSlides; let i = index"
       (click)="goToSlide(i)"
